@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Explained Simply | What Is SEO & How Does It Work | HB Web Development</title>
+    <meta name="description" content="SEO explained in plain English. What SEO is, how long it takes to rank, keywords, domain authority, long-tail keywords, topical authority, schema, technical SEO, LLMs and reviews. No jargon.">
+    <meta name="keywords" content="what is SEO, SEO explained, how SEO works, long tail keywords, domain authority, topical authority, technical SEO, schema markup, SEO for small business, SEO Kent">
+    <meta name="author" content="HB Web Development">
+    <link rel="canonical" href="https://hbwebdevelopment.co.uk/seo-explained.html">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── SEO Explained page extras ── */
+        .seo-intro-block {
+            background: #0a0a0a;
+            border-left: 4px solid #ff1493;
+            border-radius: 0 16px 16px 0;
+            padding: 2rem 2.5rem;
+            margin: 2rem 0;
+            color: #ddd;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .seo-intro-block strong { color: #ff1493; }
+
+        .seo-concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .seo-concept-card {
+            background: #0a0a0a;
+            border: 2px solid rgba(255, 20, 147, 0.3);
+            border-radius: 40px 15px 40px 15px;
+            padding: 2rem 1.75rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .seo-concept-card::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -50%;
+            width: 100%; height: 100%;
+            background: rgba(255, 20, 147, 0.05);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .seo-concept-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 20, 147, 0.7);
+            box-shadow: 0 8px 30px rgba(255, 20, 147, 0.15);
+        }
+        .seo-concept-card h3 {
+            color: #ff1493;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+        .seo-concept-card p {
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .seo-analogy-box {
+            background: #0a0a0a;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            margin: 2.5rem auto;
+            max-width: 860px;
+            position: relative;
+            text-align: center;
+        }
+        .seo-analogy-box::before {
+            content: '"';
+            position: absolute;
+            top: -0.5rem;
+            left: 1.5rem;
+            font-size: 5rem;
+            color: rgba(255, 20, 147, 0.2);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        .seo-analogy-box p {
+            color: #ccc;
+            font-style: italic;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin: 0;
+            text-align: center;
+        }
+        .seo-analogy-box .analogy-label {
+            color: #ff1493;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+            font-style: normal;
+            text-align: center;
+        }
+
+        .timeline-explainer {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .timeline-explainer-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 1.5rem;
+            align-items: start;
+            background: #0a0a0a;
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 20, 147, 0.15);
+        }
+        .timeline-explainer-item .tei-label {
+            color: #ff1493;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-align: center;
+            background: rgba(255, 20, 147, 0.1);
+            border-radius: 12px;
+            padding: 0.5rem;
+            align-self: center;
+        }
+        .timeline-explainer-item h4 {
+            color: #fff;
+            margin: 0 0 0.4rem;
+        }
+        .timeline-explainer-item p {
+            color: #bbb;
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .keyword-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        @media (max-width: 700px) {
+            .keyword-split { grid-template-columns: 1fr; }
+            .timeline-explainer-item { grid-template-columns: 1fr; }
+            .timeline-explainer-item .tei-label { text-align: left; }
+        }
+
+        .keyword-box {
+            border-radius: 20px;
+            padding: 2rem;
+        }
+        .keyword-box.hard {
+            background: #0a0a0a;
+            border: 2px solid rgba(255, 80, 80, 0.3);
+        }
+        .keyword-box.easy {
+            background: #0a0a0a;
+            border: 2px solid rgba(20, 200, 100, 0.3);
+        }
+        .keyword-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        .keyword-box.hard h3 { color: #ff6b6b; }
+        .keyword-box.easy h3 { color: #4ade80; }
+        .keyword-box ul {
+            list-style: none;
+            padding: 0; margin: 0;
+        }
+        .keyword-box ul li {
+            color: #ccc;
+            padding: 0.4rem 0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .keyword-box ul li:last-child { border: none; }
+        .keyword-box ul li span {
+            font-size: 0.8rem;
+            opacity: 0.6;
+            display: block;
+        }
+
+        .pill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.25rem;
+        }
+        .pill {
+            background: rgba(255, 20, 147, 0.1);
+            border: 1px solid rgba(255, 20, 147, 0.35);
+            border-radius: 50px;
+            padding: 0.35rem 1rem;
+            color: #ff69b4;
+            font-size: 0.85rem;
+        }
+
+        .seo-section-divider {
+            text-align: center;
+            padding: 4rem 0 0;
+            margin: 0;
+        }
+        .seo-section-divider .eyebrow {
+            color: #ff1493;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .review-llm-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        @media (max-width: 700px) {
+            .review-llm-grid { grid-template-columns: 1fr; }
+        }
+        .review-llm-card {
+            background: #0a0a0a;
+            border: 2px solid rgba(255, 20, 147, 0.3);
+            border-radius: 40px 15px 40px 15px;
+            padding: 2rem 1.75rem;
+            transition: all 0.3s ease;
+        }
+        .review-llm-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 20, 147, 0.7);
+            box-shadow: 0 8px 30px rgba(255, 20, 147, 0.15);
+        }
+        .review-llm-card h3 {
+            color: #ff1493;
+            margin-bottom: 0.75rem;
+        }
+        .review-llm-card p {
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .big-stat-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin: 3rem 0;
+        }
+        .big-stat {
+            text-align: center;
+            flex: 1 1 160px;
+        }
+        .big-stat .stat-num {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #ff1493;
+            display: block;
+            line-height: 1;
+        }
+        .big-stat .stat-label {
+            color: #aaa;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="home-page.html" class="nav-logo">
+                <img src="images/hb-logo.png" alt="HB Web Development Logo">
+            </a>
+            <div class="burger-menu" id="burgerMenu" aria-label="Toggle menu" aria-expanded="false">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="home-page.html">Home</a></li>
+                <li><a href="home-page.html#about">About</a></li>
+                <li><a href="home-page.html#projects">Inspiration</a></li>
+                <li><a href="features.html">Feature Ideas</a></li>
+                <li class="nav-dropdown">
+                    <a href="home-page.html#advanced-services" class="dropdown-toggle">Services <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="custom-html.html">
+                                <span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+                                <span class="dropdown-item-text"><span class="dropdown-item-title">Custom HTML</span><span class="dropdown-item-desc">Handcrafted, fast websites</span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="package-deals.html">
+                                <span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></span>
+                                <span class="dropdown-item-text"><span class="dropdown-item-title">Package Deals</span><span class="dropdown-item-desc">All-in-one website bundles</span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="seo-services.html">
+                                <span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+                                <span class="dropdown-item-text"><span class="dropdown-item-title">SEO Services</span><span class="dropdown-item-desc">Get found on Google</span></span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="#" class="dropdown-toggle">Blog <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="seo-explained.html">
+                                <span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+                                <span class="dropdown-item-text"><span class="dropdown-item-title">SEO Explained</span><span class="dropdown-item-desc">Plain English SEO guide</span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="hosting-explained.html">
+                                <span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+                                <span class="dropdown-item-text"><span class="dropdown-item-title">Hosting Explained</span><span class="dropdown-item-desc">What hosting really means</span></span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="contact.html" class="nav-btn">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+
+        <!-- Hero -->
+        <section class="service-hero" style="--hero-img: url('images/hero-seo.jpg')">
+            <div class="container">
+                <p class="service-hero-eyebrow">HB Web Development</p>
+                <h1><span>SEO</span> Explained</h1>
+                <p class="hero-subtitle">No jargon. No fluff. Just the honest truth about how Google works.</p>
+                <p>Whether you are completely new to SEO or just want to understand what you are actually paying for, this guide explains everything in plain English.</p>
+                <div class="hero-buttons">
+                    <a href="#what-is-seo" class="btn-primary">Start Reading</a>
+                    <a href="seo-services.html" class="btn-secondary">View SEO Services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Is SEO -->
+        <section class="service-intro" id="what-is-seo">
+            <div class="container">
+                <h2><span>What</span> Is SEO, Actually?</h2>
+                <p>SEO stands for Search Engine Optimisation. In plain terms, it is the process of making your website more likely to appear when someone types something into Google.</p>
+
+                <div class="seo-analogy-box">
+                    <p class="analogy-label">Think of it like this</p>
+                    <p>Imagine Google is a librarian who has read every book (website) on the internet. When someone asks for information, the librarian recommends the most relevant, trustworthy, and well-organised books first. SEO is the work you do to make your book easier to find, easier to read, and more trusted than the others on the shelf.</p>
+                </div>
+
+                <p>Google uses hundreds of signals to decide which websites to show and in what order. Things like how fast your site loads, how well-written your content is, how many other credible websites link to you, and whether your site is structured in a way Google can understand. SEO is the practice of improving all of those things.</p>
+
+                <div class="big-stat-row">
+                    <div class="big-stat">
+                        <span class="stat-num">92%</span>
+                        <span class="stat-label">of all searches happen on Google</span>
+                    </div>
+                    <div class="big-stat">
+                        <span class="stat-num">75%</span>
+                        <span class="stat-label">of people never scroll past page one</span>
+                    </div>
+                    <div class="big-stat">
+                        <span class="stat-num">53%</span>
+                        <span class="stat-label">of all website traffic comes from organic search</span>
+                    </div>
+                    <div class="big-stat">
+                        <span class="stat-num">0%</span>
+                        <span class="stat-label">extra cost per click, unlike paid ads</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How Long Does It Take -->
+        <section class="features-section" id="how-long">
+            <div class="container">
+                <h2><span>How Long</span> Does It Take to Rank?</h2>
+                <p>This is the question everyone asks and the honest answer is: it depends, but it is never instant. SEO is a long-term strategy, not a quick fix. Here is a realistic breakdown of what to expect:</p>
+
+                <div class="timeline-explainer">
+                    <div class="timeline-explainer-item">
+                        <div class="tei-label">Month 1</div>
+                        <div>
+                            <h4>Groundwork Phase</h4>
+                            <p>Google is still learning about your site. If your site is brand new, it may not even appear in search results yet. This is normal. Work in this phase includes technical fixes, content optimisation, and getting your site properly indexed. Think of it as laying foundations.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-explainer-item">
+                        <div class="tei-label">Month 2-3</div>
+                        <div>
+                            <h4>Early Signals</h4>
+                            <p>Google starts to notice the improvements. Long-tail keywords (more specific, less competitive search terms) may start appearing in results. You might rank on page 3 or 4 for some terms. Rankings can feel slow or even drop slightly as Google re-evaluates your site. This is completely normal.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-explainer-item">
+                        <div class="tei-label">Month 3-6</div>
+                        <div>
+                            <h4>Visible Progress</h4>
+                            <p>This is where things start to feel real. Rankings begin climbing, especially for targeted and local keywords. Traffic picks up. You may start appearing on page one for some terms. The more competitive your industry, the longer this phase takes.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-explainer-item">
+                        <div class="tei-label">Month 6-12</div>
+                        <div>
+                            <h4>Momentum Builds</h4>
+                            <p>Consistent content and ongoing optimisation compound over time. Rankings stabilise and improve. You start seeing consistent organic traffic and leads. This is where the real return on investment becomes clear.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-explainer-item">
+                        <div class="tei-label">Year 2+</div>
+                        <div>
+                            <h4>Authority and Dominance</h4>
+                            <p>Websites that have been consistently optimised for 12+ months have a significant advantage. Domain authority grows, making it easier to rank for more competitive terms. Competitors without a consistent SEO strategy struggle to catch up.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="seo-intro-block">
+                    <strong>New website?</strong> Expect a longer runway. Brand new domains with no history have zero domain authority and zero trust with Google. It typically takes 6-12 months before a new site starts ranking well, even with excellent SEO work from day one. This is not a failure. It is just how Google works.
+                </div>
+            </div>
+        </section>
+
+        <!-- Keywords -->
+        <section class="ideal-for-section" id="keywords">
+            <div class="container">
+                <h2><span>Keywords</span> Explained</h2>
+                <p>A keyword is simply the word or phrase someone types into Google. Your job, with SEO, is to make sure your website appears when people search for the keywords your business is relevant to. But not all keywords are created equal.</p>
+
+                <div class="keyword-split">
+                    <div class="keyword-box hard">
+                        <h3>Hard to Rank Keywords (Short Tail)</h3>
+                        <ul>
+                            <li>"web designer"<span>Millions of results, dominated by huge agencies</span></li>
+                            <li>"SEO services"<span>Extremely competitive, high search volume</span></li>
+                            <li>"plumber"<span>National competition, impossible without authority</span></li>
+                            <li>"accountant"<span>Massive brands own these terms</span></li>
+                        </ul>
+                        <p style="color:#ff6b6b; font-size:0.85rem; margin-top:1rem;">As a small business or new site, you will almost certainly not rank for these terms in the short or medium term. That is not pessimism, that is honesty.</p>
+                    </div>
+                    <div class="keyword-box easy">
+                        <h3>Winnable Keywords (Long Tail)</h3>
+                        <ul>
+                            <li>"web designer in Ashford Kent"<span>Local, specific, much less competition</span></li>
+                            <li>"affordable SEO for small business Kent"<span>Targeted audience, lower competition</span></li>
+                            <li>"emergency plumber Folkestone 24 hour"<span>High intent, very specific</span></li>
+                            <li>"accountant for sole traders Canterbury"<span>Niche, local, very achievable</span></li>
+                        </ul>
+                        <p style="color:#4ade80; font-size:0.85rem; margin-top:1rem;">These longer, more specific searches have lower competition. A small business with good SEO can realistically rank on page one for dozens of these terms.</p>
+                    </div>
+                </div>
+
+                <div class="seo-analogy-box" style="margin-top: 2.5rem;">
+                    <p class="analogy-label">The Long Tail Strategy</p>
+                    <p>Ranking for 50 specific, low-competition keywords that each bring in 10 visitors a month is often more valuable than chasing one big keyword that brings in 1,000 visitors but where you rank on page 8. Long-tail visitors also tend to be closer to buying because their search is more specific and intentional.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Keyword Research Process -->
+        <section class="features-section" id="keyword-research">
+            <div class="container">
+                <h2><span>Keyword Research</span> and the Process</h2>
+                <p>Good keyword research is the foundation of any SEO strategy. It is not guessing what people search for, it is using data to find out exactly what they type, how often they search it, and how hard it would be to rank for it.</p>
+
+                <div class="seo-concept-grid">
+                    <div class="seo-concept-card">
+
+                        <h3>Search Volume</h3>
+                        <p>How many times per month people search for a particular term. High volume sounds great but usually means high competition. Low volume terms with buying intent are often more valuable for small businesses.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Keyword Difficulty</h3>
+                        <p>A score that tells you how hard it would be to rank for a keyword. A new site should focus on low difficulty keywords first and work up as authority grows. Trying to rank for high difficulty terms too early is a waste of time and budget.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Search Intent</h3>
+                        <p>What is the person actually trying to do? Are they looking to buy, to learn, or to find a specific page? Matching your content to search intent is critical. A page selling services should not target keywords where people are just researching.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Local Keywords</h3>
+                        <p>For most small businesses, adding your location to keywords is one of the fastest wins. "Electrician Kent" is far easier to rank for than "electrician" and the people searching it are far more likely to hire you.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Keyword Mapping</h3>
+                        <p>Each page on your site should target a specific keyword or group of related keywords. You should not have two pages targeting the same keyword as they will compete against each other and confuse Google.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Seed Keywords</h3>
+                        <p>Your starting point. A broad term that describes your business (e.g. "web designer"). From one seed keyword, a good research tool will generate hundreds of related terms, questions, and variations to build your strategy around.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competitor Research -->
+        <section class="ideal-for-section" id="competitor-research">
+            <div class="container">
+                <h2><span>Competitor</span> Research</h2>
+                <p>Before deciding which keywords to target, a good SEO strategy looks at who is already ranking for those terms and why. Understanding your competition is not about copying them, it is about finding the gaps they have left open.</p>
+
+                <div class="seo-concept-grid" style="grid-template-columns: repeat(2, 1fr);">
+                    <div class="seo-concept-card">
+
+                        <h3>Who Is Ranking?</h3>
+                        <p>Sometimes the first page for your target keyword is dominated by national brands, directory sites (Yell, Checkatrade), or newspapers. No amount of good SEO will outrank the BBC for a generic term. Knowing this early saves you wasted effort.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Their Backlinks</h3>
+                        <p>How many other websites are linking to your competitors? A site with 2,000 high-quality backlinks from trusted sources will almost always outrank a site with 20. Analysing this shows you the gap to close and whether a keyword is realistically winnable.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Content Gaps</h3>
+                        <p>What questions are your competitors not answering? What topics have they missed? These gaps are your opportunity. Creating genuinely useful content that fills those gaps is one of the best ways to rank without a large backlink profile.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Their Authority</h3>
+                        <p>Domain Authority (DA) is a score from 1-100 that indicates how much Google trusts a website. A new domain starts at 0. A national brand might be at 70+. Chasing the same keywords as a DA70 site when you are at DA5 is like a local baker competing with Greggs on day one.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Backlink Building -->
+        <section class="features-section" id="backlinks">
+            <div class="container">
+                <h2><span>Backlink</span> Building</h2>
+                <p>A backlink is simply a link from another website to yours. Think of it as a vote of confidence. When a credible website links to you, Google sees it as a signal that your site is trustworthy and worth ranking higher. Backlinks are one of the most powerful ranking factors in all of SEO.</p>
+
+                <div class="seo-analogy-box">
+                    <p class="analogy-label">The Word of Mouth Analogy</p>
+                    <p>Imagine you are looking for a good plumber. You could search online yourself, or you could ask three trusted friends who all recommend the same person. Google works the same way. If ten respected websites all link to yours, Google trusts you far more than a site nobody links to. The more credible the websites recommending you, the stronger the signal.</p>
+                </div>
+
+                <div class="seo-concept-grid" style="margin-top: 2.5rem;">
+                    <div class="seo-concept-card">
+                        <h3>What Makes a Good Backlink?</h3>
+                        <p>Not all backlinks are equal. A link from a well-known, relevant website in your industry is worth far more than a hundred links from random low-quality directories. Relevance matters too. A link to a web design company from a marketing blog is more valuable than one from an unrelated forum. Quality always beats quantity.</p>
+                    </div>
+                    <div class="seo-concept-card">
+                        <h3>What Makes a Bad Backlink?</h3>
+                        <p>Links from spammy websites, link farms, or paid link schemes can actually hurt your rankings. Google penalises sites that try to manipulate rankings with artificial links. Any SEO provider promising hundreds of cheap backlinks overnight should be avoided. Genuine link building takes time and cannot be shortcut.</p>
+                    </div>
+                    <div class="seo-concept-card">
+                        <h3>Local Citations</h3>
+                        <p>For local businesses, citations are a form of backlink. A citation is a mention of your business name, address, and phone number on a directory like Yell, Thomson Local, or Yelp. Consistent citations across trusted local directories help Google confirm where you are based and improve your local search rankings significantly.</p>
+                    </div>
+                    <div class="seo-concept-card">
+                        <h3>Content That Earns Links</h3>
+                        <p>The most sustainable way to build backlinks is to create content so useful, informative, or interesting that other websites naturally want to link to it. A helpful guide, a local resource, or an original piece of research can earn links passively over time. This is called "earning" links rather than "building" them.</p>
+                    </div>
+                    <div class="seo-concept-card">
+                        <h3>Guest Posts and Partnerships</h3>
+                        <p>Writing an article for another reputable website in your industry, in exchange for a link back to yours, is a legitimate and effective way to build authority. Similarly, partnering with local businesses, suppliers, or organisations to exchange links is a natural and Google-approved approach for small businesses.</p>
+                    </div>
+                    <div class="seo-concept-card">
+                        <h3>PR and Brand Mentions</h3>
+                        <p>Getting featured in local newspapers, industry publications, or online press generates high-quality backlinks that are almost impossible to replicate any other way. Even unlinked brand mentions (where a website talks about you without linking) are increasingly used by Google as a trust signal. Building genuine relationships and doing good work is still the best long-term link building strategy.</p>
+                    </div>
+                </div>
+
+                <div class="seo-intro-block" style="margin-top: 2.5rem;">
+                    <strong>How long does link building take to show results?</strong> Backlinks typically take 2-3 months to be discovered by Google and influence your rankings. Building a strong backlink profile is an ongoing process, not a one-time task. Even a handful of high-quality links earned over 12 months will compound in value over time and continue working for you long after they are acquired.
+                </div>
+            </div>
+        </section>
+
+        <!-- Domain Authority -->
+        <section class="features-section" id="domain-authority">
+            <div class="container">
+                <h2><span>Domain Authority</span> and New Sites</h2>
+                <p>Domain Authority is one of the most misunderstood concepts in SEO. Here is what you actually need to know.</p>
+
+                <div class="seo-intro-block">
+                    <strong>Domain Authority (DA)</strong> is a score, not an official Google metric, that predicts how likely a website is to rank well in search results. It is based primarily on the number and quality of other websites that link to yours. A new website starts with a DA of 1. A site like Wikipedia has a DA close to 100.
+                </div>
+
+                <div class="seo-concept-grid" style="grid-template-columns: repeat(2, 1fr);">
+                    <div class="seo-concept-card">
+
+                        <h3>New Domains Start at Zero</h3>
+                        <p>If you have just registered a brand new domain, Google has no opinion of it yet. It has no history, no backlinks, no trust signals. This is known as the "Google Sandbox" effect, where new sites struggle to rank regardless of how good their SEO is. It typically takes 3-6 months minimum for a new domain to begin gaining traction.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Backlinks Build Authority</h3>
+                        <p>Every time a credible, relevant website links to yours, Google sees it as a vote of confidence. One link from a trusted local newspaper is worth more than 100 links from obscure, low-quality directories. Quality matters far more than quantity.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Age Matters</h3>
+                        <p>Older domains with consistent history tend to be trusted more. If you are buying a domain, a domain that has been active for several years with good history can give you a head start. A brand new domain will always take longer to rank than an established one.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Local Authority Helps</h3>
+                        <p>Even with low domain authority, you can rank well locally by building local citations (mentions of your business name, address, and phone number across the web), getting listed on local directories, and earning reviews. Local SEO partly bypasses domain authority barriers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topical Authority -->
+        <section class="ideal-for-section" id="topical-authority">
+            <div class="container">
+                <h2><span>Topical</span> Authority</h2>
+                <p>Beyond domain authority, Google also measures how much of an expert your website appears to be on a given subject. This is called topical authority, and it is one of the biggest opportunities for small businesses.</p>
+
+                <div class="seo-analogy-box">
+                    <p class="analogy-label">The Expert Principle</p>
+                    <p>If you only have one blog post about plumbing, Google does not consider you a plumbing expert. But if your website has 30 well-written, helpful articles covering everything from how to fix a dripping tap to what causes boiler pressure to drop, Google starts to see you as a genuine authority on the subject. That expertise helps every page on your site rank better.</p>
+                </div>
+
+                <div class="seo-concept-grid" style="margin-top: 2.5rem;">
+                    <div class="seo-concept-card">
+
+                        <h3>Topic Clusters</h3>
+                        <p>A topic cluster is a group of related content all linking back to one main "pillar" page. For example, a main page about "SEO for small businesses" might link to supporting articles about keywords, backlinks, local SEO, and technical SEO. This structure tells Google you cover a topic comprehensively.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Content Depth Over Breadth</h3>
+                        <p>One detailed, genuinely helpful 1,500-word article will outperform five thin 200-word pages every time. Google rewards content that actually answers the reader's question thoroughly. Do not write for word count. Write to genuinely help people.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Internal Linking</h3>
+                        <p>Linking between your own pages helps Google understand how your content is connected. It passes authority around your site and helps visitors find related information. A well-linked site is easier for Google to crawl and understand.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical SEO -->
+        <section class="features-section" id="technical-seo">
+            <div class="container">
+                <h2><span>Technical</span> SEO</h2>
+                <p>Technical SEO is everything behind the scenes that helps Google find, read, and understand your website. Even if your content is excellent, technical problems can stop it from ranking. Think of it as making sure the engine works before worrying about the paintwork.</p>
+
+                <div class="seo-concept-grid">
+                    <div class="seo-concept-card">
+
+                        <h3>Page Speed</h3>
+                        <p>Google has confirmed that page speed is a ranking factor. A slow website frustrates users and Google knows it. Core Web Vitals (Google's official speed scores) measure things like how fast the page loads, how quickly it becomes interactive, and how stable the layout is as it loads.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Mobile Friendliness</h3>
+                        <p>Over 60% of searches happen on mobile devices. Google now uses the mobile version of your site as the primary version it indexes. If your site looks or works badly on a phone, it will rank worse, even for desktop searches.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>HTTPS and Security</h3>
+                        <p>Sites without an SSL certificate (showing a padlock in the browser bar) are flagged as "not secure" by Chrome. Google uses HTTPS as a ranking signal. If your site is still on HTTP, that is an easy technical fix with a real ranking benefit.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Crawlability</h3>
+                        <p>Google uses "crawlers" (automated bots) to visit and read your website. If pages are blocked by your robots.txt file, set to noindex, or have broken links, Google may never find them. Technical SEO ensures nothing is accidentally hidden from Google.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>XML Sitemaps</h3>
+                        <p>A sitemap is a file that lists every important page on your website and tells Google where to find them. Submitting your sitemap via Google Search Console ensures new pages get discovered and indexed faster.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Broken Links</h3>
+                        <p>Links that lead to pages that no longer exist (404 errors) waste your site's authority and create a bad experience. Regular technical audits catch these issues before they compound into bigger ranking problems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schema Markup -->
+        <section class="ideal-for-section" id="schema">
+            <div class="container">
+                <h2><span>Schema</span> Markup</h2>
+                <p>Schema markup is code added to your website that helps Google understand what your content means, not just what it says. It is one of the more technical aspects of SEO but has clear, visible benefits in search results.</p>
+
+                <div class="seo-analogy-box">
+                    <p class="analogy-label">Plain English Explanation</p>
+                    <p>Without schema, Google reads your page and makes its best guess. With schema, you are effectively labelling things clearly: "this is a review with a 5-star rating," "this is a business located in Ashford," "this is a FAQ with these specific questions and answers." Google uses that information to display rich results in search, which stand out visually and get more clicks.</p>
+                </div>
+
+                <div class="seo-concept-grid" style="margin-top: 2.5rem;">
+                    <div class="seo-concept-card">
+
+                        <h3>Review Schema</h3>
+                        <p>Makes your star ratings appear directly in Google search results. Listings with stars stand out dramatically against plain text listings and significantly increase click-through rates. This is especially powerful for local businesses and service providers.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Local Business Schema</h3>
+                        <p>Tells Google exactly where you are located, what your opening hours are, your phone number, and what type of business you run. This directly feeds into the information shown in Google's local results and knowledge panels.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>FAQ Schema</h3>
+                        <p>Marks up frequently asked questions so Google can display them as expandable answers directly in search results. This takes up far more space on the results page and positions you as an authority even before someone clicks your link.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Product Schema</h3>
+                        <p>For e-commerce sites, product schema tells Google the price, availability, and ratings of individual products. This enables rich product listings to appear in search with prices and stock status shown before a user even visits your site.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Article Schema</h3>
+                        <p>Helps Google understand blog posts and articles, including the author, publish date, and whether the content has been updated. This supports E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness), which Google uses to evaluate content quality.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Breadcrumb Schema</h3>
+                        <p>Shows the navigation path to a page in search results (Home > Services > SEO). This makes your listing cleaner, more informative, and helps users understand where the page sits within your site structure before clicking.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews -->
+        <section class="features-section" id="reviews">
+            <div class="container">
+                <h2><span>Reviews</span> and Their SEO Impact</h2>
+                <p>Reviews are one of the most underestimated parts of a local SEO strategy. They affect your rankings, your click-through rate, and increasingly, how AI systems describe your business.</p>
+
+                <div class="review-llm-grid">
+                    <div class="review-llm-card">
+                        <h3>Google Business Profile Reviews</h3>
+                        <p>The number and quality of your Google reviews is a confirmed ranking factor for local search results (the "map pack" that appears at the top of local searches). A business with 50 positive reviews will almost always outrank a competitor with 5. Responding to reviews, good and bad, also signals to Google that you are an active, engaged business.</p>
+                    </div>
+                    <div class="review-llm-card">
+                        <h3>Review Signals Google Uses</h3>
+                        <p>Google pays attention to the overall star rating, the volume of reviews, how recent they are, whether you respond to them, and even the words people use in the reviews themselves. Customers mentioning specific services or locations in their reviews can actually help you rank for those terms.</p>
+                    </div>
+                    <div class="review-llm-card">
+                        <h3>Third Party Review Platforms</h3>
+                        <p>Reviews on platforms like Trustpilot, Yell, Facebook, and industry-specific directories all contribute to your overall trustworthiness. These platforms often rank well themselves, so being listed and reviewed on them can get your business appearing multiple times on page one for branded searches.</p>
+                    </div>
+                    <div class="review-llm-card">
+                        <h3>Negative Reviews</h3>
+                        <p>A small number of negative reviews is not the end of the world. In fact, a business with 200 reviews and a 4.6 average is often more trusted than one with 10 reviews and a perfect 5. Responding professionally to negative reviews actually demonstrates good customer service and builds trust with both Google and real people.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LLMs / AI Search -->
+        <section class="ideal-for-section" id="ai-search">
+            <div class="container">
+                <h2><span>AI, LLMs</span> and the Future of Search</h2>
+                <p>Search is changing fast. Tools like ChatGPT, Google's AI Overviews, Perplexity, and other Large Language Models (LLMs) are increasingly answering questions directly rather than just listing links. This is changing what "ranking" means.</p>
+
+                <div class="seo-analogy-box">
+                    <p class="analogy-label">What is an LLM?</p>
+                    <p>A Large Language Model is the technology behind AI tools like ChatGPT or Google Gemini. They are trained on vast amounts of internet content and can answer questions directly in a conversational way. When someone asks ChatGPT "who is the best web designer in Kent?" the AI gives an answer based on what it has learned from the web, including your website, your reviews, and what others say about you.</p>
+                </div>
+
+                <div class="seo-concept-grid" style="margin-top: 2.5rem;">
+                    <div class="seo-concept-card">
+
+                        <h3>Google AI Overviews</h3>
+                        <p>Google now often shows an AI-generated summary at the top of search results before any links. To be included in these summaries, your content needs to be clear, well-structured, and genuinely authoritative. Schema markup, clear headings, and FAQ sections all help Google's AI pull from your content.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>ChatGPT and Perplexity</h3>
+                        <p>An increasing number of people now search via AI tools rather than Google. These tools pull from publicly available web content. If your website has clear, helpful, well-organised content and good reviews across the web, AI tools are more likely to mention and recommend your business in their responses.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Brand Mentions Matter More</h3>
+                        <p>LLMs learn from the entire web. The more your business is mentioned, reviewed, and referenced across trusted websites, forums, directories, and social media, the more likely it is that AI tools will be familiar with you and recommend you. This is called "share of voice" and it is becoming increasingly important.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Question-Based Content</h3>
+                        <p>AI tools are designed to answer questions. Content that directly answers specific questions (like this very page) is more likely to be surfaced by AI. Using real question phrases as headings, writing in a natural and clear tone, and covering topics thoroughly all increase your chances of being cited by AI systems.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Reviews Feed AI Recommendations</h3>
+                        <p>When someone asks an AI tool "who should I hire for X in Y area," the AI draws heavily on review data, star ratings, and what people say about businesses. Strong Google, Trustpilot, and Facebook reviews are not just a trust signal for humans anymore. They are training data for the AI tools that recommend businesses.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>SEO Is Not Dead</h3>
+                        <p>Despite the rise of AI, traditional SEO fundamentals still apply and arguably matter more. AI tools rely on the same content, the same backlink signals, and the same authority markers that Google uses. Good SEO makes you visible to both traditional search and AI-powered search simultaneously.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- On-Page SEO -->
+        <section class="features-section" id="on-page">
+            <div class="container">
+                <h2><span>On-Page</span> SEO Basics</h2>
+                <p>On-page SEO refers to the elements on each individual page of your site that you can optimise. These are the basics that every page should get right before anything else.</p>
+
+                <div class="seo-concept-grid">
+                    <div class="seo-concept-card">
+
+                        <h3>Title Tags</h3>
+                        <p>The title of each page as it appears in search results. It should include your primary keyword and be under 60 characters. This is one of the strongest on-page ranking signals. Each page needs a unique, descriptive title.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Meta Descriptions</h3>
+                        <p>The short description that appears under your page title in search results. It does not directly affect rankings but massively affects whether people click. A compelling meta description can dramatically increase your click-through rate.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Heading Structure</h3>
+                        <p>Using H1, H2, and H3 headings correctly helps Google understand what each section of your page is about. There should be one H1 per page (the main topic), with H2s for major sections and H3s for subsections. Headings should include natural uses of your keywords.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Image Alt Text</h3>
+                        <p>Every image on your site should have a short description (alt text) that describes what the image shows. This helps visually impaired users and also helps Google understand your images, which can drive traffic via Google Image Search.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>URL Structure</h3>
+                        <p>Your page URLs should be clean, readable, and include your keyword. A URL like yoursite.co.uk/seo-services-kent is far better than yoursite.co.uk/page?id=47. Clean URLs are easier for Google to understand and for users to trust.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Keyword Placement</h3>
+                        <p>Your target keyword should appear naturally in the first 100 words of the page, in at least one heading, and a few times throughout the content. Do not stuff keywords unnaturally. Write for humans first and let keywords flow naturally.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2><span>Want Help</span> Putting This Into Practice?</h2>
+                <p>Understanding SEO is one thing. Implementing it consistently while running a business is another. That is exactly what I am here for. From a one-off audit to ongoing monthly SEO support, let's get your site found.</p>
+                <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:1rem;">
+                    <a href="seo-services.html" class="btn-primary">View SEO Packages</a>
+                    <a href="contact.html" class="btn-secondary">Get a Free Audit</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <div class="container">
+                <h2><span>Common</span> SEO Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">Can I do SEO myself?</div>
+                        <div class="faq-answer">Yes, the basics are learnable. Optimising your title tags, writing good content, and getting listed on Google Business Profile are all things you can do yourself. The more technical and strategic elements, like site speed optimisation, schema markup, link building, and keyword research with real data tools, are where professional help delivers a stronger return.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">Why do I not rank even though my site looks great?</div>
+                        <div class="faq-answer">Design and SEO are separate things. A beautiful website with no keyword optimisation, no backlinks, slow load times, and poor technical structure will not rank. Google cannot see how your site looks. It reads code, content, and signals. Great design is important for conversions once people arrive, but it does not bring them there.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">Will I lose my rankings if I stop doing SEO?</div>
+                        <div class="faq-answer">Eventually, yes. SEO is not a one-time fix. Your competitors are continuously working on their sites and building authority. If you stop, they catch up. That said, a well-optimised site with strong backlinks can hold rankings for a considerable time without active work. Think of it like fitness. You maintain it with ongoing effort.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">What is the difference between organic and paid search results?</div>
+                        <div class="faq-answer">Paid results (Google Ads) appear at the top of search results with a small "Sponsored" label and you pay each time someone clicks. Organic results appear below them and are free to click. SEO targets organic results. Once you rank organically, clicks cost you nothing. Paid ads stop the moment you stop paying.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">Does social media affect SEO?</div>
+                        <div class="faq-answer">Not directly. Google does not use social media likes or followers as a ranking factor. However, active social media can drive traffic to your site, increase brand mentions, and help your content get shared and linked to, all of which do benefit SEO indirectly. A consistent social presence also helps AI tools recognise your brand.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">How does AI search change things for my business?</div>
+                        <div class="faq-answer">AI tools like ChatGPT and Google's AI Overviews are increasingly the first thing people see when they search. To be recommended by these tools, your business needs strong reviews, clear and authoritative content, and a consistent presence across the web. The businesses that invest in SEO and reviews now will be the ones AI tools recommend in the future.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="home-page.html">
+                        <img src="images/hb-logo.png" alt="HB Web Development Logo" class="footer-logo">
+                    </a>
+                    <p class="footer-tagline">I design and develop high-quality websites built from the ground up, with SEO baked in from day one. From clean code to compelling design, everything I build is focused on helping your business stand out, get found, and grow online.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="home-page.html">Home</a></li>
+                        <li><a href="home-page.html#about">About</a></li>
+                        <li><a href="home-page.html#projects">Projects</a></li>
+                        <li><a href="home-page.html#price-list">Price List</a></li>
+                        <li><a href="contact.html" class="nav-btn">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="custom-html.html">Custom Code</a></li>
+                        <li><a href="package-deals.html">Package Deals</a></li>
+                        <li><a href="seo-services.html">SEO Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Blog</h3>
+                    <ul>
+                        <li><a href="seo-explained.html">SEO Explained</a></li>
+                        <li><a href="hosting-explained.html">Hosting Explained</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Email: info@hbwebdevelopment.co.uk</p>
+                    <p>Phone: +44 (0) 123 456 7890</p>
+                    <p>Serving: Ashford, Canterbury, Folkestone, Maidstone, Hythe, Dover &amp; Kent</p>
+                    <p>Video Consultations: UK-wide</p>
+                </div>
+            </div>
+            <div class="footer-coverage-row">
+                <h3>Our Coverage</h3>
+                <div class="footer-map-row">
+                    <div class="footer-map">
+                        <iframe src="https://maps.google.com/maps?q=United+Kingdom&t=&z=5&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="HB Web Development UK Coverage Map"></iframe>
+                    </div>
+                    <div class="footer-map-info">
+                        <p>Based in <strong>Ashford, Kent</strong>, I offer in-person meetings across the county and video consultations for clients anywhere in the UK. No matter where you are, professional web design is just a message away.</p>
+                        <ul class="footer-coverage-cities">
+                            <li>Ashford</li><li>Canterbury</li><li>Folkestone</li><li>Maidstone</li><li>Hythe</li><li>Dover</li><li>Tunbridge Wells</li><li>Margate</li><li>Ramsgate</li><li>Sittingbourne</li><li>London</li><li>Birmingham</li><li>Manchester</li><li>Leeds</li><li>Bristol</li><li>Brighton</li><li>Southampton</li><li>Oxford</li><li>Cambridge</li><li>Coventry</li><li>Leicester</li><li>Nottingham</li><li>Sheffield</li><li>Liverpool</li><li>Newcastle</li><li>UK-wide (Remote)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HB Web Development. All rights reserved. | Web Developer serving Kent: Ashford, Canterbury, Folkestone, Maidstone, Hythe &amp; Dover</p>
+                <button id="accessReset" class="access-reset-btn">&#9881; Reset Visual Settings</button>
+            </div>
+        </div>
+    </footer>
+
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Accessibility Warning Modal -->
+    <div class="access-modal-overlay hidden" id="accessModal" role="dialog" aria-modal="true" aria-labelledby="accessModalTitle">
+        <div class="access-modal">
+            <div class="access-modal-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <h2 id="accessModalTitle">Visual Effects Notice</h2>
+            <p>This website contains <strong>animations, flashing effects, and moving content</strong> which may affect users with photosensitive epilepsy, migraines, vestibular disorders, or other light-sensitive conditions.</p>
+            <p>If you are affected by these, please consider enabling reduced motion below before continuing.</p>
+            <div class="access-modal-actions">
+                <button class="access-btn-reduce" id="accessReduceMotion">Enable Reduced Motion</button>
+                <button class="access-btn-continue" id="accessContinue">I Understand, Continue</button>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script>
+    (function () {
+        var selectors = ['.seo-concept-card', '.timeline-explainer-item', '.faq-item', '.review-llm-card'];
+        var dirs = ['srv-from-top', 'srv-from-left', '', 'srv-from-right', 'srv-from-bottom', 'srv-from-left', 'srv-from-right', 'srv-from-top', ''];
+        var elements = Array.from(document.querySelectorAll(selectors.join(',')));
+        if (!elements.length) return;
+        var parentMap = new Map();
+        elements.forEach(function (el) {
+            var p = el.parentElement;
+            if (!parentMap.has(p)) parentMap.set(p, []);
+            parentMap.get(p).push(el);
+        });
+        var gi = 0;
+        parentMap.forEach(function (siblings) {
+            var dir = dirs[gi % dirs.length]; gi++;
+            siblings.forEach(function (el, i) {
+                el.classList.add('srv-reveal');
+                if (dir) el.classList.add(dir);
+                el.dataset.srvDelay = i * 100;
+            });
+        });
+        var obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                var el = entry.target;
+                setTimeout(function () { el.classList.add('srv-visible'); }, parseInt(el.dataset.srvDelay) || 0);
+                obs.unobserve(el);
+            });
+        }, { threshold: 0.1 });
+        elements.forEach(function (el) { obs.observe(el); });
+    })();
+    </script>
+</body>
+</html>

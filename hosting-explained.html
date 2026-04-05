@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Hosting Explained | Free vs Paid Hosting, Speed & What You Need | HB Web Development</title>
+    <meta name="description" content="Web hosting explained in plain English. What hosting is, how it affects your website speed, the difference between free and paid hosting, and what you actually need for a small site, blog, or ecommerce store.">
+    <meta name="keywords" content="web hosting explained, free vs paid hosting, what is web hosting, hosting and website speed, shared hosting, VPS hosting, ecommerce hosting, web hosting Kent">
+    <meta name="author" content="HB Web Development">
+    <link rel="canonical" href="https://hbwebdevelopment.co.uk/hosting-explained.html">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── Hosting Explained page extras ── */
+        .host-intro-block {
+            background: #0a0a0a;
+            border-left: 4px solid #ff1493;
+            border-radius: 0 16px 16px 0;
+            padding: 2rem 2.5rem;
+            margin: 2rem 0;
+            color: #ddd;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .host-intro-block strong { color: #ff1493; }
+
+        .host-concept-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .host-concept-card {
+            background: #0a0a0a;
+            border: 2px solid rgba(255, 20, 147, 0.3);
+            border-radius: 40px 15px 40px 15px;
+            padding: 2rem 1.75rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .host-concept-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 20, 147, 0.7);
+            box-shadow: 0 8px 30px rgba(255, 20, 147, 0.15);
+        }
+        .host-concept-card h3 {
+            color: #ff1493;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+        .host-concept-card p {
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .host-analogy-box {
+            background: #0a0a0a;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            margin: 2.5rem auto;
+            max-width: 860px;
+            position: relative;
+            text-align: center;
+        }
+        .host-analogy-box::before {
+            content: '"';
+            position: absolute;
+            top: -0.5rem;
+            left: 1.5rem;
+            font-size: 5rem;
+            color: rgba(255, 20, 147, 0.2);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        .host-analogy-box p {
+            color: #ccc;
+            font-style: italic;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin: 0;
+            text-align: center;
+        }
+        .host-analogy-box .analogy-label {
+            color: #ff1493;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+            font-style: normal;
+            text-align: center;
+        }
+
+        .hosting-tier-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .hosting-tier {
+            background: #0a0a0a;
+            border: 2px solid rgba(255, 20, 147, 0.3);
+            border-radius: 40px 15px 40px 15px;
+            padding: 2rem 1.75rem;
+            transition: all 0.3s ease;
+        }
+        .hosting-tier:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 20, 147, 0.7);
+            box-shadow: 0 8px 30px rgba(255, 20, 147, 0.15);
+        }
+        .hosting-tier .tier-badge {
+            display: inline-block;
+            background: rgba(255, 20, 147, 0.15);
+            border: 1px solid rgba(255, 20, 147, 0.4);
+            color: #ff69b4;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border-radius: 50px;
+            padding: 0.25rem 0.75rem;
+            margin-bottom: 1rem;
+            display: block;
+            width: fit-content;
+        }
+        .hosting-tier h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .hosting-tier .tier-price {
+            color: #ff1493;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .hosting-tier p {
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .hosting-tier ul {
+            list-style: none;
+            padding: 0; margin: 0;
+        }
+        .hosting-tier ul li {
+            color: #bbb;
+            font-size: 1rem;
+            padding: 0.3rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .hosting-tier ul li:last-child { border: none; }
+        .hosting-tier ul li::before {
+            content: '– ';
+            color: #ff1493;
+        }
+
+        .site-size-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        .site-size-card {
+            background: #0a0a0a;
+            border: 2px solid rgba(255, 20, 147, 0.3);
+            border-radius: 40px 15px 40px 15px;
+            padding: 2rem 1.75rem;
+            transition: all 0.3s ease;
+        }
+        .site-size-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 20, 147, 0.7);
+            box-shadow: 0 8px 30px rgba(255, 20, 147, 0.15);
+        }
+        .site-size-card .size-label {
+            color: #ff1493;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .site-size-card h3 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+        .site-size-card p {
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+        }
+        .site-size-card .size-rec {
+            color: #ff69b4;
+            font-size: 1rem;
+            font-weight: 600;
+            border-top: 1px solid rgba(255,20,147,0.2);
+            padding-top: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .speed-factor-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        @media (max-width: 700px) {
+            .speed-factor-grid { grid-template-columns: 1fr; }
+        .hosting-tier-grid { grid-template-columns: 1fr; }
+        .host-concept-grid { grid-template-columns: 1fr; }
+        .site-size-grid    { grid-template-columns: 1fr; }
+        .term-grid         { grid-template-columns: 1fr; }
+        }
+        .speed-factor-card {
+            background: #0a0a0a;
+            border: 2px solid rgba(255, 20, 147, 0.3);
+            border-radius: 40px 15px 40px 15px;
+            padding: 2rem 1.75rem;
+            transition: all 0.3s ease;
+        }
+        .speed-factor-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 20, 147, 0.7);
+            box-shadow: 0 8px 30px rgba(255, 20, 147, 0.15);
+        }
+        .speed-factor-card h3 {
+            color: #ff1493;
+            margin-bottom: 0.75rem;
+        }
+        .speed-factor-card p {
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .big-stat-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin: 3rem 0;
+        }
+        .big-stat {
+            text-align: center;
+            flex: 1 1 160px;
+        }
+        .big-stat .stat-num {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #ff1493;
+            display: block;
+            line-height: 1;
+        }
+        .big-stat .stat-label {
+            color: #aaa;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: block;
+        }
+
+        .term-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .term-card {
+            background: #0a0a0a;
+            border: 1px solid rgba(255, 20, 147, 0.2);
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+        .term-card h4 {
+            color: #ff1493;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .term-card p {
+            color: #bbb;
+            font-size: 1rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="home-page.html" class="nav-logo">
+                <img src="images/hb-logo.png" alt="HB Web Development Logo">
+            </a>
+            <div class="burger-menu" id="burgerMenu" aria-label="Toggle menu" aria-expanded="false">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="home-page.html">Home</a></li>
+                <li><a href="home-page.html#about">About</a></li>
+                <li><a href="home-page.html#projects">Inspiration</a></li>
+                <li><a href="features.html">Feature Ideas</a></li>
+                <li class="nav-dropdown">
+                    <a href="home-page.html#advanced-services" class="dropdown-toggle">Services <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="custom-html.html">
+                                <span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+                                <span class="dropdown-item-text"><span class="dropdown-item-title">Custom HTML</span><span class="dropdown-item-desc">Handcrafted, fast websites</span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="package-deals.html">
+                                <span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></span>
+                                <span class="dropdown-item-text"><span class="dropdown-item-title">Package Deals</span><span class="dropdown-item-desc">All-in-one website bundles</span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="seo-services.html">
+                                <span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+                                <span class="dropdown-item-text"><span class="dropdown-item-title">SEO Services</span><span class="dropdown-item-desc">Get found on Google</span></span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="#" class="dropdown-toggle">Blog <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="seo-explained.html">
+                                <span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+                                <span class="dropdown-item-text"><span class="dropdown-item-title">SEO Explained</span><span class="dropdown-item-desc">Plain English SEO guide</span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="hosting-explained.html">
+                                <span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+                                <span class="dropdown-item-text"><span class="dropdown-item-title">Hosting Explained</span><span class="dropdown-item-desc">What hosting really means</span></span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="contact.html" class="nav-btn">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+
+        <!-- Hero -->
+        <section class="service-hero" style="--hero-img: url('images/hero-seo.jpg')">
+            <div class="container">
+                <p class="service-hero-eyebrow">HB Web Development Blog</p>
+                <h1><span>Hosting</span> Explained</h1>
+                <p class="hero-subtitle">What web hosting actually is, why it matters, and what you really need.</p>
+                <p>Hosting is one of those things most people pick once and never think about again, until their site is slow, goes down, or gets hacked. This guide covers everything in plain English so you can make the right choice from the start.</p>
+                <div class="hero-buttons">
+                    <a href="#what-is-hosting" class="btn-primary">Start Reading</a>
+                    <a href="contact.html" class="btn-secondary">Get Advice</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Is Hosting -->
+        <section class="service-intro" id="what-is-hosting">
+            <div class="container">
+                <h2><span>What</span> Is Web Hosting?</h2>
+                <p>Every website in the world lives on a computer somewhere. Web hosting is simply the service of renting space on one of those computers so that your website is accessible to anyone on the internet, 24 hours a day.</p>
+
+                <div class="host-analogy-box">
+                    <p class="analogy-label">Think of it like this</p>
+                    <p>Your domain name (e.g. yourbusiness.co.uk) is like your address. Your hosting is the actual building at that address. Without hosting, your address exists but there is nothing there. Without a domain, your building exists but nobody can find it. You need both.</p>
+                </div>
+
+                <p>When someone types your website address into a browser, their computer contacts your hosting server, which sends back all the files that make up your website. The speed of that process, the reliability of the server, and how well it is maintained all directly affect how your website performs.</p>
+
+                <div class="big-stat-row">
+                    <div class="big-stat">
+                        <span class="stat-num">1s</span>
+                        <span class="stat-label">delay in page load can reduce conversions by 7%</span>
+                    </div>
+                    <div class="big-stat">
+                        <span class="stat-num">53%</span>
+                        <span class="stat-label">of mobile users leave a site that takes over 3 seconds to load</span>
+                    </div>
+                    <div class="big-stat">
+                        <span class="stat-num">99.9%</span>
+                        <span class="stat-label">uptime is the minimum you should expect from paid hosting</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How Hosting Affects Speed -->
+        <section class="features-section" id="hosting-and-speed">
+            <div class="container">
+                <h2><span>How Hosting</span> Affects Your Website Speed</h2>
+                <p>Hosting is one of the biggest factors in how fast your website loads, yet most people treat it as an afterthought. Here is exactly how your hosting choice affects speed.</p>
+
+                <div class="speed-factor-grid">
+                    <div class="speed-factor-card">
+                        <h3>Server Location</h3>
+                        <p>The physical distance between your server and your visitor affects load time. If your hosting server is in the United States and most of your visitors are in the UK, every page request has to travel across the Atlantic and back. A UK-based server will always be faster for UK visitors. Good hosting providers offer servers in multiple locations or use CDNs (Content Delivery Networks) to serve files from the location closest to each visitor.</p>
+                    </div>
+                    <div class="speed-factor-card">
+                        <h3>Shared Resources</h3>
+                        <p>On cheap shared hosting, your website shares a server with potentially hundreds or thousands of other websites. If one of those sites gets a spike in traffic or runs badly written code, it can slow down every other site on that server. This is known as the "noisy neighbour" problem. You have no control over it and no visibility into when it is happening.</p>
+                    </div>
+                    <div class="speed-factor-card">
+                        <h3>Server Hardware</h3>
+                        <p>Older servers with slower processors and spinning hard drives (HDDs) are significantly slower than modern servers running SSDs (Solid State Drives). The difference can be dramatic. SSD-based hosting can respond to requests up to 20 times faster than HDD-based servers. Any decent paid host in 2025 should be running SSD storage as standard.</p>
+                    </div>
+                    <div class="speed-factor-card">
+                        <h3>PHP and Software Versions</h3>
+                        <p>For WordPress and most dynamic websites, the version of PHP running on your server matters significantly. Older PHP versions are slower and less secure. A well-managed host keeps software up to date. Many cheap hosts run outdated versions by default and leave you to figure it out yourself.</p>
+                    </div>
+                    <div class="speed-factor-card">
+                        <h3>Bandwidth and Traffic Limits</h3>
+                        <p>Some hosting plans limit how much data can be transferred to and from your site each month. If your site gets a surge in traffic and hits that limit, your site either slows to a crawl or goes offline entirely until the next billing cycle. For any business website, you want hosting with unmetered or high bandwidth allowances.</p>
+                    </div>
+                    <div class="speed-factor-card">
+                        <h3>Caching and CDN Support</h3>
+                        <p>Good hosting providers offer built-in caching (storing a pre-built version of your pages so they load faster) and CDN integration. A CDN distributes your website files across servers around the world so they are always served from the location closest to each visitor. Without these features, every page visit requires your server to build the page from scratch every time.</p>
+                    </div>
+                </div>
+
+                <div class="host-intro-block" style="margin-top: 2.5rem;">
+                    <strong>Hosting and SEO.</strong> Google has confirmed that page speed is a ranking factor. Slow hosting directly hurts your SEO. A website that loads in under 2 seconds will consistently outperform an identical site on slow hosting. Choosing good hosting is not just about user experience. It is an SEO decision.
+                </div>
+            </div>
+        </section>
+
+        <!-- Free vs Paid -->
+        <section class="ideal-for-section" id="free-vs-paid">
+            <div class="container">
+                <h2><span>Free</span> vs Paid Hosting</h2>
+                <p>Free hosting sounds appealing, especially when you are starting out. But there is always a cost, it just comes in other ways. Here is an honest comparison.</p>
+
+                <div class="host-concept-grid" style="grid-template-columns: repeat(2, 1fr);">
+                    <div class="host-concept-card">
+                        <h3 style="color: #ff6b6b;">Free Hosting</h3>
+                        <p>Platforms like WordPress.com (free plan), Wix free, Weebly, or random free hosting providers give you space for nothing. The trade-offs are significant.</p>
+                        <ul style="list-style:none; padding:0; margin-top:1rem;">
+                            <li style="color:#bbb; font-size:0.88rem; padding:0.35rem 0; border-bottom:1px solid rgba(255,255,255,0.05);">Their branding or ads on your site</li>
+                            <li style="color:#bbb; font-size:0.88rem; padding:0.35rem 0; border-bottom:1px solid rgba(255,255,255,0.05);">You cannot use your own domain (e.g. yourname.wix.com)</li>
+                            <li style="color:#bbb; font-size:0.88rem; padding:0.35rem 0; border-bottom:1px solid rgba(255,255,255,0.05);">Very slow, overcrowded servers</li>
+                            <li style="color:#bbb; font-size:0.88rem; padding:0.35rem 0; border-bottom:1px solid rgba(255,255,255,0.05);">No email hosting included</li>
+                            <li style="color:#bbb; font-size:0.88rem; padding:0.35rem 0; border-bottom:1px solid rgba(255,255,255,0.05);">Limited storage and no backups</li>
+                            <li style="color:#bbb; font-size:0.88rem; padding:0.35rem 0; border-bottom:1px solid rgba(255,255,255,0.05);">Poor security, no SSL control</li>
+                            <li style="color:#bbb; font-size:0.88rem; padding:0.35rem 0;">Looks unprofessional to customers</li>
+                        </ul>
+                    </div>
+                    <div class="host-concept-card">
+                        <h3 style="color: #4ade80;">Paid Hosting</h3>
+                        <p>Entry-level paid hosting starts from around £3-5 per month in the UK. For that, you get a dramatically better experience.</p>
+                        <ul style="list-style:none; padding:0; margin-top:1rem;">
+                            <li style="color:#bbb; font-size:0.88rem; padding:0.35rem 0; border-bottom:1px solid rgba(255,255,255,0.05);">Your own domain and no third-party branding</li>
+                            <li style="color:#bbb; font-size:0.88rem; padding:0.35rem 0; border-bottom:1px solid rgba(255,255,255,0.05);">SSL certificate included (the padlock in your browser)</li>
+                            <li style="color:#bbb; font-size:0.88rem; padding:0.35rem 0; border-bottom:1px solid rgba(255,255,255,0.05);">Professional email (you@yourbusiness.co.uk)</li>
+                            <li style="color:#bbb; font-size:0.88rem; padding:0.35rem 0; border-bottom:1px solid rgba(255,255,255,0.05);">Faster, more reliable servers</li>
+                            <li style="color:#bbb; font-size:0.88rem; padding:0.35rem 0; border-bottom:1px solid rgba(255,255,255,0.05);">Automatic backups</li>
+                            <li style="color:#bbb; font-size:0.88rem; padding:0.35rem 0; border-bottom:1px solid rgba(255,255,255,0.05);">Customer support when things go wrong</li>
+                            <li style="color:#bbb; font-size:0.88rem; padding:0.35rem 0;">You own your website and data fully</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="host-analogy-box" style="margin-top: 2.5rem;">
+                    <p class="analogy-label">The Bottom Line</p>
+                    <p>Free hosting is fine for a personal experiment or a hobby project. For any business, it undermines your credibility before a potential customer has even read a word on your site. A professional email address alone is worth the cost of entry-level hosting.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Types of Hosting -->
+        <section class="features-section" id="hosting-types">
+            <div class="container">
+                <h2><span>Types</span> of Hosting Explained</h2>
+                <p>Not all hosting is the same. As your website grows, your hosting needs change. Here is every main type explained simply.</p>
+
+                <div class="hosting-tier-grid">
+                    <div class="hosting-tier">
+                        <span class="tier-badge">Most Common</span>
+                        <h3>Shared Hosting</h3>
+                        <div class="tier-price">From £2-8/month</div>
+                        <p>Your website shares a server with hundreds of other websites. Resources like memory and processing power are shared between all of them.</p>
+                        <ul>
+                            <li>Good for: small brochure sites, personal sites, blogs</li>
+                            <li>Not good for: high traffic, ecommerce, anything business-critical</li>
+                            <li>Providers: SiteGround, Hostinger, Bluehost</li>
+                        </ul>
+                    </div>
+                    <div class="hosting-tier">
+                        <span class="tier-badge">Best Value Step Up</span>
+                        <h3>VPS Hosting</h3>
+                        <div class="tier-price">From £10-40/month</div>
+                        <p>A Virtual Private Server gives you a dedicated portion of a physical server. You get guaranteed resources that are not shared with neighbours.</p>
+                        <ul>
+                            <li>Good for: growing businesses, WordPress sites with decent traffic</li>
+                            <li>Requires a little more technical knowledge to manage</li>
+                            <li>Providers: Digital Ocean, Linode, SiteGround VPS</li>
+                        </ul>
+                    </div>
+                    <div class="hosting-tier">
+                        <span class="tier-badge">WordPress Specific</span>
+                        <h3>Managed WordPress Hosting</h3>
+                        <div class="tier-price">From £15-60/month</div>
+                        <p>Hosting built specifically for WordPress sites. The provider handles updates, security, backups, and performance optimisation for you automatically.</p>
+                        <ul>
+                            <li>Good for: WordPress sites where you want zero hassle</li>
+                            <li>Faster than generic shared hosting for WordPress</li>
+                            <li>Providers: Kinsta, WP Engine, Flywheel</li>
+                        </ul>
+                    </div>
+                    <div class="hosting-tier">
+                        <span class="tier-badge">Full Control</span>
+                        <h3>Dedicated Server</h3>
+                        <div class="tier-price">From £60-200+/month</div>
+                        <p>An entire physical server all to yourself. Maximum performance, maximum control, but you need technical expertise or a developer to manage it.</p>
+                        <ul>
+                            <li>Good for: large ecommerce stores, high-traffic sites, agencies</li>
+                            <li>Overkill for most small and medium businesses</li>
+                            <li>Providers: most major hosting companies offer dedicated options</li>
+                        </ul>
+                    </div>
+                    <div class="hosting-tier">
+                        <span class="tier-badge">Modern Standard</span>
+                        <h3>Cloud Hosting</h3>
+                        <div class="tier-price">Pay as you use, varies</div>
+                        <p>Your site runs across multiple servers simultaneously. If one server has a problem, another takes over instantly. Highly scalable and reliable.</p>
+                        <ul>
+                            <li>Good for: sites with unpredictable traffic spikes</li>
+                            <li>Scales up and down automatically with demand</li>
+                            <li>Providers: AWS, Google Cloud, Cloudways</li>
+                        </ul>
+                    </div>
+                    <div class="hosting-tier">
+                        <span class="tier-badge">Static Sites</span>
+                        <h3>Static / JAMstack Hosting</h3>
+                        <div class="tier-price">Often free or very cheap</div>
+                        <p>For hand-coded HTML, CSS, and JavaScript sites with no database. Files are served directly from a CDN, making them incredibly fast and secure.</p>
+                        <ul>
+                            <li>Good for: custom-coded sites, portfolios, brochure sites</li>
+                            <li>Not suitable for WordPress or database-driven sites</li>
+                            <li>Providers: Netlify, Vercel, GitHub Pages</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What You Need by Site Size -->
+        <section class="ideal-for-section" id="what-you-need">
+            <div class="container">
+                <h2><span>What You Need</span> by Site Type</h2>
+                <p>The right hosting depends entirely on what your website does, how much traffic it gets, and how critical it is to your business. Here is a plain-English guide by site type.</p>
+
+                <div class="site-size-grid">
+                    <div class="site-size-card">
+                        <span class="size-label">Small Business</span>
+                        <h3>Brochure or Service Site</h3>
+                        <p>A simple website with 5-10 pages telling people who you are, what you do, and how to contact you. Low traffic, no online transactions.</p>
+                        <p>You do not need anything fancy. A reliable shared hosting plan with good UK server location and SSD storage is more than enough.</p>
+                        <div class="size-rec">Recommended: Shared hosting. Budget £3-8/month. SiteGround or Hostinger are solid choices.</div>
+                    </div>
+                    <div class="site-size-card">
+                        <span class="size-label">Blog or Content Site</span>
+                        <h3>Regular Content, Growing Traffic</h3>
+                        <p>If you publish blog posts regularly and are actively building traffic through SEO, you will eventually outgrow basic shared hosting. As traffic grows, so does the load on your server.</p>
+                        <p>Start on shared hosting and move to managed WordPress hosting or a VPS once you are getting consistent monthly visitors above 5,000-10,000.</p>
+                        <div class="size-rec">Recommended: Managed WordPress hosting. Budget £15-30/month. Kinsta or WP Engine.</div>
+                    </div>
+                    <div class="site-size-card">
+                        <span class="size-label">Portfolio or Freelancer</span>
+                        <h3>Showcase Site, Low Traffic</h3>
+                        <p>If your site is hand-coded in HTML, CSS, and JavaScript with no WordPress or database, you can host it entirely for free using static hosting platforms like Netlify or Vercel with excellent speed and reliability.</p>
+                        <p>You will still want a paid domain (around £10-15/year) for a professional address.</p>
+                        <div class="size-rec">Recommended: Netlify or Vercel free plan. Just pay for your domain separately.</div>
+                    </div>
+                    <div class="site-size-card">
+                        <span class="size-label">Small eCommerce</span>
+                        <h3>Up to a Few Hundred Products</h3>
+                        <p>Running WooCommerce on WordPress or a platform like Shopify. eCommerce sites handle payments, user accounts, and stock data, which means they need more resources than a brochure site.</p>
+                        <p>Speed is critical for eCommerce. Every extra second of load time costs you sales. Do not use basic shared hosting for a shop.</p>
+                        <div class="size-rec">Recommended: Managed WordPress hosting or Shopify's own hosting. Budget £25-50/month.</div>
+                    </div>
+                    <div class="site-size-card">
+                        <span class="size-label">Larger eCommerce</span>
+                        <h3>High Traffic, Large Catalogue</h3>
+                        <p>Hundreds or thousands of products, regular traffic, and possibly integration with stock management systems or third-party platforms. Performance and uptime are business-critical.</p>
+                        <p>You need dedicated or cloud hosting with proper server management, staging environments, and guaranteed uptime SLAs.</p>
+                        <div class="size-rec">Recommended: Cloud or dedicated hosting. Budget £60-200+/month. Requires ongoing management.</div>
+                    </div>
+                    <div class="site-size-card">
+                        <span class="size-label">Membership or Booking</span>
+                        <h3>User Accounts, Bookings, Databases</h3>
+                        <p>Sites where users log in, book appointments, or access gated content put more load on a server than static pages because every page request involves database queries.</p>
+                        <p>VPS or managed hosting is the minimum here. Shared hosting will struggle under this kind of dynamic load.</p>
+                        <div class="size-rec">Recommended: VPS or managed cloud hosting. Budget £20-60/month depending on traffic.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Jargon Buster -->
+        <section class="features-section" id="jargon">
+            <div class="container">
+                <h2><span>Hosting</span> Jargon Buster</h2>
+                <p>The hosting world is full of technical terms that can make a simple decision feel overwhelming. Here is what the most common ones actually mean.</p>
+
+                <div class="term-grid">
+                    <div class="term-card">
+                        <h4>Bandwidth</h4>
+                        <p>The amount of data that can be transferred between your server and your visitors. Think of it like a pipe. A wider pipe means more data can flow through at once. Most modern plans offer "unmetered" bandwidth, which means you are unlikely to hit a limit in normal use.</p>
+                    </div>
+                    <div class="term-card">
+                        <h4>Uptime</h4>
+                        <p>The percentage of time your website is actually online and accessible. 99.9% uptime sounds great but still allows around 8.7 hours of downtime per year. Reputable hosts offer 99.9% to 99.99% uptime guarantees backed by service level agreements.</p>
+                    </div>
+                    <div class="term-card">
+                        <h4>SSL Certificate</h4>
+                        <p>The technology that creates a secure, encrypted connection between your visitor's browser and your server. Without it, browsers show a "Not Secure" warning and Google penalises your rankings. All paid hosts include this free. Look for HTTPS in the browser bar.</p>
+                    </div>
+                    <div class="term-card">
+                        <h4>CDN (Content Delivery Network)</h4>
+                        <p>A network of servers spread around the world that stores copies of your website files. When someone visits your site, they are served files from the server closest to them geographically. Cloudflare is the most widely used free CDN and makes a noticeable difference to load times.</p>
+                    </div>
+                    <div class="term-card">
+                        <h4>cPanel</h4>
+                        <p>A web-based control panel that most shared hosting providers use to let you manage your hosting account. You can create email accounts, manage files, install WordPress, and configure databases all from one dashboard without needing to use a terminal or write code.</p>
+                    </div>
+                    <div class="term-card">
+                        <h4>DNS (Domain Name System)</h4>
+                        <p>The system that translates your domain name (yourbusiness.co.uk) into the IP address of your hosting server. Think of it as the internet's phone book. When you change hosting providers, you update your DNS settings to point your domain to the new server, which is why there can be a propagation delay of up to 48 hours.</p>
+                    </div>
+                    <div class="term-card">
+                        <h4>PHP</h4>
+                        <p>The programming language that powers WordPress and most content management systems. The version of PHP your host runs matters. Newer versions (PHP 8.x) are significantly faster and more secure than older ones (PHP 7.x or lower). A good host lets you choose your PHP version.</p>
+                    </div>
+                    <div class="term-card">
+                        <h4>SSD vs HDD</h4>
+                        <p>The type of storage drive your server uses. SSDs (Solid State Drives) are the modern standard and dramatically faster than older HDDs (Hard Disk Drives). If a hosting provider does not specifically say SSD in 2025, it is worth asking or looking elsewhere.</p>
+                    </div>
+                    <div class="term-card">
+                        <h4>Staging Environment</h4>
+                        <p>A private copy of your live website where you can test changes, updates, or new features without risking breaking the real site. Essential for WordPress or eCommerce sites. Many managed hosting plans include staging as standard. Basic shared hosting usually does not.</p>
+                    </div>
+                    <div class="term-card">
+                        <h4>Root Access</h4>
+                        <p>Full administrative control over your server. On shared hosting you do not have this. On a VPS or dedicated server you typically do. Root access lets you install any software and configure the server exactly as needed, but it also means you are responsible for security and maintenance.</p>
+                    </div>
+                    <div class="term-card">
+                        <h4>SMTP</h4>
+                        <p>The protocol used to send emails. Relevant when your website sends automated emails (contact forms, order confirmations, password resets). Cheap shared hosting often has poor email deliverability, meaning these emails end up in spam. A dedicated SMTP service like Mailgun or SendGrid solves this.</p>
+                    </div>
+                    <div class="term-card">
+                        <h4>IP Address</h4>
+                        <p>The unique numerical address of your server on the internet (e.g. 185.220.101.47). On shared hosting you share an IP address with many other sites. On a VPS or dedicated server you get your own. A dedicated IP used to be important for SSL but is rarely necessary now with modern SNI technology.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Mistakes -->
+        <section class="ideal-for-section" id="mistakes">
+            <div class="container">
+                <h2><span>Common</span> Hosting Mistakes</h2>
+                <p>These are the mistakes most small business owners make with hosting, often without realising the consequences.</p>
+
+                <div class="host-concept-grid">
+                    <div class="host-concept-card">
+                        <h3>Buying the Cheapest Plan Available</h3>
+                        <p>The £0.99/month deal is almost always a loss leader. The price jumps dramatically on renewal (often to £10-15/month) and the performance at that price point is usually poor. If you are comparing on price alone, look at the renewal price, not the introductory offer.</p>
+                    </div>
+                    <div class="host-concept-card">
+                        <h3>Keeping Your Domain and Hosting with the Same Provider</h3>
+                        <p>It feels convenient, but if you ever want to move hosts, having your domain tied to them can complicate the process. Many developers recommend keeping your domain with a dedicated registrar (like Namecheap or 123 Reg) and your hosting separately so you always have full control.</p>
+                    </div>
+                    <div class="host-concept-card">
+                        <h3>Not Checking Where the Servers Are</h3>
+                        <p>Many cheap hosts have their servers in the US even when they appear to be UK companies. Server location affects load time for UK visitors. Always check and choose a host with UK or European servers if your audience is primarily in the UK.</p>
+                    </div>
+                    <div class="host-concept-card">
+                        <h3>Ignoring Backups Until Something Goes Wrong</h3>
+                        <p>Hosting providers can have hardware failures. Websites get hacked. WordPress updates can break things. If you do not have a recent backup, you could lose your entire site. Always confirm your host takes automatic daily backups and that you can restore them easily.</p>
+                    </div>
+                    <div class="host-concept-card">
+                        <h3>Staying on Free Hosting for Too Long</h3>
+                        <p>Many people start on a free platform and tell themselves they will upgrade when the business grows. By that point they have built SEO on a subdomain they do not own, their visitors have bookmarked an address they cannot keep, and migrating is far more painful than starting properly from day one.</p>
+                    </div>
+                    <div class="host-concept-card">
+                        <h3>Not Having an SSL Certificate</h3>
+                        <p>Any site without HTTPS is flagged as "Not Secure" by Chrome and Firefox. This immediately damages trust with visitors and hurts your Google rankings. Free SSL certificates are available from Let's Encrypt and all reputable paid hosts include them. There is no excuse for running HTTP in 2025.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2><span>Not Sure</span> What Hosting You Need?</h2>
+                <p>Every website is different. If you are not sure whether your current hosting is holding you back, or you want advice on what to use for a new site, get in touch. I can review what you have and make a straightforward recommendation.</p>
+                <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:1rem;">
+                    <a href="contact.html" class="btn-primary">Get Hosting Advice</a>
+                    <a href="custom-html.html" class="btn-secondary">View Web Design Services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <div class="container">
+                <h2><span>Hosting</span> FAQs</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">Do I need hosting if I use Shopify or Squarespace?</div>
+                        <div class="faq-answer">No. Shopify, Squarespace, and Wix all include hosting as part of their monthly subscription. You are paying for the platform and the hosting bundled together. The trade-off is you have less control over your server, your code, and your data compared to self-hosted solutions.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">How much should I expect to pay for good hosting?</div>
+                        <div class="faq-answer">For a small business website on WordPress, budget £5-10 per month for decent shared hosting from a reputable provider. For managed WordPress hosting with better performance, £15-30 per month is reasonable. Anything under £3/month at full price (not introductory) is almost certainly compromising somewhere.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">Can slow hosting really affect my Google rankings?</div>
+                        <div class="faq-answer">Yes, directly. Google uses Core Web Vitals as a ranking factor, and hosting speed is a major contributor to these scores. A site on fast hosting with good scores will rank better than an identical site on slow hosting. It also affects bounce rate. Visitors who wait too long leave, and Google notices that too.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">What is the difference between a domain and hosting?</div>
+                        <div class="faq-answer">Your domain is your web address (yourbusiness.co.uk). Your hosting is where your website files actually live. You need both. You can buy them from the same provider or different ones. Most people recommend keeping them separate so you are never locked in to one company for everything.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">How do I move my website to a different host?</div>
+                        <div class="faq-answer">The process involves copying your website files and database to the new host, then updating your DNS settings to point your domain to the new server. There is usually a 24-48 hour propagation period where both old and new hosting are live simultaneously. Most managed hosts offer free migration assistance. A developer can handle this for you with zero downtime if planned correctly.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">Is email hosting the same as web hosting?</div>
+                        <div class="faq-answer">Not always. Many web hosts include basic email hosting so you can have professional@yourdomain.co.uk, but the email quality varies. For reliable business email, many businesses use Google Workspace (from £5/user/month) or Microsoft 365, which are dedicated email platforms separate from their web hosting. This is usually more reliable than relying on your web host for email.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="home-page.html">
+                        <img src="images/hb-logo.png" alt="HB Web Development Logo" class="footer-logo">
+                    </a>
+                    <p class="footer-tagline">I design and develop high-quality websites built from the ground up, with SEO baked in from day one. From clean code to compelling design, everything I build is focused on helping your business stand out, get found, and grow online.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="home-page.html">Home</a></li>
+                        <li><a href="home-page.html#about">About</a></li>
+                        <li><a href="home-page.html#projects">Projects</a></li>
+                        <li><a href="home-page.html#price-list">Price List</a></li>
+                        <li><a href="contact.html" class="nav-btn">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="custom-html.html">Custom Code</a></li>
+                        <li><a href="package-deals.html">Package Deals</a></li>
+                        <li><a href="seo-services.html">SEO Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Blog</h3>
+                    <ul>
+                        <li><a href="seo-explained.html">SEO Explained</a></li>
+                        <li><a href="hosting-explained.html">Hosting Explained</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Email: info@hbwebdevelopment.co.uk</p>
+                    <p>Phone: +44 (0) 123 456 7890</p>
+                    <p>Serving: Ashford, Canterbury, Folkestone, Maidstone, Hythe, Dover &amp; Kent</p>
+                    <p>Video Consultations: UK-wide</p>
+                </div>
+            </div>
+            <div class="footer-coverage-row">
+                <h3>Our Coverage</h3>
+                <div class="footer-map-row">
+                    <div class="footer-map">
+                        <iframe src="https://maps.google.com/maps?q=United+Kingdom&t=&z=5&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="HB Web Development UK Coverage Map"></iframe>
+                    </div>
+                    <div class="footer-map-info">
+                        <p>Based in <strong>Ashford, Kent</strong>, I offer in-person meetings across the county and video consultations for clients anywhere in the UK. No matter where you are, professional web design is just a message away.</p>
+                        <ul class="footer-coverage-cities">
+                            <li>Ashford</li><li>Canterbury</li><li>Folkestone</li><li>Maidstone</li><li>Hythe</li><li>Dover</li><li>Tunbridge Wells</li><li>Margate</li><li>Ramsgate</li><li>Sittingbourne</li><li>London</li><li>Birmingham</li><li>Manchester</li><li>Leeds</li><li>Bristol</li><li>Brighton</li><li>Southampton</li><li>Oxford</li><li>Cambridge</li><li>Coventry</li><li>Leicester</li><li>Nottingham</li><li>Sheffield</li><li>Liverpool</li><li>Newcastle</li><li>UK-wide (Remote)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HB Web Development. All rights reserved. | Web Developer serving Kent: Ashford, Canterbury, Folkestone, Maidstone, Hythe &amp; Dover</p>
+                <button id="accessReset" class="access-reset-btn">&#9881; Reset Visual Settings</button>
+            </div>
+        </div>
+    </footer>
+
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <div class="access-modal-overlay hidden" id="accessModal" role="dialog" aria-modal="true" aria-labelledby="accessModalTitle">
+        <div class="access-modal">
+            <div class="access-modal-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <h2 id="accessModalTitle">Visual Effects Notice</h2>
+            <p>This website contains <strong>animations, flashing effects, and moving content</strong> which may affect users with photosensitive epilepsy, migraines, vestibular disorders, or other light-sensitive conditions.</p>
+            <p>If you are affected by these, please consider enabling reduced motion below before continuing.</p>
+            <div class="access-modal-actions">
+                <button class="access-btn-reduce" id="accessReduceMotion">Enable Reduced Motion</button>
+                <button class="access-btn-continue" id="accessContinue">I Understand, Continue</button>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script>
+    (function () {
+        var selectors = ['.host-concept-card', '.hosting-tier', '.site-size-card', '.speed-factor-card', '.term-card', '.faq-item'];
+        var dirs = ['srv-from-left', 'srv-from-top', 'srv-from-right', '', 'srv-from-bottom', 'srv-from-left', 'srv-from-right', 'srv-from-top'];
+        var elements = Array.from(document.querySelectorAll(selectors.join(',')));
+        if (!elements.length) return;
+        var parentMap = new Map();
+        elements.forEach(function (el) {
+            var p = el.parentElement;
+            if (!parentMap.has(p)) parentMap.set(p, []);
+            parentMap.get(p).push(el);
+        });
+        var gi = 0;
+        parentMap.forEach(function (siblings) {
+            var dir = dirs[gi % dirs.length]; gi++;
+            siblings.forEach(function (el, i) {
+                el.classList.add('srv-reveal');
+                if (dir) el.classList.add(dir);
+                el.dataset.srvDelay = i * 100;
+            });
+        });
+        var obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                var el = entry.target;
+                setTimeout(function () { el.classList.add('srv-visible'); }, parseInt(el.dataset.srvDelay) || 0);
+                obs.unobserve(el);
+            });
+        }, { threshold: 0.1 });
+        elements.forEach(function (el) { obs.observe(el); });
+    })();
+    </script>
+</body>
+</html>
