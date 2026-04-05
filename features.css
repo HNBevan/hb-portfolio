@@ -4097,6 +4097,12 @@ body:has(.features-page)::before {
     .fc-desktop-only { display: none; }
 }
 
+/* ── Features hero button spacing on mobile ── */
+@media (max-width: 768px) {
+    .features-hero p { margin-bottom: 1.5rem; }
+    .features-ask-btn { margin-top: 0; }
+}
+
 /* ── Food & instructions on mobile ── */
 @media (max-width: 768px) {
     /* Single row of 8 above the instructions */
