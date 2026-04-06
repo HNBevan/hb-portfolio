@@ -102,8 +102,9 @@ body > * {
     position: fixed;
     top: 0;
     width: 100%;
-    background: transparent;
-    backdrop-filter: blur(0px);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     z-index: 1001;
     transition: transform 0.3s ease, background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
     padding: 0.6rem 0;
@@ -663,7 +664,7 @@ body > * {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    padding: 150px 0 50px;
+    padding: 60px 0 50px;
 }
 
 .hero-video {
@@ -895,7 +896,7 @@ body > * {
 @media (max-width: 1024px) and (orientation: landscape) {
     .hero {
         min-height: auto;
-        padding: 70px 0 40px;
+        padding: 35px 0 40px;
     }
 
     .hero-title {
@@ -953,7 +954,7 @@ body > * {
 @media (max-width: 968px) {
     .hero {
         min-height: auto;
-        padding: 70px 0 40px;
+        padding: 35px 0 40px;
     }
 
     .hero {
@@ -1040,7 +1041,7 @@ body > * {
 /* iPhones and small phones */
 @media (max-width: 576px) {
     .hero {
-        padding: 70px 0 40px;
+        padding: 35px 0 40px;
     }
 
     .hero {
@@ -1111,7 +1112,7 @@ body > * {
 /* Very small phones (iPhone SE, etc.) */
 @media (max-width: 375px) {
     .hero {
-        padding: 65px 0 30px;
+        padding: 32px 0 30px;
     }
 
     .hero-title {
@@ -5426,7 +5427,7 @@ h3 span {
 @media (max-width: 768px) and (orientation: landscape) {
     .service-hero,
     .contact-hero {
-        padding: 65px 0 30px;
+        padding: 32px 0 30px;
         min-height: auto;
     }
     .service-hero h1,
