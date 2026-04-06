@@ -20,8 +20,13 @@
             color: #ddd;
             font-size: 1.05rem;
             line-height: 1.8;
+            text-align: left;
         }
         .seo-intro-block strong { color: #ff1493; }
+
+        .service-intro > .container > p,
+        .features-section > .container > p,
+        .ideal-for-section > .container > p { color: #fff; text-align: center; }
 
         .seo-concept-grid {
             display: grid;
@@ -63,6 +68,18 @@
             font-size: 0.95rem;
             line-height: 1.7;
         }
+        .seo-concept-card,
+        .seo-concept-card h3,
+        .seo-concept-card p,
+        .review-llm-card,
+        .review-llm-card h3,
+        .review-llm-card p,
+        .timeline-explainer-item,
+        .timeline-explainer-item h4,
+        .timeline-explainer-item p,
+        .keyword-box,
+        .keyword-box h3,
+        .keyword-box ul li { text-align: left; }
 
         .seo-analogy-box {
             background: #0a0a0a;
@@ -145,10 +162,51 @@
             gap: 2rem;
             margin-top: 2.5rem;
         }
-        @media (max-width: 700px) {
-            .keyword-split { grid-template-columns: 1fr; }
+        @media (max-width: 1024px) {
+            .service-intro h2,
+            .features-section h2,
+            .ideal-for-section h2 { margin-bottom: 0.5rem !important; font-size: 1.75rem !important; }
+            .service-intro p,
+            .features-section p,
+            .ideal-for-section p { margin-bottom: 0.6rem !important; }
+            .service-intro,
+            .features-section,
+            .ideal-for-section { padding: 36px 0 !important; }
+            .seo-concept-grid { margin-top: 0.75rem !important; gap: 1.25rem !important; }
+            .timeline-explainer { margin-top: 0.75rem !important; gap: 1rem !important; }
+            .seo-analogy-box { margin: 1rem auto !important; }
+            .review-llm-grid { margin-top: 0.75rem !important; gap: 1.25rem !important; }
+            .big-stat-row { margin-top: 2.5rem !important; margin-bottom: 1.25rem !important; }
+            .seo-concept-card, .seo-concept-card h3, .seo-concept-card p,
+            .review-llm-card, .review-llm-card h3, .review-llm-card p,
+            .timeline-explainer-item, .timeline-explainer-item h4, .timeline-explainer-item p,
+            .keyword-box, .keyword-box h3, .keyword-box ul li { text-align: left !important; }
+        }
+
+        @media (max-width: 768px) {
+            .keyword-split { grid-template-columns: 1fr; gap: 1rem; }
             .timeline-explainer-item { grid-template-columns: 1fr; }
             .timeline-explainer-item .tei-label { text-align: left; }
+            .seo-concept-grid { grid-template-columns: 1fr !important; margin-top: 0.5rem !important; gap: 0.75rem !important; }
+            .service-intro h2,
+            .features-section h2,
+            .ideal-for-section h2 { margin-bottom: 0.4rem !important; font-size: 1.55rem !important; }
+            .service-intro p,
+            .features-section p,
+            .ideal-for-section p { margin-bottom: 0.5rem !important; font-size: 1rem !important; text-align: center !important; line-height: 1.6 !important; }
+            .seo-concept-card, .seo-concept-card h3, .seo-concept-card p,
+            .review-llm-card, .review-llm-card h3, .review-llm-card p,
+            .timeline-explainer-item, .timeline-explainer-item h4, .timeline-explainer-item p,
+            .keyword-box, .keyword-box h3, .keyword-box ul li { text-align: left !important; }
+            .service-intro,
+            .features-section,
+            .ideal-for-section { padding: 24px 0 !important; }
+            .timeline-explainer { margin-top: 0.5rem !important; gap: 0.75rem !important; }
+            .seo-analogy-box { margin: 0.75rem auto !important; padding: 1.25rem 1.5rem !important; }
+            .seo-analogy-box::before { font-size: 3rem; }
+            .review-llm-grid { margin-top: 0.5rem !important; gap: 0.75rem !important; }
+            .big-stat-row { margin-top: 2rem !important; margin-bottom: 1rem !important; gap: 0.75rem !important; }
+            .big-stat .stat-num { font-size: 2rem !important; }
         }
 
         .keyword-box {
@@ -359,10 +417,10 @@
 
                 <div class="seo-analogy-box">
                     <p class="analogy-label">Think of it like this</p>
-                    <p>Imagine Google is a librarian who has read every book (website) on the internet. When someone asks for information, the librarian recommends the most relevant, trustworthy, and well-organised books first. SEO is the work you do to make your book easier to find, easier to read, and more trusted than the others on the shelf.</p>
+                    <p>Imagine Google is a librarian who has read every book (website) on the internet. When someone asks for information, the librarian recommends the most relevant, trustworthy, and well organised books first. SEO is the work you do to make your book easier to find, easier to read, and more trusted than the others on the shelf.</p>
                 </div>
 
-                <p>Google uses hundreds of signals to decide which websites to show and in what order. Things like how fast your site loads, how well-written your content is, how many other credible websites link to you, and whether your site is structured in a way Google can understand. SEO is the practice of improving all of those things.</p>
+                <p>Google uses hundreds of signals to decide which websites to show and in what order. Things like how fast your site loads, how well written your content is, how many other credible websites link to you, and whether your site is structured in a way Google can understand. SEO is the practice of improving all of those things.</p>
 
                 <div class="big-stat-row">
                     <div class="big-stat">

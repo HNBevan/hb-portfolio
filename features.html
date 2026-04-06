@@ -668,7 +668,7 @@
                         <h4>Launch</h4>
                         <p>Deployed, tested and live. SEO baked in from day one so you rank right away.</p>
                     </div>
-                    <div class="fc-stack-hint">scroll to stack cards</div>
+                    <div class="fc-stack-hint"><span class="fc-desktop-only">scroll</span><span class="fc-mobile-only">swipe</span> to stack cards</div>
                 </div>
 
             </div>
@@ -2595,11 +2595,17 @@
         }, { passive: false });
 
         let ty = 0;
-        demo.addEventListener('touchstart', function (e) { ty = e.touches[0].clientY; }, { passive: true });
+        demo.addEventListener('touchstart', function (e) {
+            ty = e.touches[0].clientY;
+            e.preventDefault();
+        }, { passive: false });
+        demo.addEventListener('touchmove', function (e) {
+            e.preventDefault();
+        }, { passive: false });
         demo.addEventListener('touchend', function (e) {
             const diff = ty - e.changedTouches[0].clientY;
-            if (Math.abs(diff) > 30) goTo(diff > 0 ? current + 1 : current - 1);
-        }, { passive: true });
+            if (Math.abs(diff) > 20) goTo(diff > 0 ? current + 1 : current - 1);
+        }, { passive: false });
     })();
 
     // ── Reveal animations ──

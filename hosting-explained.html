@@ -94,6 +94,10 @@
             text-align: center;
         }
 
+        .service-intro > .container > p,
+        .features-section > .container > p,
+        .ideal-for-section > .container > p { color: #fff; text-align: center; }
+
         .hosting-tier-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -214,12 +218,41 @@
             gap: 2rem;
             margin-top: 2.5rem;
         }
-        @media (max-width: 700px) {
-            .speed-factor-grid { grid-template-columns: 1fr; }
-        .hosting-tier-grid { grid-template-columns: 1fr; }
-        .host-concept-grid { grid-template-columns: 1fr; }
-        .site-size-grid    { grid-template-columns: 1fr; }
-        .term-grid         { grid-template-columns: 1fr; }
+        @media (max-width: 1024px) {
+            .service-intro h2,
+            .features-section h2,
+            .ideal-for-section h2 { margin-bottom: 0.5rem !important; font-size: 1.75rem !important; }
+            .service-intro p,
+            .features-section p,
+            .ideal-for-section p { margin-bottom: 0.6rem !important; }
+            .service-intro,
+            .features-section,
+            .ideal-for-section { padding: 36px 0 !important; }
+            .speed-factor-grid,
+            .hosting-tier-grid,
+            .host-concept-grid,
+            .site-size-grid,
+            .term-grid { margin-top: 0.75rem !important; gap: 1.25rem !important; }
+            .big-stat-row { margin: 1.25rem 0 !important; }
+        }
+
+        @media (max-width: 768px) {
+            .speed-factor-grid      { grid-template-columns: 1fr; margin-top: 0.5rem !important; gap: 0.75rem !important; }
+            .hosting-tier-grid      { grid-template-columns: 1fr; margin-top: 0.5rem !important; gap: 0.75rem !important; }
+            .host-concept-grid      { grid-template-columns: 1fr !important; margin-top: 0.5rem !important; gap: 0.75rem !important; }
+            .site-size-grid         { grid-template-columns: 1fr; margin-top: 0.5rem !important; gap: 0.75rem !important; }
+            .term-grid              { grid-template-columns: 1fr; margin-top: 0.5rem !important; gap: 0.75rem !important; }
+            .service-intro h2,
+            .features-section h2,
+            .ideal-for-section h2 { margin-bottom: 0.4rem !important; font-size: 1.55rem !important; }
+            .service-intro p,
+            .features-section p,
+            .ideal-for-section p { margin-bottom: 0.5rem !important; font-size: 1rem !important; text-align: center !important; line-height: 1.6 !important; }
+            .service-intro,
+            .features-section,
+            .ideal-for-section { padding: 24px 0 !important; }
+            .big-stat-row { margin: 1rem 0 !important; gap: 0.75rem !important; }
+            .big-stat .stat-num { font-size: 2rem !important; }
         }
         .speed-factor-card {
             background: #0a0a0a;

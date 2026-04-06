@@ -748,6 +748,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ── Electrical dot cursor trail ──
 (function () {
     if (document.body.classList.contains('reduced-motion')) return;
+    if (window.matchMedia('(hover: none)').matches) return;
 
     // Custom glow cursor dot
     const cursorDot = document.createElement('div');
