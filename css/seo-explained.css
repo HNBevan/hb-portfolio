@@ -318,4 +318,11 @@
             margin-top: 0.5rem;
             display: block;
         }
+        .big-stat .stat-source {
+            color: #555;
+            font-size: 0.7rem;
+            margin-top: 0.35rem;
+            display: block;
+            font-style: italic;
+        }
     
