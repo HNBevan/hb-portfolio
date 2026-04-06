@@ -4406,6 +4406,7 @@ h3 span {
     color: #888;
     margin-bottom: 0.6rem;
     opacity: 0.9;
+    
 }
 
 .cw-split-grid {
@@ -5213,6 +5214,8 @@ h3 span {
 
 /* ─── iPad portrait (769–1024px) ─── */
 @media (min-width: 769px) and (max-width: 1024px) {
+    .nav-logo { margin-left: 1rem; }
+
     .footer .container { padding: 0 2rem; }
     .footer-content { flex-wrap: wrap; gap: 2rem; }
     .footer-brand { flex: 1 1 100%; padding-right: 0; margin-bottom: 0.5rem; }
@@ -5288,7 +5291,9 @@ h3 span {
     .process-step h3,
     .process-step p,
     .highlight-label,
-    .about-highlight p { text-align: center; }
+    .about-highlight p,
+    .service-hero-eyebrow,
+    .section-eyebrow { text-align: center; }
 
     /* ── Button groups centred ── */
     .hero-buttons,
