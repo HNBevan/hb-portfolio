@@ -895,7 +895,7 @@ body > * {
 @media (max-width: 1024px) and (orientation: landscape) {
     .hero {
         min-height: auto;
-        padding: 100px 0 40px;
+        padding: 70px 0 40px;
     }
 
     .hero-title {
@@ -953,7 +953,7 @@ body > * {
 @media (max-width: 968px) {
     .hero {
         min-height: auto;
-        padding: 100px 0 40px;
+        padding: 70px 0 40px;
     }
 
     .hero {
@@ -965,6 +965,10 @@ body > * {
     .hero-content {
         padding: 0 1.5rem;
         margin-bottom: 380px;
+    }
+
+    .hero-buttons {
+        margin-bottom: 1.5rem;
     }
 
     .hero-title {
@@ -1036,7 +1040,7 @@ body > * {
 /* iPhones and small phones */
 @media (max-width: 576px) {
     .hero {
-        padding: 100px 0 40px;
+        padding: 70px 0 40px;
     }
 
     .hero {
@@ -1075,6 +1079,7 @@ body > * {
         align-items: center;
         width: 100%;
         gap: 0.6rem;
+        margin-bottom: 1.5rem;
     }
 
     .btn-primary,
@@ -1106,7 +1111,7 @@ body > * {
 /* Very small phones (iPhone SE, etc.) */
 @media (max-width: 375px) {
     .hero {
-        padding: 90px 0 30px;
+        padding: 65px 0 30px;
     }
 
     .hero-title {
@@ -1455,6 +1460,11 @@ body > * {
     z-index: 10;
 }
 
+.slider-arrow-left,
+.slider-arrow-right {
+    display: none;
+}
+
 .slider-arrow:hover {
     background: #ff1493;
     color: white;
@@ -1482,8 +1492,8 @@ body > * {
 .projects-slider {
     display: flex;
     gap: 2rem;
-    animation: infiniteProjectSlide 40s linear infinite;
-    width: calc(200% + 2rem);
+    animation: infiniteProjectSlide 30s linear infinite;
+    width: max-content;
 }
 
 .projects-slider:hover {
@@ -1590,12 +1600,8 @@ body > * {
 }
 
 @keyframes infiniteProjectSlide {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(var(--slide-end, -50%)); }
 }
 
 /* Service Cards */
@@ -1728,6 +1734,21 @@ body > * {
     .service-feature-text h3,
     .service-feature-text p { text-align: center; }
     .service-feature-text .btn-primary { align-self: center; }
+    .sfm-creature .creature-speech {
+        font-size: 4.5px;
+        padding: 2px 5px;
+        border-radius: 5px;
+        bottom: calc(100% + 5px);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .sfm-creature .creature-speech {
+        font-size: 5.5px;
+        padding: 2px 6px;
+        border-radius: 6px;
+        bottom: calc(100% + 6px);
+    }
 }
 
 .service-grid {
@@ -1809,6 +1830,9 @@ body > * {
 /* Technologies section */
 .technologies {
     background: #000;
+    padding: 60px 0 50px;
+    position: relative;
+    z-index: 1;
 }
 
 /* Infinite Technologies Slider */
@@ -1828,7 +1852,7 @@ body > * {
     color: #fff;
     text-align: center;
     font-size: 2.5rem;
-    
+    margin-bottom: 2.5rem;
 }
 
 
@@ -1836,7 +1860,7 @@ body > * {
 .tech-slider {
     display: flex;
     gap: 2rem;
-    animation: infiniteSlide 30s linear infinite;
+    animation: infiniteSlide 18s linear infinite;
     width: calc(200% + 2rem); /* Double width for infinite effect */
     
 }
@@ -2305,6 +2329,8 @@ body > * {
     flex: 1 1 calc(33.333% - 1.5rem);
     min-width: 220px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .advanced-card::before {
@@ -2350,6 +2376,7 @@ body > * {
     margin-bottom: 0.75rem;
     position: relative;
     z-index: 1;
+    flex: 1;
 }
 
 .card-link {
@@ -4975,7 +5002,7 @@ h3 span {
     .contact-hero h1 { font-size: 2.8rem; }
 
     /* ── Inspiration slider ── */
-    .projects-slider { animation-duration: 22s; }
+    .projects-slider { animation-duration: 50s; }
 
     /* 3-col grids → 2-col at tablet portrait */
     .features-grid { grid-template-columns: repeat(2, 1fr); }
@@ -5008,14 +5035,10 @@ h3 span {
     .service-intro p,
     .features-section p,
     .ideal-for-section p,
-    .process-section p,
     .pricing-section p,
     .cta-section p,
     .comparison-section p,
     .faq-section p,
-    .about-intro,
-    .about-text p,
-    .about-highlight p,
     .services-intro,
     .service-subtitle,
     .advanced-services p,
@@ -5028,8 +5051,6 @@ h3 span {
     .ideal-card p,
     .pricing-intro,
     .pricing-cta p,
-    .timeline-content p,
-    .timeline-content h3,
     .info-item p,
     .contact-hero p,
     .service-hero p,
@@ -5038,10 +5059,20 @@ h3 span {
     .cw-wp-intro,
     .advanced-card h3,
     .advanced-card p,
-    .highlight-label,
-    .about-highlight p,
     .service-hero-eyebrow,
     .section-eyebrow { text-align: center; }
+
+    /* ── Process & Why Choose: main titles + intro centred ── */
+    .process-section h2,
+    .about-text h2,
+    .about-intro { text-align: center; }
+
+    /* ── Process & Why Choose: body content left-aligned ── */
+    .process-section p,
+    .timeline-content h3,
+    .timeline-content p,
+    .highlight-label,
+    .about-highlight p { text-align: left; }
 
     /* ── Button groups centred ── */
     .hero-buttons,
@@ -5078,7 +5109,7 @@ h3 span {
     .slider-arrow           { width: 36px; height: 36px; font-size: 1rem; flex-shrink: 0; }
     .project-item           { width: 78vw; }
     .project-video-wrap     { height: 200px; }
-    .projects-slider        { animation-duration: 18s; }
+    .projects-slider        { animation-duration: 45s; }
 
     /* ── Global section headings ── */
     .about-text h2,
@@ -5170,7 +5201,7 @@ h3 span {
     .project-content        { padding: 1rem 1.25rem 1.25rem; }
     .project-content h3     { font-size: 1rem; }
     .project-content p      { font-size: 0.85rem; }
-    .projects-slider        { animation-duration: 15s; }
+    .projects-slider        { animation-duration: 40s; }
 
     /* ── Global section headings ── */
     .about-text h2,

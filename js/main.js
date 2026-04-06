@@ -361,15 +361,41 @@ document.addEventListener('DOMContentLoaded', function() {
     const leftBtn  = outer ? outer.querySelector('.slider-arrow-left')  : null;
     const rightBtn = outer ? outer.querySelector('.slider-arrow-right') : null;
 
+    // Measure the exact pixel distance for one loop cycle (offsetLeft of the first duplicate card)
+    const items = slider.querySelectorAll('.project-item');
+    const halfCount = Math.floor(items.length / 2);
+
+    function setSlideEnd() {
+        const dist = items[halfCount].offsetLeft;
+        slider.style.setProperty('--slide-end', `-${dist}px`);
+        slider._slideEnd = dist;
+    }
+    setSlideEnd();
+    window.addEventListener('resize', setSlideEnd);
+
+    // Capture duration from CSS before any animation is killed
+    let cssDuration = parseFloat(window.getComputedStyle(slider).animationDuration) || 40;
+
+    function resumeFromPosition() {
+        if (isDown) return;
+        const pos = getCurrentTranslate();
+        const totalDist = slider._slideEnd || (slider.offsetWidth * 0.5);
+        // Normalise: pos is negative, so flip sign then mod
+        const cyclePos = ((-pos) % totalDist + totalDist) % totalDist;
+        const progress = cyclePos / totalDist;
+        const delay = -(progress * cssDuration);
+        // Set animation first — CSS animations override inline transform,
+        // so the slider snaps to the correct cycle position immediately
+        slider.style.animation = `infiniteProjectSlide ${cssDuration}s ${delay}s linear infinite`;
+        slider.style.transform = '';
+    }
+
     function nudgeSlider(direction) {
         const pos = getCurrentTranslate();
         slider.style.animation = 'none';
         slider.style.transform = `translateX(${pos + direction * 300}px)`;
         clearTimeout(slider._resumeTimer);
-        slider._resumeTimer = setTimeout(() => {
-            slider.style.animation = '';
-            slider.style.transform = '';
-        }, 3000);
+        slider._resumeTimer = setTimeout(resumeFromPosition, 3000);
     }
 
     if (leftBtn)  leftBtn.addEventListener('click', () => nudgeSlider(1));
@@ -393,6 +419,8 @@ document.addEventListener('DOMContentLoaded', function() {
         wrapper.classList.add('grabbing');
         startX = pageX;
 
+        // Capture duration before killing the animation (computed style returns 0 when animation:none)
+        cssDuration = parseFloat(window.getComputedStyle(slider).animationDuration) || cssDuration;
         // Capture current animated position and stop animation
         currentTranslate = getCurrentTranslate();
         slider.style.animation = 'none';
@@ -404,21 +432,18 @@ document.addEventListener('DOMContentLoaded', function() {
         isDown = false;
         wrapper.classList.remove('grabbing');
 
-        // Resume animation after delay
-        setTimeout(() => {
-            if (!isDown) {
-                slider.style.animation = '';
-                slider.style.transform = '';
-            }
-        }, 3000);
+        // Resume animation from current position after delay
+        clearTimeout(slider._resumeTimer);
+        slider._resumeTimer = setTimeout(resumeFromPosition, 3000);
     }
 
     function moveDrag(pageX) {
         if (!isDown) return;
         isDragging = true;
-        const x = pageX;
-        const walk = (x - startX) * 1.5;
-        slider.style.transform = `translateX(${currentTranslate + walk}px)`;
+        const walk = (pageX - startX) * 1.5;
+        const newPos = currentTranslate + walk;
+        // Clamp so slider can't be dragged backwards past the start
+        slider.style.transform = `translateX(${Math.min(0, newPos)}px)`;
     }
 
     // Mouse events
@@ -438,14 +463,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Touch events for mobile
     wrapper.addEventListener('touchstart', (e) => {
+        e.preventDefault();
         startDrag(e.touches[0].pageX);
-    }, { passive: true });
+    }, { passive: false });
 
     wrapper.addEventListener('touchend', endDrag);
 
     wrapper.addEventListener('touchmove', (e) => {
+        if (!isDown) return;
+        e.preventDefault(); // stop browser back-navigation gesture
         moveDrag(e.touches[0].pageX);
-    }, { passive: true });
+    }, { passive: false });
 
     // Prevent clicks on links while dragging
     wrapper.addEventListener('click', (e) => {
@@ -484,34 +512,42 @@ document.addEventListener('DOMContentLoaded', function () {
         update();
     }
 
-    prev.addEventListener('click', () => goTo(current - 1));
-    next.addEventListener('click', () => goTo(current + 1));
-    dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+    // Auto-rotate
+    let autoPlay = setInterval(() => goTo(current + 1), 3500);
+
+    function resetAutoPlay() {
+        clearInterval(autoPlay);
+        autoPlay = setInterval(() => goTo(current + 1), 3500);
+    }
+
+    prev.addEventListener('click', () => { goTo(current - 1); resetAutoPlay(); });
+    next.addEventListener('click', () => { goTo(current + 1); resetAutoPlay(); });
+    dots.forEach((d, i) => d.addEventListener('click', () => { goTo(i); resetAutoPlay(); }));
 
     // Click side cards to bring them forward
     cards.forEach((card, i) => {
         card.addEventListener('click', () => {
-            if (!card.classList.contains('pos-center')) goTo(i);
+            if (!card.classList.contains('pos-center')) { goTo(i); resetAutoPlay(); }
         });
     });
 
-    // Swipe
+    // Swipe (pause during touch, reset timer after)
     let tx = 0;
-    stage.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
-    stage.addEventListener('touchend',   e => {
+    stage.addEventListener('touchstart', e => {
+        tx = e.touches[0].clientX;
+        clearInterval(autoPlay);
+    }, { passive: true });
+    stage.addEventListener('touchend', e => {
         const diff = tx - e.changedTouches[0].clientX;
         if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+        resetAutoPlay();
     });
 
     update();
 
-    // Auto-rotate
-    let autoPlay = setInterval(() => goTo(current + 1), 3500);
     const wrap = stage.closest('.carousel-wrap') || stage.parentElement;
     wrap.addEventListener('mouseenter', () => clearInterval(autoPlay));
-    wrap.addEventListener('mouseleave', () => {
-        autoPlay = setInterval(() => goTo(current + 1), 3500);
-    });
+    wrap.addEventListener('mouseleave', () => resetAutoPlay());
 });
 
 // Smooth scrolling for navigation links
