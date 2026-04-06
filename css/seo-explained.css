@@ -1,0 +1,321 @@
+
+        /* ── SEO Explained page extras ── */
+        .seo-intro-block {
+            background: #0a0a0a;
+            border-left: 4px solid #ff1493;
+            border-radius: 0 16px 16px 0;
+            padding: 2rem 2.5rem;
+            margin: 2rem 0;
+            color: #ddd;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            text-align: left;
+        }
+        .seo-intro-block strong { color: #ff1493; }
+
+        .service-intro > .container > p,
+        .features-section > .container > p,
+        .ideal-for-section > .container > p { color: #fff; text-align: center; padding-bottom: 15px; }
+
+        .seo-concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .seo-concept-card {
+            background: #0a0a0a;
+            border: 2px solid rgba(255, 20, 147, 0.3);
+            border-radius: 40px 15px 40px 15px;
+            padding: 2rem 1.75rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .seo-concept-card::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -50%;
+            width: 100%; height: 100%;
+            background: rgba(255, 20, 147, 0.05);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .seo-concept-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 20, 147, 0.7);
+            box-shadow: 0 8px 30px rgba(255, 20, 147, 0.15);
+        }
+        .seo-concept-card h3 {
+            color: #ff1493;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+        .seo-concept-card p {
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .seo-concept-card,
+        .seo-concept-card h3,
+        .seo-concept-card p,
+        .review-llm-card,
+        .review-llm-card h3,
+        .review-llm-card p,
+        .timeline-explainer-item,
+        .timeline-explainer-item h4,
+        .timeline-explainer-item p,
+        .keyword-box,
+        .keyword-box h3,
+        .keyword-box ul li { text-align: left; }
+
+        .seo-analogy-box {
+            background: #0a0a0a;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            margin: 2.5rem auto;
+            max-width: 860px;
+            position: relative;
+            text-align: center;
+        }
+        .seo-analogy-box::before {
+            content: '"';
+            position: absolute;
+            top: -0.5rem;
+            left: 1.5rem;
+            font-size: 5rem;
+            color: rgba(255, 20, 147, 0.2);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        .seo-analogy-box p {
+            color: #ccc;
+            font-style: italic;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin: 0;
+            text-align: center;
+        }
+        .seo-analogy-box .analogy-label {
+            color: #ff1493;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+            font-style: normal;
+            text-align: center;
+        }
+
+        .timeline-explainer {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .timeline-explainer-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 1.5rem;
+            align-items: start;
+            background: #0a0a0a;
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 20, 147, 0.15);
+        }
+        .timeline-explainer-item .tei-label {
+            color: #ff1493;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-align: center;
+            background: rgba(255, 20, 147, 0.1);
+            border-radius: 12px;
+            padding: 0.5rem;
+            align-self: center;
+        }
+        .timeline-explainer-item h4 {
+            color: #fff;
+            margin: 0 0 0.4rem;
+        }
+        .timeline-explainer-item p {
+            color: #bbb;
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .keyword-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        @media (max-width: 1024px) {
+            .service-intro h2,
+            .features-section h2,
+            .ideal-for-section h2 { margin-bottom: 0.5rem !important; font-size: 1.75rem !important; }
+            .service-intro p,
+            .features-section p,
+            .ideal-for-section p { margin-bottom: 0.6rem !important; }
+            .service-intro,
+            .features-section,
+            .ideal-for-section { padding: 36px 0 !important; }
+            .seo-concept-grid { margin-top: 0.75rem !important; gap: 1.25rem !important; }
+            .timeline-explainer { margin-top: 0.75rem !important; gap: 1rem !important; }
+            .seo-analogy-box { margin: 1rem auto !important; }
+            .review-llm-grid { margin-top: 0.75rem !important; gap: 1.25rem !important; }
+            .big-stat-row { margin-top: 2.5rem !important; margin-bottom: 1.25rem !important; }
+            .seo-concept-card, .seo-concept-card h3, .seo-concept-card p,
+            .review-llm-card, .review-llm-card h3, .review-llm-card p,
+            .timeline-explainer-item, .timeline-explainer-item h4, .timeline-explainer-item p,
+            .keyword-box, .keyword-box h3, .keyword-box ul li { text-align: left !important; }
+        }
+
+        @media (max-width: 768px) {
+            .keyword-split { grid-template-columns: 1fr; gap: 1rem; }
+            .timeline-explainer-item { grid-template-columns: 1fr; }
+            .timeline-explainer-item .tei-label { text-align: left; }
+            .seo-concept-grid { grid-template-columns: 1fr !important; margin-top: 0.5rem !important; gap: 0.75rem !important; }
+            .service-intro h2,
+            .features-section h2,
+            .ideal-for-section h2 { margin-bottom: 0.4rem !important; font-size: 1.55rem !important; }
+            .service-intro p,
+            .features-section p,
+            .ideal-for-section p { margin-bottom: 0.5rem !important; font-size: 1rem !important; text-align: center !important; line-height: 1.6 !important; }
+            .seo-concept-card, .seo-concept-card h3, .seo-concept-card p,
+            .review-llm-card, .review-llm-card h3, .review-llm-card p,
+            .timeline-explainer-item, .timeline-explainer-item h4, .timeline-explainer-item p,
+            .keyword-box, .keyword-box h3, .keyword-box ul li { text-align: left !important; }
+            .service-intro,
+            .features-section,
+            .ideal-for-section { padding: 24px 0 !important; }
+            .timeline-explainer { margin-top: 0.5rem !important; gap: 0.75rem !important; }
+            .seo-analogy-box { margin: 0.75rem auto !important; padding: 1.25rem 1.5rem !important; }
+            .seo-analogy-box::before { font-size: 3rem; }
+            .review-llm-grid { margin-top: 0.5rem !important; gap: 0.75rem !important; }
+            .big-stat-row { margin-top: 2rem !important; margin-bottom: 1rem !important; gap: 0.75rem !important; }
+            .big-stat .stat-num { font-size: 2rem !important; }
+        }
+
+        .keyword-box {
+            border-radius: 20px;
+            padding: 2rem;
+        }
+        .keyword-box.hard {
+            background: #0a0a0a;
+            border: 2px solid rgba(255, 80, 80, 0.3);
+        }
+        .keyword-box.easy {
+            background: #0a0a0a;
+            border: 2px solid rgba(20, 200, 100, 0.3);
+        }
+        .keyword-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        .keyword-box.hard h3 { color: #ff6b6b; }
+        .keyword-box.easy h3 { color: #4ade80; }
+        .keyword-box ul {
+            list-style: none;
+            padding: 0; margin: 0;
+        }
+        .keyword-box ul li {
+            color: #ccc;
+            padding: 0.4rem 0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .keyword-box ul li:last-child { border: none; }
+        .keyword-box ul li span {
+            font-size: 0.8rem;
+            opacity: 0.6;
+            display: block;
+        }
+
+        .pill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.25rem;
+        }
+        .pill {
+            background: rgba(255, 20, 147, 0.1);
+            border: 1px solid rgba(255, 20, 147, 0.35);
+            border-radius: 50px;
+            padding: 0.35rem 1rem;
+            color: #ff69b4;
+            font-size: 0.85rem;
+        }
+
+        .seo-section-divider {
+            text-align: center;
+            padding: 4rem 0 0;
+            margin: 0;
+        }
+        .seo-section-divider .eyebrow {
+            color: #ff1493;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .review-llm-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        @media (max-width: 700px) {
+            .review-llm-grid { grid-template-columns: 1fr; }
+        }
+        .review-llm-card {
+            background: #0a0a0a;
+            border: 2px solid rgba(255, 20, 147, 0.3);
+            border-radius: 40px 15px 40px 15px;
+            padding: 2rem 1.75rem;
+            transition: all 0.3s ease;
+        }
+        .review-llm-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 20, 147, 0.7);
+            box-shadow: 0 8px 30px rgba(255, 20, 147, 0.15);
+        }
+        .review-llm-card h3 {
+            color: #ff1493;
+            margin-bottom: 0.75rem;
+        }
+        .review-llm-card p {
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .big-stat-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin: 3rem 0;
+        }
+        .big-stat {
+            text-align: center;
+            flex: 1 1 160px;
+        }
+        .big-stat .stat-num {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #ff1493;
+            display: block;
+            line-height: 1;
+        }
+        .big-stat .stat-label {
+            color: #aaa;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: block;
+        }
+    

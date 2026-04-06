@@ -1,0 +1,316 @@
+
+        /* ── Hosting Explained page extras ── */
+        .host-intro-block {
+            background: #0a0a0a;
+            border-left: 4px solid #ff1493;
+            border-radius: 0 16px 16px 0;
+            padding: 2rem 2.5rem;
+            margin: 2rem 0;
+            color: #ddd;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .host-intro-block strong { color: #ff1493; }
+
+        .host-concept-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .host-concept-card {
+            background: #0a0a0a;
+            border: 2px solid rgba(255, 20, 147, 0.3);
+            border-radius: 40px 15px 40px 15px;
+            padding: 2rem 1.75rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .host-concept-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 20, 147, 0.7);
+            box-shadow: 0 8px 30px rgba(255, 20, 147, 0.15);
+        }
+        .host-concept-card h3 {
+            color: #ff1493;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+        .host-concept-card p {
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .host-analogy-box {
+            background: #0a0a0a;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            margin: 2.5rem auto;
+            max-width: 860px;
+            position: relative;
+            text-align: center;
+        }
+        .host-analogy-box::before {
+            content: '"';
+            position: absolute;
+            top: -0.5rem;
+            left: 1.5rem;
+            font-size: 5rem;
+            color: rgba(255, 20, 147, 0.2);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        .host-analogy-box p {
+            color: #ccc;
+            font-style: italic;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin: 0;
+            text-align: center;
+        }
+        .host-analogy-box .analogy-label {
+            color: #ff1493;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+            font-style: normal;
+            text-align: center;
+        }
+
+        .service-intro > .container > p,
+        .features-section > .container > p,
+        .ideal-for-section > .container > p { color: #fff; text-align: center; }
+
+        .hosting-tier-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .hosting-tier {
+            background: #0a0a0a;
+            border: 2px solid rgba(255, 20, 147, 0.3);
+            border-radius: 40px 15px 40px 15px;
+            padding: 2rem 1.75rem;
+            transition: all 0.3s ease;
+        }
+        .hosting-tier:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 20, 147, 0.7);
+            box-shadow: 0 8px 30px rgba(255, 20, 147, 0.15);
+        }
+        .hosting-tier .tier-badge {
+            display: inline-block;
+            background: rgba(255, 20, 147, 0.15);
+            border: 1px solid rgba(255, 20, 147, 0.4);
+            color: #ff69b4;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border-radius: 50px;
+            padding: 0.25rem 0.75rem;
+            margin-bottom: 1rem;
+            display: block;
+            width: fit-content;
+        }
+        .hosting-tier h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .hosting-tier .tier-price {
+            color: #ff1493;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .hosting-tier p {
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .hosting-tier ul {
+            list-style: none;
+            padding: 0; margin: 0;
+        }
+        .hosting-tier ul li {
+            color: #bbb;
+            font-size: 1rem;
+            padding: 0.3rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .hosting-tier ul li:last-child { border: none; }
+        .hosting-tier ul li::before {
+            content: '– ';
+            color: #ff1493;
+        }
+
+        .site-size-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        .site-size-card {
+            background: #0a0a0a;
+            border: 2px solid rgba(255, 20, 147, 0.3);
+            border-radius: 40px 15px 40px 15px;
+            padding: 2rem 1.75rem;
+            transition: all 0.3s ease;
+        }
+        .site-size-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 20, 147, 0.7);
+            box-shadow: 0 8px 30px rgba(255, 20, 147, 0.15);
+        }
+        .site-size-card .size-label {
+            color: #ff1493;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .site-size-card h3 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+        .site-size-card p {
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+        }
+        .site-size-card .size-rec {
+            color: #ff69b4;
+            font-size: 1rem;
+            font-weight: 600;
+            border-top: 1px solid rgba(255,20,147,0.2);
+            padding-top: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .speed-factor-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        @media (max-width: 1024px) {
+            .service-intro h2,
+            .features-section h2,
+            .ideal-for-section h2 { margin-bottom: 0.5rem !important; font-size: 1.75rem !important; }
+            .service-intro p,
+            .features-section p,
+            .ideal-for-section p { margin-bottom: 0.6rem !important; }
+            .service-intro,
+            .features-section,
+            .ideal-for-section { padding: 36px 0 !important; }
+            .speed-factor-grid,
+            .hosting-tier-grid,
+            .host-concept-grid,
+            .site-size-grid,
+            .term-grid { margin-top: 0.75rem !important; gap: 1.25rem !important; }
+            .big-stat-row { margin: 1.25rem 0 !important; }
+        }
+
+        @media (max-width: 768px) {
+            .speed-factor-grid      { grid-template-columns: 1fr; margin-top: 0.5rem !important; gap: 0.75rem !important; }
+            .hosting-tier-grid      { grid-template-columns: 1fr; margin-top: 0.5rem !important; gap: 0.75rem !important; }
+            .host-concept-grid      { grid-template-columns: 1fr !important; margin-top: 0.5rem !important; gap: 0.75rem !important; }
+            .site-size-grid         { grid-template-columns: 1fr; margin-top: 0.5rem !important; gap: 0.75rem !important; }
+            .term-grid              { grid-template-columns: 1fr; margin-top: 0.5rem !important; gap: 0.75rem !important; }
+            .service-intro h2,
+            .features-section h2,
+            .ideal-for-section h2 { margin-bottom: 0.4rem !important; font-size: 1.55rem !important; }
+            .service-intro p,
+            .features-section p,
+            .ideal-for-section p { margin-bottom: 0.5rem !important; font-size: 1rem !important; text-align: center !important; line-height: 1.6 !important; }
+            .service-intro,
+            .features-section,
+            .ideal-for-section { padding: 24px 0 !important; }
+            .big-stat-row { margin: 1rem 0 !important; gap: 0.75rem !important; }
+            .big-stat .stat-num { font-size: 2rem !important; }
+        }
+        .speed-factor-card {
+            background: #0a0a0a;
+            border: 2px solid rgba(255, 20, 147, 0.3);
+            border-radius: 40px 15px 40px 15px;
+            padding: 2rem 1.75rem;
+            transition: all 0.3s ease;
+        }
+        .speed-factor-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 20, 147, 0.7);
+            box-shadow: 0 8px 30px rgba(255, 20, 147, 0.15);
+        }
+        .speed-factor-card h3 {
+            color: #ff1493;
+            margin-bottom: 0.75rem;
+        }
+        .speed-factor-card p {
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .big-stat-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin: 3rem 0;
+        }
+        .big-stat {
+            text-align: center;
+            flex: 1 1 160px;
+        }
+        .big-stat .stat-num {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #ff1493;
+            display: block;
+            line-height: 1;
+        }
+        .big-stat .stat-label {
+            color: #aaa;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: block;
+        }
+
+        .term-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .term-card {
+            background: #0a0a0a;
+            border: 1px solid rgba(255, 20, 147, 0.2);
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+        .term-card h4 {
+            color: #ff1493;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .term-card p {
+            color: #bbb;
+            font-size: 1rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+    

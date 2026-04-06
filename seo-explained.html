@@ -7,335 +7,71 @@
     <meta name="description" content="SEO explained in plain English. What SEO is, how long it takes to rank, keywords, domain authority, long-tail keywords, topical authority, schema, technical SEO, LLMs and reviews. No jargon.">
     <meta name="keywords" content="what is SEO, SEO explained, how SEO works, long tail keywords, domain authority, topical authority, technical SEO, schema markup, SEO for small business, SEO Kent">
     <meta name="author" content="HB Web Development">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/seo-explained.css">
+
+
+    <!-- Canonical -->
     <link rel="canonical" href="https://hbwebdevelopment.co.uk/seo-explained.html">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* ── SEO Explained page extras ── */
-        .seo-intro-block {
-            background: #0a0a0a;
-            border-left: 4px solid #ff1493;
-            border-radius: 0 16px 16px 0;
-            padding: 2rem 2.5rem;
-            margin: 2rem 0;
-            color: #ddd;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            text-align: left;
-        }
-        .seo-intro-block strong { color: #ff1493; }
 
-        .service-intro > .container > p,
-        .features-section > .container > p,
-        .ideal-for-section > .container > p { color: #fff; text-align: center; padding-bottom: 15px; }
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="HB Web Development">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:title" content="SEO Explained Simply | What Is SEO and How Does It Work | HB Web Development">
+    <meta property="og:description" content="SEO explained in plain English. Keywords, domain authority, technical SEO, schema markup, AI search and more — no jargon.">
+    <meta property="og:url" content="https://hbwebdevelopment.co.uk/seo-explained.html">
+    <meta property="og:image" content="https://hbwebdevelopment.co.uk/images/hb-logo.png">
 
-        .seo-concept-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2.5rem;
-        }
-
-        .seo-concept-card {
-            background: #0a0a0a;
-            border: 2px solid rgba(255, 20, 147, 0.3);
-            border-radius: 40px 15px 40px 15px;
-            padding: 2rem 1.75rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .seo-concept-card::before {
-            content: '';
-            position: absolute;
-            top: -50%; right: -50%;
-            width: 100%; height: 100%;
-            background: rgba(255, 20, 147, 0.05);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-        .seo-concept-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 20, 147, 0.7);
-            box-shadow: 0 8px 30px rgba(255, 20, 147, 0.15);
-        }
-        .seo-concept-card h3 {
-            color: #ff1493;
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
-        }
-        .seo-concept-card p {
-            color: #ccc;
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-        .seo-concept-card,
-        .seo-concept-card h3,
-        .seo-concept-card p,
-        .review-llm-card,
-        .review-llm-card h3,
-        .review-llm-card p,
-        .timeline-explainer-item,
-        .timeline-explainer-item h4,
-        .timeline-explainer-item p,
-        .keyword-box,
-        .keyword-box h3,
-        .keyword-box ul li { text-align: left; }
-
-        .seo-analogy-box {
-            background: #0a0a0a;
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 20px;
-            padding: 2rem 2.5rem;
-            margin: 2.5rem auto;
-            max-width: 860px;
-            position: relative;
-            text-align: center;
-        }
-        .seo-analogy-box::before {
-            content: '"';
-            position: absolute;
-            top: -0.5rem;
-            left: 1.5rem;
-            font-size: 5rem;
-            color: rgba(255, 20, 147, 0.2);
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-        .seo-analogy-box p {
-            color: #ccc;
-            font-style: italic;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin: 0;
-            text-align: center;
-        }
-        .seo-analogy-box .analogy-label {
-            color: #ff1493;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.75rem;
-            font-style: normal;
-            text-align: center;
-        }
-
-        .timeline-explainer {
-            display: grid;
-            gap: 1.5rem;
-            margin-top: 2.5rem;
-        }
-        .timeline-explainer-item {
-            display: grid;
-            grid-template-columns: 120px 1fr;
-            gap: 1.5rem;
-            align-items: start;
-            background: #0a0a0a;
-            border-radius: 16px;
-            padding: 1.5rem;
-            border: 1px solid rgba(255, 20, 147, 0.15);
-        }
-        .timeline-explainer-item .tei-label {
-            color: #ff1493;
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-align: center;
-            background: rgba(255, 20, 147, 0.1);
-            border-radius: 12px;
-            padding: 0.5rem;
-            align-self: center;
-        }
-        .timeline-explainer-item h4 {
-            color: #fff;
-            margin: 0 0 0.4rem;
-        }
-        .timeline-explainer-item p {
-            color: #bbb;
-            margin: 0;
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .keyword-split {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 2.5rem;
-        }
-        @media (max-width: 1024px) {
-            .service-intro h2,
-            .features-section h2,
-            .ideal-for-section h2 { margin-bottom: 0.5rem !important; font-size: 1.75rem !important; }
-            .service-intro p,
-            .features-section p,
-            .ideal-for-section p { margin-bottom: 0.6rem !important; }
-            .service-intro,
-            .features-section,
-            .ideal-for-section { padding: 36px 0 !important; }
-            .seo-concept-grid { margin-top: 0.75rem !important; gap: 1.25rem !important; }
-            .timeline-explainer { margin-top: 0.75rem !important; gap: 1rem !important; }
-            .seo-analogy-box { margin: 1rem auto !important; }
-            .review-llm-grid { margin-top: 0.75rem !important; gap: 1.25rem !important; }
-            .big-stat-row { margin-top: 2.5rem !important; margin-bottom: 1.25rem !important; }
-            .seo-concept-card, .seo-concept-card h3, .seo-concept-card p,
-            .review-llm-card, .review-llm-card h3, .review-llm-card p,
-            .timeline-explainer-item, .timeline-explainer-item h4, .timeline-explainer-item p,
-            .keyword-box, .keyword-box h3, .keyword-box ul li { text-align: left !important; }
-        }
-
-        @media (max-width: 768px) {
-            .keyword-split { grid-template-columns: 1fr; gap: 1rem; }
-            .timeline-explainer-item { grid-template-columns: 1fr; }
-            .timeline-explainer-item .tei-label { text-align: left; }
-            .seo-concept-grid { grid-template-columns: 1fr !important; margin-top: 0.5rem !important; gap: 0.75rem !important; }
-            .service-intro h2,
-            .features-section h2,
-            .ideal-for-section h2 { margin-bottom: 0.4rem !important; font-size: 1.55rem !important; }
-            .service-intro p,
-            .features-section p,
-            .ideal-for-section p { margin-bottom: 0.5rem !important; font-size: 1rem !important; text-align: center !important; line-height: 1.6 !important; }
-            .seo-concept-card, .seo-concept-card h3, .seo-concept-card p,
-            .review-llm-card, .review-llm-card h3, .review-llm-card p,
-            .timeline-explainer-item, .timeline-explainer-item h4, .timeline-explainer-item p,
-            .keyword-box, .keyword-box h3, .keyword-box ul li { text-align: left !important; }
-            .service-intro,
-            .features-section,
-            .ideal-for-section { padding: 24px 0 !important; }
-            .timeline-explainer { margin-top: 0.5rem !important; gap: 0.75rem !important; }
-            .seo-analogy-box { margin: 0.75rem auto !important; padding: 1.25rem 1.5rem !important; }
-            .seo-analogy-box::before { font-size: 3rem; }
-            .review-llm-grid { margin-top: 0.5rem !important; gap: 0.75rem !important; }
-            .big-stat-row { margin-top: 2rem !important; margin-bottom: 1rem !important; gap: 0.75rem !important; }
-            .big-stat .stat-num { font-size: 2rem !important; }
-        }
-
-        .keyword-box {
-            border-radius: 20px;
-            padding: 2rem;
-        }
-        .keyword-box.hard {
-            background: #0a0a0a;
-            border: 2px solid rgba(255, 80, 80, 0.3);
-        }
-        .keyword-box.easy {
-            background: #0a0a0a;
-            border: 2px solid rgba(20, 200, 100, 0.3);
-        }
-        .keyword-box h3 {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-        .keyword-box.hard h3 { color: #ff6b6b; }
-        .keyword-box.easy h3 { color: #4ade80; }
-        .keyword-box ul {
-            list-style: none;
-            padding: 0; margin: 0;
-        }
-        .keyword-box ul li {
-            color: #ccc;
-            padding: 0.4rem 0;
-            font-size: 0.9rem;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .keyword-box ul li:last-child { border: none; }
-        .keyword-box ul li span {
-            font-size: 0.8rem;
-            opacity: 0.6;
-            display: block;
-        }
-
-        .pill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-top: 1.25rem;
-        }
-        .pill {
-            background: rgba(255, 20, 147, 0.1);
-            border: 1px solid rgba(255, 20, 147, 0.35);
-            border-radius: 50px;
-            padding: 0.35rem 1rem;
-            color: #ff69b4;
-            font-size: 0.85rem;
-        }
-
-        .seo-section-divider {
-            text-align: center;
-            padding: 4rem 0 0;
-            margin: 0;
-        }
-        .seo-section-divider .eyebrow {
-            color: #ff1493;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .review-llm-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 2.5rem;
-        }
-        @media (max-width: 700px) {
-            .review-llm-grid { grid-template-columns: 1fr; }
-        }
-        .review-llm-card {
-            background: #0a0a0a;
-            border: 2px solid rgba(255, 20, 147, 0.3);
-            border-radius: 40px 15px 40px 15px;
-            padding: 2rem 1.75rem;
-            transition: all 0.3s ease;
-        }
-        .review-llm-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 20, 147, 0.7);
-            box-shadow: 0 8px 30px rgba(255, 20, 147, 0.15);
-        }
-        .review-llm-card h3 {
-            color: #ff1493;
-            margin-bottom: 0.75rem;
-        }
-        .review-llm-card p {
-            color: #ccc;
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .big-stat-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-            margin: 3rem 0;
-        }
-        .big-stat {
-            text-align: center;
-            flex: 1 1 160px;
-        }
-        .big-stat .stat-num {
-            font-size: 3rem;
-            font-weight: 900;
-            color: #ff1493;
-            display: block;
-            line-height: 1;
-        }
-        .big-stat .stat-label {
-            color: #aaa;
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
-            display: block;
-        }
-    </style>
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@HBWebDev">
+    <meta name="twitter:title" content="SEO Explained Simply | HB Web Development">
+    <meta name="twitter:description" content="SEO explained in plain English — keywords, domain authority, technical SEO, AI search, and more. No jargon.">
+    <meta name="twitter:image" content="https://hbwebdevelopment.co.uk/images/hb-logo.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://hbwebdevelopment.co.uk/"},
+      {"@type":"ListItem","position":2,"name":"SEO Explained","item":"https://hbwebdevelopment.co.uk/seo-explained.html"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "SEO Explained Simply",
+      "description": "SEO explained in plain English — keywords, domain authority, technical SEO, schema markup, AI search, and more.",
+      "url": "https://hbwebdevelopment.co.uk/seo-explained.html",
+      "inLanguage": "en-GB",
+      "author": {"@id": "https://hbwebdevelopment.co.uk/#business"},
+      "publisher": {"@id": "https://hbwebdevelopment.co.uk/#business"},
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://hbwebdevelopment.co.uk/seo-explained.html"}
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+      {"@type":"Question","name":"Can I do SEO myself?","acceptedAnswer":{"@type":"Answer","text":"Yes, the basics are learnable. Optimising title tags, writing good content, and listing on Google Business Profile are great starting points."}},
+      {"@type":"Question","name":"Why do I not rank even though my site looks great?","acceptedAnswer":{"@type":"Answer","text":"Design and SEO are separate things. A beautiful website with no keyword optimisation, no backlinks, and poor technical structure will not rank."}},
+      {"@type":"Question","name":"Will I lose my rankings if I stop doing SEO?","acceptedAnswer":{"@type":"Answer","text":"Eventually, yes. SEO is not a one-time fix. Competitors continuously work on their sites and build authority."}},
+      {"@type":"Question","name":"What is the difference between organic and paid search results?","acceptedAnswer":{"@type":"Answer","text":"Paid results appear at the top with a Sponsored label and you pay per click. Organic results are free to click and are earned through SEO."}},
+      {"@type":"Question","name":"Does social media affect SEO?","acceptedAnswer":{"@type":"Answer","text":"Not directly. Google does not use social media likes as a ranking factor, but social media can drive traffic and help content get shared."}},
+      {"@type":"Question","name":"How does AI search change things for my business?","acceptedAnswer":{"@type":"Answer","text":"AI tools like ChatGPT and Google's AI Overviews are increasingly the first thing people see. Strong reviews, clear content, and proper schema help you get recommended."}}
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="home-page.html" class="nav-logo">
+            <a href="index.html" class="nav-logo">
                 <img src="images/hb-logo.png" alt="HB Web Development Logo">
             </a>
             <div class="burger-menu" id="burgerMenu" aria-label="Toggle menu" aria-expanded="false">
@@ -344,27 +80,27 @@
                 <div class="burger-line"></div>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="home-page.html">Home</a></li>
-                <li><a href="home-page.html#about">About</a></li>
-                <li><a href="home-page.html#projects">Inspiration</a></li>
-                <li><a href="features.html">Feature Ideas</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Inspiration</a></li>
+                <li><a href="website-features-uk.html">Feature Ideas</a></li>
                 <li class="nav-dropdown">
-                    <a href="home-page.html#advanced-services" class="dropdown-toggle">Services <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                    <a href="index.html#advanced-services" class="dropdown-toggle">Services <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="custom-html.html">
+                            <a href="custom-websites-uk.html">
                                 <span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
                                 <span class="dropdown-item-text"><span class="dropdown-item-title">Custom HTML</span><span class="dropdown-item-desc">Handcrafted, fast websites</span></span>
                             </a>
                         </li>
                         <li>
-                            <a href="package-deals.html">
+                            <a href="website-package-deals-uk.html">
                                 <span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></span>
                                 <span class="dropdown-item-text"><span class="dropdown-item-title">Package Deals</span><span class="dropdown-item-desc">All-in-one website bundles</span></span>
                             </a>
                         </li>
                         <li>
-                            <a href="seo-services.html">
+                            <a href="seo-services-uk.html">
                                 <span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
                                 <span class="dropdown-item-text"><span class="dropdown-item-title">SEO Services</span><span class="dropdown-item-desc">Get found on Google</span></span>
                             </a>
@@ -394,6 +130,7 @@
     </nav>
 
     <main class="main-content">
+        <article itemscope itemtype="https://schema.org/Article">
 
         <!-- Hero -->
         <section class="service-hero" style="--hero-img: url('images/hero-seo.jpg')">
@@ -404,7 +141,7 @@
                 <p>Whether you are completely new to SEO or just want to understand what you are actually paying for, this guide explains everything in plain English.</p>
                 <div class="hero-buttons">
                     <a href="#what-is-seo" class="btn-primary">Start Reading</a>
-                    <a href="seo-services.html" class="btn-secondary">View SEO Services</a>
+                    <a href="seo-services-uk.html" class="btn-secondary">View SEO Services</a>
                 </div>
             </div>
         </section>
@@ -533,7 +270,7 @@
         <section class="features-section" id="keyword-research">
             <div class="container">
                 <h2><span>Keyword Research</span> and the Process</h2>
-                <p>Good keyword research is the foundation of any SEO strategy. It is not guessing what people search for, it is using data to find out exactly what they type, how often they search it, and how hard it would be to rank for it.</p>
+                <p>Good keyword research is the foundation of any SEO strategy. If you want this handled for you, see our <a href="seo-services-uk.html">SEO services</a>. It is not guessing what people search for, it is using data to find out exactly what they type, how often they search it, and how hard it would be to rank for it.</p>
 
                 <div class="seo-concept-grid">
                     <div class="seo-concept-card">
@@ -918,7 +655,7 @@
                 <h2><span>Want Help</span> Putting This Into Practice?</h2>
                 <p>Understanding SEO is one thing. Implementing it consistently while running a business is another. That is exactly what I am here for. From a one-off audit to ongoing monthly SEO support, let's get your site found.</p>
                 <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:1rem;">
-                    <a href="seo-services.html" class="btn-primary">View SEO Packages</a>
+                    <a href="seo-services-uk.html" class="btn-primary">View SEO Packages</a>
                     <a href="contact.html" class="btn-secondary">Get a Free Audit</a>
                 </div>
             </div>
@@ -957,6 +694,7 @@
             </div>
         </section>
 
+        </article>
     </main>
 
     <!-- Footer -->
@@ -964,7 +702,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="home-page.html">
+                    <a href="index.html">
                         <img src="images/hb-logo.png" alt="HB Web Development Logo" class="footer-logo">
                     </a>
                     <p class="footer-tagline">I design and develop high-quality websites built from the ground up, with SEO baked in from day one. From clean code to compelling design, everything I build is focused on helping your business stand out, get found, and grow online.</p>
@@ -972,19 +710,19 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="home-page.html">Home</a></li>
-                        <li><a href="home-page.html#about">About</a></li>
-                        <li><a href="home-page.html#projects">Projects</a></li>
-                        <li><a href="home-page.html#price-list">Price List</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="website-features-uk.html">Website Features</a></li>
                         <li><a href="contact.html" class="nav-btn">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
                     <ul>
-                        <li><a href="custom-html.html">Custom Code</a></li>
-                        <li><a href="package-deals.html">Package Deals</a></li>
-                        <li><a href="seo-services.html">SEO Services</a></li>
+                        <li><a href="custom-websites-uk.html">Custom Code</a></li>
+                        <li><a href="website-package-deals-uk.html">Package Deals</a></li>
+                        <li><a href="seo-services-uk.html">SEO Services</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1040,38 +778,7 @@
             </div>
         </div>
     </div>
-    <script src="main.js"></script>
-    <script>
-    (function () {
-        var selectors = ['.seo-concept-card', '.timeline-explainer-item', '.faq-item', '.review-llm-card'];
-        var dirs = ['srv-from-top', 'srv-from-left', '', 'srv-from-right', 'srv-from-bottom', 'srv-from-left', 'srv-from-right', 'srv-from-top', ''];
-        var elements = Array.from(document.querySelectorAll(selectors.join(',')));
-        if (!elements.length) return;
-        var parentMap = new Map();
-        elements.forEach(function (el) {
-            var p = el.parentElement;
-            if (!parentMap.has(p)) parentMap.set(p, []);
-            parentMap.get(p).push(el);
-        });
-        var gi = 0;
-        parentMap.forEach(function (siblings) {
-            var dir = dirs[gi % dirs.length]; gi++;
-            siblings.forEach(function (el, i) {
-                el.classList.add('srv-reveal');
-                if (dir) el.classList.add(dir);
-                el.dataset.srvDelay = i * 100;
-            });
-        });
-        var obs = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (!entry.isIntersecting) return;
-                var el = entry.target;
-                setTimeout(function () { el.classList.add('srv-visible'); }, parseInt(el.dataset.srvDelay) || 0);
-                obs.unobserve(el);
-            });
-        }, { threshold: 0.1 });
-        elements.forEach(function (el) { obs.observe(el); });
-    })();
-    </script>
+    <script src="js/main.js"></script>
+    <script src="js/seo-explained-animations.js"></script>
 </body>
 </html>

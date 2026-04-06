@@ -7,330 +7,71 @@
     <meta name="description" content="Web hosting explained in plain English. What hosting is, how it affects your website speed, the difference between free and paid hosting, and what you actually need for a small site, blog, or ecommerce store.">
     <meta name="keywords" content="web hosting explained, free vs paid hosting, what is web hosting, hosting and website speed, shared hosting, VPS hosting, ecommerce hosting, web hosting Kent">
     <meta name="author" content="HB Web Development">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/hosting-explained.css">
+
+
+    <!-- Canonical -->
     <link rel="canonical" href="https://hbwebdevelopment.co.uk/hosting-explained.html">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* ── Hosting Explained page extras ── */
-        .host-intro-block {
-            background: #0a0a0a;
-            border-left: 4px solid #ff1493;
-            border-radius: 0 16px 16px 0;
-            padding: 2rem 2.5rem;
-            margin: 2rem 0;
-            color: #ddd;
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
-        .host-intro-block strong { color: #ff1493; }
 
-        .host-concept-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 2.5rem;
-        }
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="HB Web Development">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:title" content="Web Hosting Explained | Free vs Paid Hosting, Speed and What You Need | HB Web Development">
+    <meta property="og:description" content="Web hosting explained in plain English. What hosting is, how it affects your website speed, free vs paid hosting, and what you actually need.">
+    <meta property="og:url" content="https://hbwebdevelopment.co.uk/hosting-explained.html">
+    <meta property="og:image" content="https://hbwebdevelopment.co.uk/images/hb-logo.png">
 
-        .host-concept-card {
-            background: #0a0a0a;
-            border: 2px solid rgba(255, 20, 147, 0.3);
-            border-radius: 40px 15px 40px 15px;
-            padding: 2rem 1.75rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .host-concept-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 20, 147, 0.7);
-            box-shadow: 0 8px 30px rgba(255, 20, 147, 0.15);
-        }
-        .host-concept-card h3 {
-            color: #ff1493;
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
-        }
-        .host-concept-card p {
-            color: #ccc;
-            font-size: 1rem;
-            line-height: 1.7;
-        }
-
-        .host-analogy-box {
-            background: #0a0a0a;
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 20px;
-            padding: 2rem 2.5rem;
-            margin: 2.5rem auto;
-            max-width: 860px;
-            position: relative;
-            text-align: center;
-        }
-        .host-analogy-box::before {
-            content: '"';
-            position: absolute;
-            top: -0.5rem;
-            left: 1.5rem;
-            font-size: 5rem;
-            color: rgba(255, 20, 147, 0.2);
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-        .host-analogy-box p {
-            color: #ccc;
-            font-style: italic;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin: 0;
-            text-align: center;
-        }
-        .host-analogy-box .analogy-label {
-            color: #ff1493;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.75rem;
-            font-style: normal;
-            text-align: center;
-        }
-
-        .service-intro > .container > p,
-        .features-section > .container > p,
-        .ideal-for-section > .container > p { color: #fff; text-align: center; }
-
-        .hosting-tier-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 2.5rem;
-        }
-
-        .hosting-tier {
-            background: #0a0a0a;
-            border: 2px solid rgba(255, 20, 147, 0.3);
-            border-radius: 40px 15px 40px 15px;
-            padding: 2rem 1.75rem;
-            transition: all 0.3s ease;
-        }
-        .hosting-tier:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 20, 147, 0.7);
-            box-shadow: 0 8px 30px rgba(255, 20, 147, 0.15);
-        }
-        .hosting-tier .tier-badge {
-            display: inline-block;
-            background: rgba(255, 20, 147, 0.15);
-            border: 1px solid rgba(255, 20, 147, 0.4);
-            color: #ff69b4;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            border-radius: 50px;
-            padding: 0.25rem 0.75rem;
-            margin-bottom: 1rem;
-            display: block;
-            width: fit-content;
-        }
-        .hosting-tier h3 {
-            color: #fff;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        .hosting-tier .tier-price {
-            color: #ff1493;
-            font-size: 0.9rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        .hosting-tier p {
-            color: #ccc;
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-        .hosting-tier ul {
-            list-style: none;
-            padding: 0; margin: 0;
-        }
-        .hosting-tier ul li {
-            color: #bbb;
-            font-size: 1rem;
-            padding: 0.3rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .hosting-tier ul li:last-child { border: none; }
-        .hosting-tier ul li::before {
-            content: '– ';
-            color: #ff1493;
-        }
-
-        .site-size-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 2.5rem;
-        }
-        .site-size-card {
-            background: #0a0a0a;
-            border: 2px solid rgba(255, 20, 147, 0.3);
-            border-radius: 40px 15px 40px 15px;
-            padding: 2rem 1.75rem;
-            transition: all 0.3s ease;
-        }
-        .site-size-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 20, 147, 0.7);
-            box-shadow: 0 8px 30px rgba(255, 20, 147, 0.15);
-        }
-        .site-size-card .size-label {
-            color: #ff1493;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-        .site-size-card h3 {
-            color: #fff;
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
-        }
-        .site-size-card p {
-            color: #ccc;
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 0.75rem;
-        }
-        .site-size-card .size-rec {
-            color: #ff69b4;
-            font-size: 1rem;
-            font-weight: 600;
-            border-top: 1px solid rgba(255,20,147,0.2);
-            padding-top: 0.75rem;
-            margin-top: 0.5rem;
-        }
-
-        .speed-factor-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 2.5rem;
-        }
-        @media (max-width: 1024px) {
-            .service-intro h2,
-            .features-section h2,
-            .ideal-for-section h2 { margin-bottom: 0.5rem !important; font-size: 1.75rem !important; }
-            .service-intro p,
-            .features-section p,
-            .ideal-for-section p { margin-bottom: 0.6rem !important; }
-            .service-intro,
-            .features-section,
-            .ideal-for-section { padding: 36px 0 !important; }
-            .speed-factor-grid,
-            .hosting-tier-grid,
-            .host-concept-grid,
-            .site-size-grid,
-            .term-grid { margin-top: 0.75rem !important; gap: 1.25rem !important; }
-            .big-stat-row { margin: 1.25rem 0 !important; }
-        }
-
-        @media (max-width: 768px) {
-            .speed-factor-grid      { grid-template-columns: 1fr; margin-top: 0.5rem !important; gap: 0.75rem !important; }
-            .hosting-tier-grid      { grid-template-columns: 1fr; margin-top: 0.5rem !important; gap: 0.75rem !important; }
-            .host-concept-grid      { grid-template-columns: 1fr !important; margin-top: 0.5rem !important; gap: 0.75rem !important; }
-            .site-size-grid         { grid-template-columns: 1fr; margin-top: 0.5rem !important; gap: 0.75rem !important; }
-            .term-grid              { grid-template-columns: 1fr; margin-top: 0.5rem !important; gap: 0.75rem !important; }
-            .service-intro h2,
-            .features-section h2,
-            .ideal-for-section h2 { margin-bottom: 0.4rem !important; font-size: 1.55rem !important; }
-            .service-intro p,
-            .features-section p,
-            .ideal-for-section p { margin-bottom: 0.5rem !important; font-size: 1rem !important; text-align: center !important; line-height: 1.6 !important; }
-            .service-intro,
-            .features-section,
-            .ideal-for-section { padding: 24px 0 !important; }
-            .big-stat-row { margin: 1rem 0 !important; gap: 0.75rem !important; }
-            .big-stat .stat-num { font-size: 2rem !important; }
-        }
-        .speed-factor-card {
-            background: #0a0a0a;
-            border: 2px solid rgba(255, 20, 147, 0.3);
-            border-radius: 40px 15px 40px 15px;
-            padding: 2rem 1.75rem;
-            transition: all 0.3s ease;
-        }
-        .speed-factor-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 20, 147, 0.7);
-            box-shadow: 0 8px 30px rgba(255, 20, 147, 0.15);
-        }
-        .speed-factor-card h3 {
-            color: #ff1493;
-            margin-bottom: 0.75rem;
-        }
-        .speed-factor-card p {
-            color: #ccc;
-            font-size: 1rem;
-            line-height: 1.7;
-        }
-
-        .big-stat-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-            margin: 3rem 0;
-        }
-        .big-stat {
-            text-align: center;
-            flex: 1 1 160px;
-        }
-        .big-stat .stat-num {
-            font-size: 3rem;
-            font-weight: 900;
-            color: #ff1493;
-            display: block;
-            line-height: 1;
-        }
-        .big-stat .stat-label {
-            color: #aaa;
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
-            display: block;
-        }
-
-        .term-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-top: 2.5rem;
-        }
-        .term-card {
-            background: #0a0a0a;
-            border: 1px solid rgba(255, 20, 147, 0.2);
-            border-radius: 16px;
-            padding: 1.5rem;
-        }
-        .term-card h4 {
-            color: #ff1493;
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-        }
-        .term-card p {
-            color: #bbb;
-            font-size: 1rem;
-            line-height: 1.65;
-            margin: 0;
-        }
-    </style>
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@HBWebDev">
+    <meta name="twitter:title" content="Web Hosting Explained | HB Web Development">
+    <meta name="twitter:description" content="Web hosting explained in plain English — free vs paid, speed, and what your business actually needs.">
+    <meta name="twitter:image" content="https://hbwebdevelopment.co.uk/images/hb-logo.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://hbwebdevelopment.co.uk/"},
+      {"@type":"ListItem","position":2,"name":"Hosting Explained","item":"https://hbwebdevelopment.co.uk/hosting-explained.html"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Web Hosting Explained",
+      "description": "Web hosting explained in plain English — free vs paid hosting, speed, and what your business actually needs.",
+      "url": "https://hbwebdevelopment.co.uk/hosting-explained.html",
+      "inLanguage": "en-GB",
+      "author": {"@id": "https://hbwebdevelopment.co.uk/#business"},
+      "publisher": {"@id": "https://hbwebdevelopment.co.uk/#business"},
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://hbwebdevelopment.co.uk/hosting-explained.html"}
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+      {"@type":"Question","name":"Do I need hosting if I use Shopify or Squarespace?","acceptedAnswer":{"@type":"Answer","text":"No. Shopify, Squarespace, and Wix all include hosting as part of their monthly subscription."}},
+      {"@type":"Question","name":"How much should I expect to pay for good hosting?","acceptedAnswer":{"@type":"Answer","text":"For a small business website, budget 5-10 pounds per month for decent shared hosting. Managed WordPress hosting costs 15-30 pounds per month."}},
+      {"@type":"Question","name":"Can slow hosting really affect my Google rankings?","acceptedAnswer":{"@type":"Answer","text":"Yes, directly. Google uses Core Web Vitals as a ranking factor, and hosting speed is a major contributor."}},
+      {"@type":"Question","name":"What is the difference between a domain and hosting?","acceptedAnswer":{"@type":"Answer","text":"Your domain is your web address. Hosting is where your website files live. You need both."}},
+      {"@type":"Question","name":"How do I move my website to a different host?","acceptedAnswer":{"@type":"Answer","text":"Copy your files and database to the new host, then update your DNS settings. There is usually a 24-48 hour propagation period."}},
+      {"@type":"Question","name":"Is email hosting the same as web hosting?","acceptedAnswer":{"@type":"Answer","text":"Not always. Many web hosts include basic email hosting, but for reliable business email consider Google Workspace or Microsoft 365."}}
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="home-page.html" class="nav-logo">
+            <a href="index.html" class="nav-logo">
                 <img src="images/hb-logo.png" alt="HB Web Development Logo">
             </a>
             <div class="burger-menu" id="burgerMenu" aria-label="Toggle menu" aria-expanded="false">
@@ -339,27 +80,27 @@
                 <div class="burger-line"></div>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="home-page.html">Home</a></li>
-                <li><a href="home-page.html#about">About</a></li>
-                <li><a href="home-page.html#projects">Inspiration</a></li>
-                <li><a href="features.html">Feature Ideas</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Inspiration</a></li>
+                <li><a href="website-features-uk.html">Feature Ideas</a></li>
                 <li class="nav-dropdown">
-                    <a href="home-page.html#advanced-services" class="dropdown-toggle">Services <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                    <a href="index.html#advanced-services" class="dropdown-toggle">Services <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="custom-html.html">
+                            <a href="custom-websites-uk.html">
                                 <span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
                                 <span class="dropdown-item-text"><span class="dropdown-item-title">Custom HTML</span><span class="dropdown-item-desc">Handcrafted, fast websites</span></span>
                             </a>
                         </li>
                         <li>
-                            <a href="package-deals.html">
+                            <a href="website-package-deals-uk.html">
                                 <span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></span>
                                 <span class="dropdown-item-text"><span class="dropdown-item-title">Package Deals</span><span class="dropdown-item-desc">All-in-one website bundles</span></span>
                             </a>
                         </li>
                         <li>
-                            <a href="seo-services.html">
+                            <a href="seo-services-uk.html">
                                 <span class="dropdown-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
                                 <span class="dropdown-item-text"><span class="dropdown-item-title">SEO Services</span><span class="dropdown-item-desc">Get found on Google</span></span>
                             </a>
@@ -389,6 +130,7 @@
     </nav>
 
     <main class="main-content">
+        <article itemscope itemtype="https://schema.org/Article">
 
         <!-- Hero -->
         <section class="service-hero" style="--hero-img: url('images/hero-seo.jpg')">
@@ -581,7 +323,7 @@
                         <span class="tier-badge">Static Sites</span>
                         <h3>Static / JAMstack Hosting</h3>
                         <div class="tier-price">Often free or very cheap</div>
-                        <p>For hand-coded HTML, CSS, and JavaScript sites with no database. Files are served directly from a CDN, making them incredibly fast and secure.</p>
+                        <p>For <a href="custom-websites-uk.html">hand-coded HTML, CSS, and JavaScript</a> sites with no database. Files are served directly from a CDN, making them incredibly fast and secure.</p>
                         <ul>
                             <li>Good for: custom-coded sites, portfolios, brochure sites</li>
                             <li>Not suitable for WordPress or database-driven sites</li>
@@ -746,7 +488,7 @@
                 <p>Every website is different. If you are not sure whether your current hosting is holding you back, or you want advice on what to use for a new site, get in touch. I can review what you have and make a straightforward recommendation.</p>
                 <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:1rem;">
                     <a href="contact.html" class="btn-primary">Get Hosting Advice</a>
-                    <a href="custom-html.html" class="btn-secondary">View Web Design Services</a>
+                    <a href="custom-websites-uk.html" class="btn-secondary">View Web Design Services</a>
                 </div>
             </div>
         </section>
@@ -784,6 +526,7 @@
             </div>
         </section>
 
+        </article>
     </main>
 
     <!-- Footer -->
@@ -791,7 +534,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="home-page.html">
+                    <a href="index.html">
                         <img src="images/hb-logo.png" alt="HB Web Development Logo" class="footer-logo">
                     </a>
                     <p class="footer-tagline">I design and develop high-quality websites built from the ground up, with SEO baked in from day one. From clean code to compelling design, everything I build is focused on helping your business stand out, get found, and grow online.</p>
@@ -799,19 +542,19 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="home-page.html">Home</a></li>
-                        <li><a href="home-page.html#about">About</a></li>
-                        <li><a href="home-page.html#projects">Projects</a></li>
-                        <li><a href="home-page.html#price-list">Price List</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="website-features-uk.html">Website Features</a></li>
                         <li><a href="contact.html" class="nav-btn">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
                     <ul>
-                        <li><a href="custom-html.html">Custom Code</a></li>
-                        <li><a href="package-deals.html">Package Deals</a></li>
-                        <li><a href="seo-services.html">SEO Services</a></li>
+                        <li><a href="custom-websites-uk.html">Custom Code</a></li>
+                        <li><a href="website-package-deals-uk.html">Package Deals</a></li>
+                        <li><a href="seo-services-uk.html">SEO Services</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -866,38 +609,7 @@
             </div>
         </div>
     </div>
-    <script src="main.js"></script>
-    <script>
-    (function () {
-        var selectors = ['.host-concept-card', '.hosting-tier', '.site-size-card', '.speed-factor-card', '.term-card', '.faq-item'];
-        var dirs = ['srv-from-left', 'srv-from-top', 'srv-from-right', '', 'srv-from-bottom', 'srv-from-left', 'srv-from-right', 'srv-from-top'];
-        var elements = Array.from(document.querySelectorAll(selectors.join(',')));
-        if (!elements.length) return;
-        var parentMap = new Map();
-        elements.forEach(function (el) {
-            var p = el.parentElement;
-            if (!parentMap.has(p)) parentMap.set(p, []);
-            parentMap.get(p).push(el);
-        });
-        var gi = 0;
-        parentMap.forEach(function (siblings) {
-            var dir = dirs[gi % dirs.length]; gi++;
-            siblings.forEach(function (el, i) {
-                el.classList.add('srv-reveal');
-                if (dir) el.classList.add(dir);
-                el.dataset.srvDelay = i * 100;
-            });
-        });
-        var obs = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (!entry.isIntersecting) return;
-                var el = entry.target;
-                setTimeout(function () { el.classList.add('srv-visible'); }, parseInt(el.dataset.srvDelay) || 0);
-                obs.unobserve(el);
-            });
-        }, { threshold: 0.1 });
-        elements.forEach(function (el) { obs.observe(el); });
-    })();
-    </script>
+    <script src="js/main.js"></script>
+    <script src="js/hosting-explained-animations.js"></script>
 </body>
 </html>

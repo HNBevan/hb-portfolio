@@ -1,0 +1,30 @@
+(function () {
+        var selectors = ['.seo-concept-card', '.timeline-explainer-item', '.faq-item', '.review-llm-card'];
+        var dirs = ['srv-from-top', 'srv-from-left', '', 'srv-from-right', 'srv-from-bottom', 'srv-from-left', 'srv-from-right', 'srv-from-top', ''];
+        var elements = Array.from(document.querySelectorAll(selectors.join(',')));
+        if (!elements.length) return;
+        var parentMap = new Map();
+        elements.forEach(function (el) {
+            var p = el.parentElement;
+            if (!parentMap.has(p)) parentMap.set(p, []);
+            parentMap.get(p).push(el);
+        });
+        var gi = 0;
+        parentMap.forEach(function (siblings) {
+            var dir = dirs[gi % dirs.length]; gi++;
+            siblings.forEach(function (el, i) {
+                el.classList.add('srv-reveal');
+                if (dir) el.classList.add(dir);
+                el.dataset.srvDelay = i * 100;
+            });
+        });
+        var obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                var el = entry.target;
+                setTimeout(function () { el.classList.add('srv-visible'); }, parseInt(el.dataset.srvDelay) || 0);
+                obs.unobserve(el);
+            });
+        }, { threshold: 0.1 });
+        elements.forEach(function (el) { obs.observe(el); });
+    })();
