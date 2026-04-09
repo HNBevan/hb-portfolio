@@ -1462,6 +1462,29 @@ body:has(.features-page)::before {
     grid-template-columns: 1fr 1fr;
     gap: 0.8rem;
 }
+.fform-radio-group {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    padding: 0.4rem 0;
+}
+
+.fform-radio {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: inherit;
+}
+
+.fform-radio input[type="radio"] {
+    accent-color: #ff1493;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
 .fform-basic .fform-btn {
     padding: 0.7rem;
     background: #111;
@@ -1789,7 +1812,7 @@ body:has(.features-page)::before {
 }
 .fform-premium .fprem-badge::before { content: '★'; }
 .fform-premium .fform-title {
-    background: linear-gradient(120deg, #ffffff 0%, #ff69b4 60%, #bb44ff 100%);
+    background: linear-gradient(120deg, #ffffff 0%, #ff8c00 60%, #ff4500 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1859,7 +1882,7 @@ body:has(.features-page)::before {
 }
 .fform-premium .fform-btn {
     padding: 0.85rem;
-    background: linear-gradient(135deg, #ff1493 0%, #bb44ff 50%, #ff1493 100%);
+    background: linear-gradient(135deg, #ff8c00 0%, #ff4500 50%, #ff8c00 100%);
     background-size: 200% 100%;
     color: #fff;
     border: none;
@@ -1882,7 +1905,7 @@ body:has(.features-page)::before {
 }
 .fform-premium .fform-btn:hover {
     background-position: 100% 0;
-    box-shadow: 0 0 30px rgba(255,20,147,0.5), 0 0 60px rgba(187,68,255,0.25);
+    box-shadow: 0 0 30px rgba(255,140,0,0.5), 0 0 60px rgba(255,69,0,0.25);
     transform: translateY(-2px) scale(1.01);
 }
 .fform-premium .fprem-security {

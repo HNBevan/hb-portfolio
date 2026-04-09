@@ -463,9 +463,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Touch events for mobile
     wrapper.addEventListener('touchstart', (e) => {
-        e.preventDefault();
         startDrag(e.touches[0].pageX);
-    }, { passive: false });
+    }, { passive: true });
 
     wrapper.addEventListener('touchend', endDrag);
 
