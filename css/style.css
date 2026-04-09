@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     cursor: none !important;
+    -webkit-tap-highlight-color: transparent;
 }
 
 a, button, [role="button"], input[type="submit"], input[type="button"],
@@ -5204,8 +5205,8 @@ h3 span {
 @media (max-width: 600px) {
 
     /* ── Inspiration slider ── */
-    .projects-slider-outer  { padding: 0; gap: 0; }
-    .slider-arrow           { display: none; }   /* swipe handles navigation */
+    .projects-slider-outer  { padding: 0 0.5rem; gap: 0.5rem; }
+    .slider-arrow           { width: 32px; height: 32px; font-size: 0.9rem; flex-shrink: 0; }
     .project-item           { width: 82vw; }
     .project-video-wrap     { height: 180px; }
     .project-content        { padding: 1rem 1.25rem 1.25rem; }
