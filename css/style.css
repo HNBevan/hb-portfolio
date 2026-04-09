@@ -3139,7 +3139,7 @@ body.reduced-motion .creature-sparkle {
 
 /* Contact Page Styles */
 .main-content {
-    padding-top: 80px;
+    padding-top: 0;
 }
 
 .contact-hero {
