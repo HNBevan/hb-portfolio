@@ -1429,6 +1429,15 @@ body > * {
     clip-path: ellipse(70% 100% at 50% 100%);
 }
 
+.inspiration-note {
+    text-align: center;
+    color: #aaa;
+    font-size: 0.95rem;
+    margin-top: -2rem;
+    margin-bottom: 2.5rem;
+    padding: 0 2rem;
+}
+
 .projects h2 {
     text-align: center;
     color: #fff;
