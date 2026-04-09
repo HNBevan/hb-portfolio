@@ -1493,7 +1493,7 @@ body > * {
 .projects-slider {
     display: flex;
     gap: 2rem;
-    animation: infiniteProjectSlide 30s linear infinite;
+    animation: infiniteProjectSlide 60s linear infinite;
     width: max-content;
 }
 
@@ -5003,7 +5003,7 @@ h3 span {
     .contact-hero h1 { font-size: 2.8rem; }
 
     /* ── Inspiration slider ── */
-    .projects-slider { animation-duration: 50s; }
+    .projects-slider { animation-duration: 90s; }
 
     /* 3-col grids → 2-col at tablet portrait */
     .features-grid { grid-template-columns: repeat(2, 1fr); }
@@ -5110,7 +5110,7 @@ h3 span {
     .slider-arrow           { width: 36px; height: 36px; font-size: 1rem; flex-shrink: 0; }
     .project-item           { width: 78vw; }
     .project-video-wrap     { height: 200px; }
-    .projects-slider        { animation-duration: 45s; }
+    .projects-slider        { animation-duration: 80s; }
 
     /* ── Global section headings ── */
     .about-text h2,
@@ -5202,7 +5202,7 @@ h3 span {
     .project-content        { padding: 1rem 1.25rem 1.25rem; }
     .project-content h3     { font-size: 1rem; }
     .project-content p      { font-size: 0.85rem; }
-    .projects-slider        { animation-duration: 40s; }
+    .projects-slider        { animation-duration: 70s; }
 
     /* ── Global section headings ── */
     .about-text h2,
