@@ -66,6 +66,55 @@
       ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "SEO Services",
+      "description": "Professional SEO services for businesses in Kent and across the UK. Local SEO, on-page optimisation, technical audits, and ongoing monthly support.",
+      "provider": {"@id": "https://hbwebdevelopment.co.uk/#business"},
+      "serviceType": "Search Engine Optimisation",
+      "areaServed": [
+        {"@type": "AdministrativeArea", "name": "Kent"},
+        {"@type": "Country", "name": "United Kingdom"}
+      ],
+      "url": "https://hbwebdevelopment.co.uk/seo-explained.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://hbwebdevelopment.co.uk/#business",
+      "name": "HB Web Development",
+      "url": "https://hbwebdevelopment.co.uk/",
+      "logo": "https://hbwebdevelopment.co.uk/images/hb-logo.png",
+      "email": "info@hbwebdevelopment.co.uk",
+      "telephone": "+447496060776",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ashford",
+        "addressRegion": "Kent",
+        "postalCode": "TN23",
+        "addressCountry": "GB"
+      },
+      "sameAs": [
+        "https://hbwebdevelopment.co.uk/"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://hbwebdevelopment.co.uk/#website",
+      "url": "https://hbwebdevelopment.co.uk/",
+      "name": "HB Web Development",
+      "description": "Professional web development and SEO services in Kent and across the UK",
+      "inLanguage": "en-GB",
+      "publisher": {"@id": "https://hbwebdevelopment.co.uk/#business"}
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -421,6 +470,47 @@
             </div>
         </section>
 
+        <!-- On-Page SEO -->
+        <section class="features-section" id="on-page">
+            <div class="container">
+                <h2><span>On-Page</span> SEO Basics</h2>
+                <p>On-page SEO refers to the elements on each individual page of your site that you can optimise. These are the basics that every page should get right before anything else.</p>
+
+                <div class="seo-concept-grid">
+                    <div class="seo-concept-card">
+
+                        <h3>Title Tags</h3>
+                        <p>The title of each page as it appears in search results. It should include your primary keyword and be under 60 characters. This is one of the strongest on-page ranking signals. Each page needs a unique, descriptive title.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Meta Descriptions</h3>
+                        <p>The short description that appears under your page title in search results. It does not directly affect rankings but massively affects whether people click. A compelling meta description can dramatically increase your click-through rate.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Heading Structure</h3>
+                        <p>Using H1, H2, and H3 headings correctly helps Google understand what each section of your page is about. There should be one H1 per page (the main topic), with H2s for major sections and H3s for subsections. Headings should include natural uses of your keywords.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Image Alt Text</h3>
+                        <p>Every image on your site should have a short description (alt text) that describes what the image shows. This helps visually impaired users and also helps Google understand your images, which can drive traffic via Google Image Search.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>URL Structure</h3>
+                        <p>Your page URLs should be clean, readable, and include your keyword. A URL like yoursite.co.uk/seo-services-kent is far better than yoursite.co.uk/page?id=47. Clean URLs are easier for Google to understand and for users to trust.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Keyword Placement</h3>
+                        <p>Your target keyword should appear naturally in the first 100 words of the page, in at least one heading, and a few times throughout the content. Do not stuff keywords unnaturally. Write for humans first and let keywords flow naturally.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Topical Authority -->
         <section class="ideal-for-section" id="topical-authority">
             <div class="container">
@@ -535,6 +625,21 @@
                         <h3>Breadcrumb Schema</h3>
                         <p>Shows the navigation path to a page in search results (Home > Services > SEO). This makes your listing cleaner, more informative, and helps users understand where the page sits within your site structure before clicking.</p>
                     </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Service Schema</h3>
+                        <p>Tells Google exactly what services your business offers, the type of service, and the areas you cover. This helps your services appear in relevant searches and supports Google in matching your business to the right queries without ambiguity.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Organisation Schema</h3>
+                        <p>Establishes your business identity in Google's knowledge graph. It includes your name, logo, contact details, and website, giving Google a single authoritative reference point for who you are. This is particularly useful for branded searches and AI-generated results.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Website Schema</h3>
+                        <p>Marks up your website as a whole entity and links it to your organisation. It tells Google the site name, language, and publisher, which helps with sitelinks and ensures your brand is represented correctly when it appears in search results.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -612,42 +717,89 @@
             </div>
         </section>
 
-        <!-- On-Page SEO -->
-        <section class="features-section" id="on-page">
+        <!-- AEO -->
+        <section class="features-section" id="aeo">
             <div class="container">
-                <h2><span>On-Page</span> SEO Basics</h2>
-                <p>On-page SEO refers to the elements on each individual page of your site that you can optimise. These are the basics that every page should get right before anything else.</p>
+                <h2><span>Answer Engine</span> Optimisation (AEO)</h2>
+                <p>Answer Engine Optimisation is the practice of structuring your content and online presence so that AI tools, voice assistants, and search engines surfacing direct answers will choose your business as the source. Where traditional SEO focuses on ranking in a list of links, AEO focuses on being the answer.</p>
 
-                <div class="seo-concept-grid">
-                    <div class="seo-concept-card">
+                <div class="seo-analogy-box">
+                    <p class="analogy-label">Plain English Explanation</p>
+                    <p>When someone asks Google or ChatGPT a question and gets a direct answer, that answer came from somewhere. AEO is the work of making sure that somewhere is you. It is not about gaming anything. It is about presenting your content, your business, and your expertise in the clearest, most structured way possible so that AI systems and answer engines can confidently select you.</p>
+                </div>
 
-                        <h3>Title Tags</h3>
-                        <p>The title of each page as it appears in search results. It should include your primary keyword and be under 60 characters. This is one of the strongest on-page ranking signals. Each page needs a unique, descriptive title.</p>
+                <div class="seo-concept-grid" style="margin-top: 2.5rem; grid-template-columns: repeat(6, 1fr);">
+                    <div class="seo-concept-card" style="grid-column: span 2;">
+
+                        <h3>FAQ Optimisation</h3>
+                        <p>Answer engines are built around questions. Having clearly written FAQ content on your site that directly answers the questions your customers ask is one of the most effective AEO tactics available. Each question should have a concise, standalone answer that makes sense out of context. Pair this with FAQ schema markup and you give both Google and AI tools a structured, easy-to-cite reference.</p>
                     </div>
-                    <div class="seo-concept-card">
+                    <div class="seo-concept-card" style="grid-column: span 2;">
 
-                        <h3>Meta Descriptions</h3>
-                        <p>The short description that appears under your page title in search results. It does not directly affect rankings but massively affects whether people click. A compelling meta description can dramatically increase your click-through rate.</p>
+                        <h3>Entity Optimisation</h3>
+                        <p>An "entity" in SEO terms is a clearly defined thing: your business, a person, a product, a location, or a concept. AI systems and Google's Knowledge Graph understand the world through entities and the relationships between them. Optimising your entity means making sure your business name, what you do, where you operate, and who you are consistently match across your website, Google Business Profile, directories, and anywhere else you appear online. Inconsistency confuses AI. Consistency builds authority.</p>
                     </div>
-                    <div class="seo-concept-card">
+                    <div class="seo-concept-card" style="grid-column: span 2;">
 
-                        <h3>Heading Structure</h3>
-                        <p>Using H1, H2, and H3 headings correctly helps Google understand what each section of your page is about. There should be one H1 per page (the main topic), with H2s for major sections and H3s for subsections. Headings should include natural uses of your keywords.</p>
+                        <h3>Feed and Attribution Optimisation</h3>
+                        <p class="card-tag">E-commerce only</p>
+                        <p>For e-commerce businesses, product feeds (the structured data files you submit to Google Shopping, Meta, and other platforms) are a direct line into how your products are understood and displayed by AI-powered shopping tools. Accurate product titles, categories, descriptions, and attributes mean your products are matched correctly to buyer intent. Poor feed data leads to irrelevant placements, low conversion, and being overlooked entirely by AI-driven product discovery.</p>
                     </div>
+                    <div class="seo-concept-card" style="grid-column: span 3;">
+
+                        <h3>Social Sentiment and Awareness Strategy</h3>
+                        <p>AI tools do not only read your website. They learn from everything that is publicly said about you across the web, including social media, forums, review platforms, and news coverage. A social sentiment strategy means actively managing the narrative around your brand: generating positive reviews, addressing negative feedback professionally, encouraging user-generated content, and maintaining a consistent presence on the platforms your audience uses. What people say about you online is becoming as important as what you say about yourself.</p>
+                    </div>
+                    <div class="seo-concept-card" style="grid-column: span 3;">
+
+                        <h3>Persona Content</h3>
+                        <p>Persona content is content written specifically for a defined type of customer rather than for a generic audience. Instead of writing a page about "SEO services," you write content that speaks directly to a sole trader in their first year of business, or a marketing manager at a mid-size retailer. AI tools match answers to the person asking. Content that clearly maps to a specific person, their situation, their questions, and their language is far more likely to be surfaced when someone matching that profile asks an AI for help.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- International E-commerce SEO -->
+        <section class="ideal-for-section" id="international-ecommerce">
+            <div class="container">
+                <h2><span>International</span> E-commerce SEO</h2>
+                <p>Selling to customers in multiple countries introduces a layer of SEO complexity that does not exist for local or national businesses. Google needs to know which version of your site is intended for which audience, and getting this wrong can split your rankings or cause the wrong pages to appear in the wrong countries.</p>
+
+                <div class="seo-analogy-box">
+                    <p class="analogy-label">Plain English Explanation</p>
+                    <p>Imagine you sell to both UK and US customers. You have a page in British English and one in American English with US pricing. Without the right signals, Google might show the UK page to American shoppers, or treat both pages as duplicate content and rank neither of them. International SEO gives Google the map it needs to serve the right version to the right person.</p>
+                </div>
+
+                <div class="seo-concept-grid" style="margin-top: 2.5rem;">
                     <div class="seo-concept-card">
 
-                        <h3>Image Alt Text</h3>
-                        <p>Every image on your site should have a short description (alt text) that describes what the image shows. This helps visually impaired users and also helps Google understand your images, which can drive traffic via Google Image Search.</p>
+                        <h3>Hreflang Tags</h3>
+                        <p>Hreflang is a piece of code that tells Google which language and country each page is intended for. For example, you can tag one page as English for the UK and another as English for the US. Without hreflang, Google guesses, and it frequently gets it wrong, sending the wrong version to the wrong audience.</p>
                     </div>
                     <div class="seo-concept-card">
 
                         <h3>URL Structure</h3>
-                        <p>Your page URLs should be clean, readable, and include your keyword. A URL like yoursite.co.uk/seo-services-kent is far better than yoursite.co.uk/page?id=47. Clean URLs are easier for Google to understand and for users to trust.</p>
+                        <p>You have three main options for structuring international URLs: country-code domains (yoursite.de), subdirectories (yoursite.com/de/), or subdomains (de.yoursite.com). Each has trade-offs around authority, management complexity, and how clearly they signal location to Google. Subdirectories are generally the most practical starting point for growing e-commerce stores.</p>
                     </div>
                     <div class="seo-concept-card">
 
-                        <h3>Keyword Placement</h3>
-                        <p>Your target keyword should appear naturally in the first 100 words of the page, in at least one heading, and a few times throughout the content. Do not stuff keywords unnaturally. Write for humans first and let keywords flow naturally.</p>
+                        <h3>International Keyword Research</h3>
+                        <p>The same product can be searched for in completely different ways depending on the country. "Trainers" in the UK becomes "sneakers" in the US. "Autumn collection" becomes "fall collection." Translating your existing keywords word-for-word is not enough. Proper international keyword research uncovers what people in each market actually type.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Content Localisation</h3>
+                        <p>Localisation goes beyond translation. Pricing should be in the local currency, dates and measurements in the local format, and the tone adjusted for cultural expectations. Thin or machine-translated content rarely ranks well. Google evaluates quality by market, so each regional version needs to feel genuinely written for that audience.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Duplicate Content Across Regions</h3>
+                        <p>If two versions of a page are nearly identical (for example, UK and Australian English with only minor differences), Google may treat them as duplicates and consolidate their rankings, often to the wrong URL. Canonical tags and hreflang work together to prevent this and ensure each regional page builds its own authority.</p>
+                    </div>
+                    <div class="seo-concept-card">
+
+                        <h3>Local Trust Signals</h3>
+                        <p>International shoppers look for reassurance that a store is legitimate in their market. Local phone numbers, country-specific return policies, local payment methods, and reviews from customers in that country all contribute to conversion and to how Google assesses your relevance for regional searches.</p>
                     </div>
                 </div>
             </div>
