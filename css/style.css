@@ -32,6 +32,16 @@ body.reduced-motion .scroll-top-btn {
     cursor: pointer !important;
 }
 
+/* Global inline link colour */
+a {
+    color: #ff1493;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+a:hover {
+    color: #ff69b4;
+}
+
 /* Custom glow cursor dot */
 #hb-cursor {
     position: fixed;
