@@ -794,7 +794,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     Object.assign(canvas.style, {
         position: 'fixed', inset: '0',
         width: '100%', height: '100%',
-        zIndex: '1', pointerEvents: 'none',
+        zIndex: '9998', pointerEvents: 'none',
         mixBlendMode: 'screen',
     });
     document.body.appendChild(canvas);

@@ -1746,6 +1746,11 @@ body > * {
         gap: 2rem;
         text-align: center;
     }
+    .service-feature-mascot {
+        margin: 0 auto;
+        max-width: 320px;
+        width: 100%;
+    }
     .service-feature-text {
         display: flex;
         flex-direction: column;
@@ -1763,6 +1768,24 @@ body > * {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
+    .service-feature {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    .service-feature-mascot {
+        margin: 0 auto;
+        max-width: 420px;
+        width: 100%;
+    }
+    .service-feature-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .service-feature-text h3,
+    .service-feature-text p { text-align: center; }
+    .service-feature-text .btn-primary { align-self: center; }
     .sfm-creature .creature-speech {
         font-size: 5.5px;
         padding: 2px 6px;
@@ -2593,6 +2616,7 @@ body.reduced-motion .creature-sparkle {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+    z-index: 9999;
 }
 
 .footer::before {
@@ -4608,18 +4632,9 @@ h3 span {
 .ecom-section {
     padding: 80px 0 180px;
     background: #000;
-    position: relative;
-    z-index: 1;
 }
 
 
-.ecom-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(255, 20, 147, 0.06) 0%, transparent 70%);
-    pointer-events: none;
-}
 
 .ecom-section h2 {
     color: #fff;
@@ -4644,47 +4659,6 @@ h3 span {
     margin-top: 2.5rem;
 }
 
-.ecom-platform-card {
-    background: rgba(255, 20, 147, 0.05);
-    border: 2px solid rgba(255, 20, 147, 0.3);
-    border-radius: 40px 15px 40px 15px;
-    padding: 2rem 2rem 2.5rem;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.ecom-platform-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 20, 147, 0.05);
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.ecom-platform-card::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    right: -10px;
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 20, 147, 0.08);
-    border-radius: 50%;
-    pointer-events: none;
-    transition: all 0.3s ease;
-}
-
-.ecom-platform-card:hover {
-    border-color: #ff1493;
-    background: rgba(255, 20, 147, 0.1);
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(255, 20, 147, 0.15);
-}
 
 .ecom-platform-header {
     margin-bottom: 1.5rem;

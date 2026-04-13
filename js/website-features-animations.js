@@ -279,6 +279,22 @@
         }
         setTimeout(showMessage, 1800);
 
+        // ── Home position helper ──
+        function setHomePos() {
+            creature.style.top    = '';
+            if (window.innerWidth <= 1024) {
+                creature.style.transform = 'none'; // cancel CSS translateX(50%)
+                creature.style.left      = 'calc(50% - ' + (creature.offsetWidth / 2) + 'px)';
+                creature.style.right     = 'auto';
+                creature.style.bottom    = '10px';
+            } else {
+                creature.style.transform = ''; // restore CSS default (no transform on desktop)
+                creature.style.left      = '';
+                creature.style.right     = '80px';
+                creature.style.bottom    = '18px';
+            }
+        }
+
         // ── Physics state ──
         let posX = 0, posY = 0;
         let vx = 0, vy = 0;
@@ -343,6 +359,7 @@
             if (!creature.style.left) {
                 posX = cr.left - hr.left;
                 posY = cr.top  - hr.top;
+                creature.style.transform = 'none'; // cancel CSS translateX(50%) on mobile/tablet
                 creature.style.left   = posX + 'px';
                 creature.style.top    = posY + 'px';
                 creature.style.right  = 'auto';
@@ -351,10 +368,12 @@
 
             const getTarget = () => {
                 const hr2 = hero.getBoundingClientRect();
-                return {
-                    x: hr2.width  - creature.offsetWidth  - 80,
-                    y: hr2.height - creature.offsetHeight - 18,
-                };
+                const cw  = creature.offsetWidth;
+                const ch  = creature.offsetHeight;
+                const x   = window.innerWidth <= 1024
+                    ? (hr2.width / 2) - (cw / 2)
+                    : hr2.width - cw - 80;
+                return { x, y: hr2.height - ch - (window.innerWidth <= 1024 ? 10 : 18) };
             };
 
             const WALK_SPEED = 2.8; // px per frame
@@ -377,10 +396,7 @@
                     // Arrived — clean up and restore CSS positioning
                     posX = tx; posY = ty;
                     creature.classList.remove('fc-walk-left', 'fc-walk-right');
-                    creature.style.left   = '';
-                    creature.style.top    = '';
-                    creature.style.right  = '80px';
-                    creature.style.bottom = '18px';
+                    setHomePos();
                     walkRaf = null;
                     showMessage("Home sweet home.");
                     return;
@@ -528,6 +544,7 @@
             const hr = hero.getBoundingClientRect();
             posX = cr.left - hr.left;
             posY = cr.top  - hr.top;
+            creature.style.transform = 'none'; // cancel CSS translateX(50%) on mobile/tablet
             creature.style.left   = posX + 'px';
             creature.style.top    = posY + 'px';
             creature.style.right  = 'auto';
@@ -555,8 +572,10 @@
                     creature.classList.remove('fc-walk-left','fc-walk-right');
 
                     // ── Phase 2: appear above hero ──
-                    const homeX = hr.width  - creature.offsetWidth  - 80;
-                    const homeY = hr.height - creature.offsetHeight - 18;
+                    const homeX = window.innerWidth <= 1024
+                        ? (hr.width / 2) - (creature.offsetWidth / 2)
+                        : hr.width - creature.offsetWidth - 80;
+                    const homeY = hr.height - creature.offsetHeight - (window.innerWidth <= 1024 ? 10 : 18);
                     posX = homeX;
                     posY = -(creature.offsetHeight + 20);
                     creature.style.left = posX + 'px';
@@ -579,12 +598,7 @@
                                 showMessage("Ta-da!");
 
                                 // Settle back to CSS-based positioning
-                                setTimeout(() => {
-                                    creature.style.left   = '';
-                                    creature.style.top    = '';
-                                    creature.style.right  = '80px';
-                                    creature.style.bottom = '18px';
-                                }, 500);
+                                setTimeout(() => { setHomePos(); }, 500);
                                 return;
                             }
                             requestAnimationFrame(fallTick);
@@ -606,6 +620,7 @@
             const hr = hero.getBoundingClientRect();
             posX = cr.left - hr.left;
             posY = cr.top  - hr.top;
+            creature.style.transform = 'none'; // cancel CSS translateX(50%) on mobile/tablet
             creature.style.left   = posX + 'px';
             creature.style.top    = posY + 'px';
             creature.style.right  = 'auto';
@@ -739,6 +754,7 @@
             const hr = hero.getBoundingClientRect();
             posX = cr.left - hr.left;
             posY = cr.top  - hr.top;
+            creature.style.transform = 'none'; // cancel CSS translateX(50%) on mobile/tablet
             creature.style.left   = posX + 'px';
             creature.style.top    = posY + 'px';
             creature.style.right  = 'auto';

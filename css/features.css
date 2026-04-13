@@ -4134,7 +4134,7 @@ body:has(.features-page)::before {
 }
 
 /* ── Features hero mobile ── */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .features-hero {
         padding: 80px 0 270px;
     }
@@ -4146,43 +4146,54 @@ body:has(.features-page)::before {
 }
 
 /* ── Features hero tablet ── */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
     .features-hero {
-        padding: 100px 0 200px;
+        padding: 100px 0 260px;
     }
     .fc-creature-wrap {
-        right: 40px;
+        right: 50%;
+        transform: translateX(50%);
         bottom: 20px;
     }
+    /* Food in the bottom padding area, not overlapping h1 */
+    .fc-food { font-size: 1.8rem; }
+    #fcFood0 { bottom: 190px; top: auto; left:  6%; right: auto; }
+    #fcFood1 { bottom: 190px; top: auto; left: 18%; right: auto; }
+    #fcFood2 { bottom: 190px; top: auto; left: 30%; right: auto; }
+    #fcFood3 { bottom: 190px; top: auto; left: 42%; right: auto; }
+    #fcFood4 { bottom: 190px; top: auto; left: 54%; right: auto; }
+    #fcFood5 { bottom: 190px; top: auto; left: 66%; right: auto; }
+    #fcFood6 { bottom: 190px; top: auto; left: 78%; right: auto; }
+    #fcFood7 { bottom: 190px; top: auto; left: 90%; right: auto; }
 }
 
 /* Desktop/mobile instruction key toggles */
 .fc-mobile-only { display: none; }
 .fc-desktop-only { display: inline; }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .fc-mobile-only  { display: inline; }
     .fc-desktop-only { display: none; }
 }
 
 /* ── Features hero button spacing on mobile ── */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .features-hero p { margin-bottom: 1.5rem; }
     .features-ask-btn { margin-top: 0; }
 }
 
 /* ── Food & instructions on mobile ── */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     /* Single row of 8 above the instructions */
     .fc-food { font-size: 1.5rem; }
-    #fcFood0 { bottom: 200px; top: auto; left:  2%; right: auto; }
-    #fcFood1 { bottom: 200px; top: auto; left: 14%; right: auto; }
-    #fcFood2 { bottom: 200px; top: auto; left: 26%; right: auto; }
-    #fcFood3 { bottom: 200px; top: auto; left: 38%; right: auto; }
-    #fcFood4 { bottom: 200px; top: auto; left: 50%; right: auto; }
-    #fcFood5 { bottom: 200px; top: auto; left: 62%; right: auto; }
-    #fcFood6 { bottom: 200px; top: auto; left: 74%; right: auto; }
-    #fcFood7 { bottom: 200px; top: auto; left: 86%; right: auto; }
+    #fcFood0 { bottom: 200px; top: auto; left:  3%; right: auto; }
+    #fcFood1 { bottom: 200px; top: auto; left: 15%; right: auto; }
+    #fcFood2 { bottom: 200px; top: auto; left: 27%; right: auto; }
+    #fcFood3 { bottom: 200px; top: auto; left: 39%; right: auto; }
+    #fcFood4 { bottom: 200px; top: auto; left: 51%; right: auto; }
+    #fcFood5 { bottom: 200px; top: auto; left: 63%; right: auto; }
+    #fcFood6 { bottom: 200px; top: auto; left: 75%; right: auto; }
+    #fcFood7 { bottom: 200px; top: auto; left: 87%; right: auto; }
 
     /* Cleaner instructions */
     .fc-instructions {

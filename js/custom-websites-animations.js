@@ -1,8 +1,7 @@
 (function () {
         var selectors = [
             '.feature-card', '.pricing-card', '.ideal-card', '.cw-split-card',
-            '.timeline-item', '.faq-item', '.comparison-row:not(.header)',
-            '.ecom-platform-card'
+            '.timeline-item', '.faq-item', '.comparison-row:not(.header)'
         ];
         var dirs = ['srv-from-left', 'srv-from-top', '', 'srv-from-right', 'srv-from-bottom', 'srv-from-left'];
         var elements = Array.from(document.querySelectorAll(selectors.join(',')));
