@@ -1,7 +1,12 @@
 * {
     box-sizing: border-box;
-    cursor: none !important;
     -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    * {
+        cursor: none !important;
+    }
 }
 
 a, button, [role="button"], input[type="submit"], input[type="button"],
@@ -4597,6 +4602,249 @@ h3 span {
 
 .comparison-row.header .comparison-cell:not(:first-child) {
     color: #ff1493;
+}
+
+/* ── E-Commerce Platform Section ── */
+.ecom-section {
+    padding: 80px 0 180px;
+    background: #000;
+    position: relative;
+    z-index: 1;
+}
+
+
+.ecom-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(255, 20, 147, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.ecom-section h2 {
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.ecom-intro {
+    color: #aaa;
+    font-size: 1.05rem;
+    max-width: 760px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    line-height: 1.7;
+}
+
+.ecom-platform-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.ecom-platform-card {
+    background: rgba(255, 20, 147, 0.05);
+    border: 2px solid rgba(255, 20, 147, 0.3);
+    border-radius: 40px 15px 40px 15px;
+    padding: 2rem 2rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.ecom-platform-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 20, 147, 0.05);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.ecom-platform-card::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 20, 147, 0.08);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.ecom-platform-card:hover {
+    border-color: #ff1493;
+    background: rgba(255, 20, 147, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(255, 20, 147, 0.15);
+}
+
+.ecom-platform-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid rgba(255, 20, 147, 0.15);
+}
+
+.ecom-platform-header h3 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin: 0 0 0.3rem;
+}
+
+.ecom-platform-tagline {
+    color: #ff1493;
+    font-size: 0.9rem;
+    margin: 0;
+    font-style: italic;
+}
+
+.ecom-cost-block {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 20, 147, 0.15);
+}
+
+.ecom-cost-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    gap: 1rem;
+}
+
+.ecom-cost-item:last-child {
+    border-bottom: none;
+}
+
+.ecom-cost-total {
+    margin-top: 0.4rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid rgba(255, 20, 147, 0.2) !important;
+    border-bottom: none !important;
+}
+
+.ecom-cost-total .ecom-cost-label,
+.ecom-cost-total .ecom-cost-value {
+    color: #fff;
+    font-weight: 600;
+}
+
+.ecom-cost-label {
+    color: #888;
+    font-size: 0.88rem;
+    white-space: nowrap;
+}
+
+.ecom-cost-value {
+    color: #ccc;
+    font-size: 0.88rem;
+    text-align: right;
+}
+
+.ecom-pros-cons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.ecom-pros h4,
+.ecom-cons h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 0.8rem;
+}
+
+.ecom-pros h4 {
+    color: #3ecf8e;
+}
+
+.ecom-cons h4 {
+    color: #ff6b6b;
+}
+
+.ecom-pros ul,
+.ecom-cons ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ecom-pros ul li,
+.ecom-cons ul li {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    padding: 0.25rem 0 0.25rem 1.1rem;
+    position: relative;
+    color: #bbb;
+}
+
+.ecom-pros ul li::before {
+    content: '+';
+    position: absolute;
+    left: 0;
+    color: #3ecf8e;
+    font-weight: 700;
+}
+
+.ecom-cons ul li::before {
+    content: 'x';
+    position: absolute;
+    left: 0;
+    color: #ff6b6b;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.ecom-best-for {
+    font-size: 0.9rem;
+    color: #999;
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 3px solid #ff1493;
+    padding: 0.8rem 1rem;
+    border-radius: 0 15px 15px 0;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.ecom-best-for strong {
+    color: #fff;
+}
+
+.ecom-comparison-table {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    .ecom-platform-grid {
+        grid-template-columns: 1fr;
+    }
+    .ecom-pros-cons-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .ecom-cost-item {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+    .ecom-cost-value {
+        text-align: left;
+    }
 }
 
 .pricing-section {
