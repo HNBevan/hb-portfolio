@@ -3243,7 +3243,7 @@ body.reduced-motion .creature-sparkle {
     margin-bottom: 1.5rem;
 }
 
-.contact-hero h1 span:not(.h1-letter) {
+.contact-hero h1 span:not(.h1-letter):not(.h1-word) {
     color: #ff1493;
     text-shadow: 0 0 30px rgba(255, 20, 147, 0.3);
 }
@@ -3721,12 +3721,12 @@ body.reduced-motion .creature-sparkle {
     display: inline-block;
 }
 
-.service-hero h1 span:not(.h1-letter) {
+.service-hero h1 span:not(.h1-letter):not(.h1-word) {
     color: #ff1493;
     text-shadow: 0 0 30px rgba(255, 20, 147, 0.3);
 }
 
-h1 span:not(.h1-letter),
+h1 span:not(.h1-letter):not(.h1-word),
 h2 span,
 h3 span {
     color: #ff1493;

@@ -183,20 +183,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
         Array.from(h1.childNodes).forEach(function (node) {
             if (node.nodeType === Node.TEXT_NODE) {
-                const chars = node.textContent.split('');
-                const frag  = document.createDocumentFragment();
-                chars.forEach(function (ch) {
-                    const s = document.createElement('span');
-                    s.className = 'h1-letter';
-                    s.textContent = ch;
-                    if (ch === ' ') { s.style.display = 'inline-block'; s.style.width = '0.35em'; }
-                    s.style.animationDelay = delay + 'ms';
-                    delay += stagger;
-                    frag.appendChild(s);
+                const frag = document.createDocumentFragment();
+                node.textContent.split(/(\s+)/).forEach(function (segment) {
+                    if (/^\s/.test(segment)) {
+                        const sp = document.createElement('span');
+                        sp.style.display = 'inline-block';
+                        sp.style.width = '0.35em';
+                        sp.style.animationDelay = delay + 'ms';
+                        delay += stagger;
+                        frag.appendChild(sp);
+                    } else if (segment.length) {
+                        const wordWrap = document.createElement('span');
+                        wordWrap.className = 'h1-word';
+                        wordWrap.style.display = 'inline-block';
+                        wordWrap.style.whiteSpace = 'nowrap';
+                        segment.split('').forEach(function (ch) {
+                            const s = document.createElement('span');
+                            s.className = 'h1-letter';
+                            s.textContent = ch;
+                            s.style.animationDelay = delay + 'ms';
+                            delay += stagger;
+                            wordWrap.appendChild(s);
+                        });
+                        frag.appendChild(wordWrap);
+                    }
                 });
                 node.parentNode.replaceChild(frag, node);
             } else if (node.nodeType === Node.ELEMENT_NODE) {
                 if (!isWave) delay += 40; // pause before coloured word on drop-in only
+                node.style.display = 'inline-block';
+                node.style.whiteSpace = 'nowrap';
                 const text = node.textContent;
                 node.textContent = '';
                 text.split('').forEach(function (ch) {

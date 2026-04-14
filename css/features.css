@@ -344,7 +344,7 @@
     margin: 0 0 0.5rem;
 }
 
-.features-hero h1 span:not(.h1-letter) {
+.features-hero h1 span:not(.h1-letter):not(.h1-word) {
     color: #ff1493;
 }
 
