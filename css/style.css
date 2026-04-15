@@ -680,7 +680,7 @@ body > * {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    padding: 60px 0 50px;
+    padding: 130px 0 50px;
 }
 
 .hero-video {
@@ -912,7 +912,7 @@ body > * {
 @media (max-width: 1024px) and (orientation: landscape) {
     .hero {
         min-height: auto;
-        padding: 35px 0 40px;
+        padding: 90px 0 40px;
     }
 
     .hero-title {
@@ -970,7 +970,7 @@ body > * {
 @media (max-width: 968px) {
     .hero {
         min-height: auto;
-        padding: 35px 0 40px;
+        padding: 110px 0 40px;
     }
 
     .hero {
@@ -1057,7 +1057,7 @@ body > * {
 /* iPhones and small phones */
 @media (max-width: 576px) {
     .hero {
-        padding: 35px 0 40px;
+        padding: 100px 0 40px;
     }
 
     .hero {
@@ -1128,7 +1128,7 @@ body > * {
 /* Very small phones (iPhone SE, etc.) */
 @media (max-width: 375px) {
     .hero {
-        padding: 32px 0 30px;
+        padding: 90px 0 30px;
     }
 
     .hero-title {
@@ -6008,17 +6008,110 @@ h3 span {
     color: #ff69b4;
 }
 
+/* Privacy — tablet (up to 1024px) */
+@media (max-width: 1024px) {
+    .privacy-hero {
+        padding: 150px 0 70px;
+    }
+
+    .privacy-hero-glow {
+        width: 90vw;
+        height: 300px;
+    }
+
+    .privacy-container {
+        max-width: 100%;
+        padding: 0 1.5rem;
+    }
+}
+
+/* Privacy — mobile (up to 768px) */
 @media (max-width: 768px) {
     .privacy-hero {
-        padding: 130px 0 60px;
+        padding: 120px 0 50px;
+        text-align: center;
+    }
+
+    .privacy-hero-glow {
+        width: 100vw;
+        height: 250px;
+    }
+
+    .privacy-hero p {
+        font-size: 0.95rem;
     }
 
     .privacy-card {
         padding: 1.5rem 1.4rem;
+        border-radius: 24px 10px 24px 10px;
+    }
+
+    .privacy-card h2 {
+        font-size: 1.05rem;
     }
 
     .privacy-container {
         gap: 1.2rem;
+        padding: 0 1rem;
+    }
+
+    .privacy-content {
+        padding: 40px 0 70px;
+    }
+}
+
+/* Privacy — small phones (up to 480px) */
+@media (max-width: 480px) {
+    .privacy-hero {
+        padding: 100px 0 40px;
+    }
+
+    .privacy-hero p {
+        font-size: 0.9rem;
+    }
+
+    .privacy-last-updated {
+        font-size: 0.75rem;
+    }
+
+    .privacy-card {
+        padding: 1.2rem 1rem;
+        border-radius: 20px 8px 20px 8px;
+    }
+
+    .privacy-card h2 {
+        font-size: 1rem;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+    }
+
+    .privacy-number {
+        width: 28px;
+        height: 28px;
+        font-size: 0.7rem;
+        flex-shrink: 0;
+    }
+
+    .privacy-card p,
+    .privacy-card ul {
+        font-size: 0.88rem;
+    }
+
+    .privacy-container {
+        gap: 1rem;
+        padding: 0 0.75rem;
+    }
+
+    .privacy-content {
+        padding: 30px 0 50px;
+    }
+}
+
+/* Privacy — phone landscape */
+@media (max-width: 768px) and (orientation: landscape) {
+    .privacy-hero {
+        padding: 80px 0 40px;
+        min-height: auto;
     }
 }
 

@@ -816,6 +816,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     document.body.appendChild(canvas);
     const ctx = canvas.getContext('2d');
 
+    // Hide cursor on touch, restore on mouse (handles hybrid/touchscreen devices)
+    document.addEventListener('touchstart', () => {
+        cursorDot.style.display = 'none';
+        canvas.style.display = 'none';
+    }, { passive: true });
+    document.addEventListener('mousemove', () => {
+        cursorDot.style.display = '';
+        canvas.style.display = '';
+    });
+
     let W, H;
     function resize() {
         W = canvas.width  = window.innerWidth;
