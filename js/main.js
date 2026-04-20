@@ -854,12 +854,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     document.body.appendChild(canvas);
     const ctx = canvas.getContext('2d');
 
-    // Hide cursor on touch, restore on mouse (handles hybrid/touchscreen devices)
+    // Hide cursor on touch, restore only on real mouse movement
+    let usingMouse = false;
     document.addEventListener('touchstart', () => {
+        usingMouse = false;
         cursorDot.style.display = 'none';
         canvas.style.display = 'none';
     }, { passive: true });
-    document.addEventListener('mousemove', () => {
+    document.addEventListener('mousemove', (e) => {
+        if (e.movementX === 0 && e.movementY === 0) return;
+        usingMouse = true;
         cursorDot.style.display = '';
         canvas.style.display = '';
     });
