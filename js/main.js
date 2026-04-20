@@ -588,17 +588,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         function toggleFAQ(element) {
             const faqItem = element.parentNode;
             const isActive = faqItem.classList.contains('active');
-            
+
             // Close all other FAQ items
             document.querySelectorAll('.faq-item').forEach(item => {
                 item.classList.remove('active');
             });
-            
+
             // Toggle current item
             if (!isActive) {
                 faqItem.classList.add('active');
             }
         }
+
+        // Keyboard support for FAQ questions
+        document.querySelectorAll('.faq-question').forEach(el => {
+            el.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleFAQ(this);
+                }
+            });
+        });
 
         // Form Submission
         const contactForm = document.getElementById('contactForm');
@@ -1492,6 +1502,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (!isOpen) item.classList.add('open');
     }
 
+    // Keyboard support for accordion heads
+    document.querySelectorAll('.fa-acc-head').forEach(el => {
+        el.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleAcc(this);
+            }
+        });
+    });
+
     // ── Modal ──
     function openModal(id)  { document.getElementById(id).classList.add('open'); }
     function closeModal(id) { document.getElementById(id).classList.remove('open'); }
@@ -1635,6 +1655,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     function toggleExpandCard() {
         document.getElementById('expandCard').classList.toggle('open');
     }
+
+    // Keyboard support for expand card head
+    document.querySelectorAll('.fc-expand-head').forEach(el => {
+        el.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleExpandCard();
+            }
+        });
+    });
 
     // ── Range slider ──
     const range = document.getElementById('budgetRange');

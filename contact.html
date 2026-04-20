@@ -70,6 +70,7 @@
     </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -131,7 +132,7 @@
         </div>
     </nav>
 
-    <main class="main-content">
+    <main class="main-content" id="main-content">
         <!-- Hero Section -->
         <section class="contact-hero" style="--hero-img: url('images/hero-contact.jpg')">
             <div class="contact-hero-glow"></div>
@@ -292,7 +293,7 @@
                 <p class="faq-subtitle">Everything you need to know before getting started.</p>
                 <div class="faq-grid">
                     <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
+                        <div class="faq-question" role="button" tabindex="0" onclick="toggleFAQ(this)">
                             How quickly will you get back to me?
                         </div>
                         <div class="faq-answer">
@@ -301,7 +302,7 @@
                     </div>
 
                     <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
+                        <div class="faq-question" role="button" tabindex="0" onclick="toggleFAQ(this)">
                             Do you offer a free initial consultation?
                         </div>
                         <div class="faq-answer">
@@ -310,7 +311,7 @@
                     </div>
 
                     <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
+                        <div class="faq-question" role="button" tabindex="0" onclick="toggleFAQ(this)">
                             What information should I have ready when I get in touch?
                         </div>
                         <div class="faq-answer">
@@ -319,7 +320,7 @@
                     </div>
 
                     <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
+                        <div class="faq-question" role="button" tabindex="0" onclick="toggleFAQ(this)">
                             Do you work with clients remotely?
                         </div>
                         <div class="faq-answer">
@@ -328,7 +329,7 @@
                     </div>
 
                     <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
+                        <div class="faq-question" role="button" tabindex="0" onclick="toggleFAQ(this)">
                             How do milestone payments work?
                         </div>
                         <div class="faq-answer">
@@ -467,7 +468,7 @@
             </div>
         </div>
     </div>
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=2"></script>
 
 </body>
 </html>

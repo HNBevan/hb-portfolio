@@ -65,6 +65,7 @@
     </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -127,7 +128,7 @@
         </div>
     </nav>
 
-    <main class="features-page">
+    <main class="features-page" id="main-content">
 
         <!-- Hero -->
         <section class="features-hero">
@@ -569,7 +570,7 @@
                     <!-- Expandable card -->
                     <div class="demo-tile" style="padding:1rem; align-items:stretch;">
                         <div class="fc-expand" id="expandCard">
-                            <div class="fc-expand-head" onclick="toggleExpandCard()">
+                            <div class="fc-expand-head" role="button" tabindex="0" onclick="toggleExpandCard()">
                                 <h4>Expandable Card</h4>
                                 <div class="fc-expand-arrow">▼</div>
                             </div>
@@ -1775,7 +1776,7 @@
                     <div class="demo-tile" style="align-items:stretch;flex-direction:column;">
                         <div class="fa-accordion" id="demoAccordion">
                             <div class="fa-acc-item open">
-                                <div class="fa-acc-head" onclick="toggleAcc(this)">
+                                <div class="fa-acc-head" role="button" tabindex="0" onclick="toggleAcc(this)">
                                     What is custom HTML? <span class="fa-acc-arrow">▼</span>
                                 </div>
                                 <div class="fa-acc-body">
@@ -1783,7 +1784,7 @@
                                 </div>
                             </div>
                             <div class="fa-acc-item">
-                                <div class="fa-acc-head" onclick="toggleAcc(this)">
+                                <div class="fa-acc-head" role="button" tabindex="0" onclick="toggleAcc(this)">
                                     How long does it take? <span class="fa-acc-arrow">▼</span>
                                 </div>
                                 <div class="fa-acc-body">
@@ -1791,7 +1792,7 @@
                                 </div>
                             </div>
                             <div class="fa-acc-item">
-                                <div class="fa-acc-head" onclick="toggleAcc(this)">
+                                <div class="fa-acc-head" role="button" tabindex="0" onclick="toggleAcc(this)">
                                     Do you offer revisions? <span class="fa-acc-arrow">▼</span>
                                 </div>
                                 <div class="fa-acc-body">

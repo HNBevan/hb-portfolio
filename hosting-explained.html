@@ -77,6 +77,7 @@
     </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -138,7 +139,7 @@
         </div>
     </nav>
 
-    <main class="main-content">
+    <main class="main-content" id="main-content">
         <article itemscope itemtype="https://schema.org/Article">
 
         <!-- Hero -->
@@ -508,27 +509,27 @@
                 <h2><span>Hosting</span> FAQs</h2>
                 <div class="faq-grid">
                     <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">Do I need hosting if I use Shopify or Squarespace?</div>
+                        <div class="faq-question" role="button" tabindex="0" onclick="toggleFAQ(this)">Do I need hosting if I use Shopify or Squarespace?</div>
                         <div class="faq-answer">No. Shopify, Squarespace, and Wix all include hosting as part of their monthly subscription. You are paying for the platform and the hosting bundled together. The trade-off is you have less control over your server, your code, and your data compared to self-hosted solutions.</div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">How much should I expect to pay for good hosting?</div>
+                        <div class="faq-question" role="button" tabindex="0" onclick="toggleFAQ(this)">How much should I expect to pay for good hosting?</div>
                         <div class="faq-answer">For a small business website on WordPress, budget £5-10 per month for decent shared hosting from a reputable provider. For managed WordPress hosting with better performance, £15-30 per month is reasonable. Anything under £3/month at full price (not introductory) is almost certainly compromising somewhere.</div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">Can slow hosting really affect my Google rankings?</div>
+                        <div class="faq-question" role="button" tabindex="0" onclick="toggleFAQ(this)">Can slow hosting really affect my Google rankings?</div>
                         <div class="faq-answer">Yes, directly. Google uses Core Web Vitals as a ranking factor, and hosting speed is a major contributor to these scores. A site on fast hosting with good scores will rank better than an identical site on slow hosting. It also affects bounce rate. Visitors who wait too long leave, and Google notices that too.</div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">What is the difference between a domain and hosting?</div>
+                        <div class="faq-question" role="button" tabindex="0" onclick="toggleFAQ(this)">What is the difference between a domain and hosting?</div>
                         <div class="faq-answer">Your domain is your web address (yourbusiness.co.uk). Your hosting is where your website files actually live. You need both. You can buy them from the same provider or different ones. Most people recommend keeping them separate so you are never locked in to one company for everything.</div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">How do I move my website to a different host?</div>
+                        <div class="faq-question" role="button" tabindex="0" onclick="toggleFAQ(this)">How do I move my website to a different host?</div>
                         <div class="faq-answer">The process involves copying your website files and database to the new host, then updating your DNS settings to point your domain to the new server. There is usually a 24-48 hour propagation period where both old and new hosting are live simultaneously. Most managed hosts offer free migration assistance. A developer can handle this for you with zero downtime if planned correctly.</div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFAQ(this)">Is email hosting the same as web hosting?</div>
+                        <div class="faq-question" role="button" tabindex="0" onclick="toggleFAQ(this)">Is email hosting the same as web hosting?</div>
                         <div class="faq-answer">Not always. Many web hosts include basic email hosting so you can have professional@yourdomain.co.uk, but the email quality varies. For reliable business email, many businesses use Google Workspace (from £5/user/month) or Microsoft 365, which are dedicated email platforms separate from their web hosting. This is usually more reliable than relying on your web host for email.</div>
                     </div>
                 </div>
