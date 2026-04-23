@@ -2348,6 +2348,111 @@ body > * {
    position: relative;
 }
 
+/* ── 3D Graphics Section ── */
+.threed-section {
+    padding: 100px 0;
+    background: #000;
+    position: relative;
+}
+
+.threed-inner {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.threed-text {
+    flex: 1;
+}
+
+.threed-text h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 1.2rem;
+    line-height: 1.2;
+}
+
+.threed-text h2 span {
+    color: #ff1493;
+}
+
+.threed-text p {
+    color: #c0c0c0;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.threed-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.threed-list li {
+    color: #c0c0c0;
+    padding-left: 1.4rem;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.threed-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #ff1493;
+}
+
+.threed-preview {
+    flex: 1;
+    height: 500px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 20, 147, 0.25);
+    box-shadow: 0 0 40px rgba(255, 20, 147, 0.1);
+}
+
+@media (max-width: 900px) {
+    .threed-inner {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .threed-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .threed-list {
+        align-items: flex-start;
+        width: 100%;
+        max-width: 340px;
+        padding-left: 2rem;
+    }
+
+    .threed-preview {
+        width: 100%;
+        height: 380px;
+    }
+}
+
+@media (max-width: 480px) {
+    .threed-preview {
+        height: 300px;
+    }
+
+    .threed-text h2 {
+        font-size: 1.6rem;
+    }
+}
+
 .advanced-services::after {
     display: none;
 }
