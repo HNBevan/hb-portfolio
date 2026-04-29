@@ -2416,6 +2416,11 @@ body > * {
     box-shadow: 0 0 40px rgba(255, 20, 147, 0.1);
 }
 
+/* On desktop the CTA sits outside the flex flow — hide it, button is in threed-text */
+.threed-cta {
+    display: none;
+}
+
 @media (max-width: 900px) {
     .threed-inner {
         flex-direction: column;
@@ -2439,15 +2444,16 @@ body > * {
 
     .threed-preview {
         width: 100%;
-        height: 380px;
+        height: unset;
+        aspect-ratio: 1 / 1;
     }
+
+    /* Show mobile button below preview, hide desktop button */
+    .threed-cta { display: inline-block !important; }
+    .threed-text .btn-primary { display: none !important; }
 }
 
 @media (max-width: 480px) {
-    .threed-preview {
-        height: 300px;
-    }
-
     .threed-text h2 {
         font-size: 1.6rem;
     }
